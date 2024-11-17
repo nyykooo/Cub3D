@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/17 19:21:40 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:47:27 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static bool	ft_validate_extension(char *name)
 
 static void	ft_clear(char *line, int fd)
 {
-	free(line);
+	if (line)
+		free(line);
 	close(fd);
 }
 
@@ -52,6 +53,7 @@ static bool	ft_open_file(char *input)
 	if (fd == -1)
 	{
 		ERROR_PRINT(ERROR_MSG(3, ERROR_OPEN, input, "\"\n"), 1);
+		ft_clear(NULL, fd);
 		return (false);
 	}
 	line = get_next_line(fd);
