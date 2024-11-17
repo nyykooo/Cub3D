@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/17 18:39:17 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/17 18:41:20 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ $(LIBFT):
 	make -C includes/libs/libft -s
 
 clean:
-	rm -rfd obj
+	rm -rfd $(OBJ_SRC_DIR)
 	make -C includes/libs/libft clean -s
 
 fclean: clean
