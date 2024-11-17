@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/17 19:06:49 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:21:40 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,16 @@ static bool	ft_validate_extension(char *name)
 	return (false);
 }
 
+static void	ft_clear(char *line, int fd)
+{
+	free(line);
+	close(fd);
+}
+
 static bool	ft_open_file(char *input)
 {
-	int	fd;
+	char	*line;
+	int		fd;
 
 	fd = open(input, O_RDONLY);
 	if (fd == -1)
@@ -47,7 +54,14 @@ static bool	ft_open_file(char *input)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_OPEN, input, "\"\n"), 1);
 		return (false);
 	}
-	close (fd);
+	line = get_next_line(fd);
+	if (line == NULL)
+	{
+		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, input, "\"\n"), 1);
+		ft_clear(line, fd);
+		return (false);
+	}
+	ft_clear(line, fd);
 	return (true);
 }
 
