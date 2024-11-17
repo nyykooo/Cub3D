@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:16:11 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/17 12:36:04 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/17 18:08:16 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@
 # include <termios.h> // to use the termios structure
 # include "libs/libft/libft.h" // to include the libft library
 # include <stdarg.h> // to use the va_list type to ft_error_msg_construct
-
-//extern volatile sig_atomic_t	g_sig;
-extern int	g_sig;
+# include "functions.h" // to include the functions.h file
+# include "macros.h" // to include the macros.h file
 
 #endif
