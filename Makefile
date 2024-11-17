@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/17 18:41:20 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/17 18:45:37 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,11 @@ SRC_DIR = main
 
 SRC_ERROR_DIR = error
 
+SRC_PARSE_DIR = parse
+
 SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
-	$(addsuffix .c, $(addprefix src/error/, $(SRC_ERROR_DIR)))
+	$(addsuffix .c, $(addprefix src/error/, $(SRC_ERROR_DIR))) \
+	$(addsuffix .c, $(addprefix src/parse/, $(SRC_PARSE_DIR)))
 
 LIBFT = "includes/libs/libft/libft.a"
 
