@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/17 19:47:27 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/17 21:38:48 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static bool	ft_open_file(char *input)
 	return (true);
 }
 
-bool	ft_parse_input(char *input)
+bool	ft_parse_input(char *input) // confirm later if there is more to look for in the parse intput function and how many arguments the program receives
 {
 	if (ft_validate_extension(input))
 	{
