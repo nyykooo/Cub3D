@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/17 19:31:00 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/18 21:33:03 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,14 +29,14 @@ GNL = "includes/libs/get_next_line/get_next_line.a"
 
 OBJ_SRC_DIR = obj
 
-OBJ = $(SRC:$(SRC_DIR)/.c=$(OBJ_SRC_DIR)/.o)
+OBJ = $(SRC:%.c=$(OBJ_SRC_DIR)/%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT) $(GNL)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(GNL) -o $(NAME)
 
-$(OBJ_SRC_DIR)/.o: .c
+$(OBJ_SRC_DIR)/%.o: %.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
