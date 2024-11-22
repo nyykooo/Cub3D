@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/17 21:36:06 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:51:45 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # define ERROR_OPEN "Error: Unable to open file \""
 # define ERROR_EXT "Error: Invalid file extension for file \""
 # define ERROR_READ "Error: Empty file \""
+# define ERROR_MLC "Error: Memory allocation failed \""
 
 #endif
