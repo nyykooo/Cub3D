@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 19:50:06 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 20:32:09 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ char	*ft_error_msg_construct(int nbr, ...);
 int		ft_put_error_msg(char *error_msg, int exit_status);
 
 // PARSE FUNCTIONS
-bool	ft_parse_input(char **av, int ac);
+void	ft_parse_input(char **av, int ac);
 
 // CUB FUNCTIONS
 t_cub	*ft_get_cub(void);
 void	ft_init_cub(char *av);
+
+// MAP FUNCTIONS
+void	ft_parse_map(char *name);
 
 #endif

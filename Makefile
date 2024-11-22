@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/22 19:45:49 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/22 20:33:46 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR = main cub
 
 SRC_ERROR_DIR = error
 
-SRC_PARSE_DIR = parse
+SRC_PARSE_DIR = parse map
 
 SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 	$(addsuffix .c, $(addprefix src/error/, $(SRC_ERROR_DIR))) \
