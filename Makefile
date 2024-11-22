@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/22 20:45:18 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/22 23:47:51 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME = cub3d
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRC_DIR = main cub
+SRC_DIR = main
+
+SRC_CUB_DIR = cub
+SRC_CUB_MAP_DIR = map
 
 SRC_ERROR_DIR = error
 
@@ -25,7 +28,9 @@ SRC_FREE_DIR = free
 SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 	$(addsuffix .c, $(addprefix src/error/, $(SRC_ERROR_DIR))) \
 	$(addsuffix .c, $(addprefix src/parse/, $(SRC_PARSE_DIR))) \
-	$(addsuffix .c, $(addprefix src/free/, $(SRC_FREE_DIR)))
+	$(addsuffix .c, $(addprefix src/free/, $(SRC_FREE_DIR))) \
+	$(addsuffix .c, $(addprefix src/cub/, $(SRC_CUB_DIR))) \
+	$(addsuffix .c, $(addprefix src/cub/map/, $(SRC_CUB_MAP_DIR)))
 
 LIBFT = "includes/libs/libft/libft.a"
 GNL = "includes/libs/get_next_line/get_next_line.a"
