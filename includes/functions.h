@@ -6,12 +6,14 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 19:45:06 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:50:06 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUNCTIONS_H
 # define FUNCTIONS_H
+
+# include "headers.h"
 
 // ERROR FUNCTIONS
 char	*ft_error_msg_construct(int nbr, ...);
@@ -22,5 +24,6 @@ bool	ft_parse_input(char **av, int ac);
 
 // CUB FUNCTIONS
 t_cub	*ft_get_cub(void);
+void	ft_init_cub(char *av);
 
 #endif

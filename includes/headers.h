@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:16:11 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 19:40:24 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:50:21 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@
 # include <termios.h> // to use the termios structure
 # include "libs/libft/libft.h" // to include the libft library
 # include <stdarg.h> // to use the va_list type to ft_error_msg_construct
-# include "functions.h" // to include the functions.h file
+# include "structs.h" // to include the structs.h file
 # include "macros.h" // to include the macros.h file
 # include "libs/get_next_line/get_next_line.h" // to include gnl function
-# include "structs.h" // to include the structs.h file
+# include "functions.h" // to include the functions.h file
 
 #endif
