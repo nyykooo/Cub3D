@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 17:48:25 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:36:58 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,12 @@ static bool	ft_open_file(char *input)
 	return (true);
 }
 
-bool	ft_parse_input(char **av, int ac) // confirm later if there is more to look for in the parse intput function and how many arguments the program receives
+// confirm later if there is more to look for in the parse intput function and how many arguments the program receives
+bool	ft_parse_input(char **av, int ac) 
 {
-	if (ft_validate_arguments(ac))
+	if (ft_validate_arguments(ac) && ft_validate_extension(av[1]) && ft_open_file(av[1]))
 	{
-		printf("Arguments validated\n");
-	}
-	if (ft_validate_extension(av[1]))
-	{
-		printf("Extension validated\n");
-	}
-	if (ft_open_file(av[1]))
-	{
-		printf("File opened successfully\n");
+		printf("All functions validated\n");
 		return (true);
 	}
 	return (false);
