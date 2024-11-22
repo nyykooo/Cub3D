@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 17:58:57 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 20:09:34 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
+/*   Updated: 2024/11/22 20:35:32 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
 
-char	*ft_error_msg_construct(int nbr, ...)
+void	ft_parse_map(char *name)
 {
-	va_list	arg;
-	int		i;
-	char	*error_msg;
+	t_cub	*cub;
+	char	*line;
+	int		fd;
 
-	error_msg = ft_strdup("");
-	i = -1;
-	va_start(arg, nbr);
-	while (++i < nbr)
-		error_msg = ft_strjoin_free(error_msg, va_arg(arg, char *));
-	va_end(arg);
-	return (error_msg);
-}
-
-int	ft_put_error_msg(char *error_msg, int exit_status)
-{
-	if (error_msg)
-		ft_putstr_fd(error_msg, STDERR_FILENO);
-	free(error_msg);
-	exit (exit_status);
+	cub = ft_get_cub();
+	fd = open(name, O_RDONLY);
+	line = get_next_line(fd);
+	while (line)
+	{
+		free(line);
+		cub->map->rows++;
+		line = get_next_line(fd);
+	}
+	close(fd);
+	free(line);
 }

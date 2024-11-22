@@ -6,26 +6,21 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 19:36:58 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 20:32:04 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
 
-static bool	ft_validate_arguments(int ac)
+static void	ft_validate_arguments(int ac)
 {
 	if (ac == 2)
-	{
-		return (true);
-	}
+		return ;
 	else
-	{
 		ERROR_PRINT(ERROR_MSG(1, ERROR_AC), 1);
-		return (false);
-	}
 }
 
-static bool	ft_validate_extension(char *name)
+static void	ft_validate_extension(char *name)
 {
 	int	len;
 
@@ -36,18 +31,16 @@ static bool	ft_validate_extension(char *name)
 		{
 			if (ft_strcmp(&name[len], ".cub") == 0)
 			{
-				return (true);
+				return ;
 			}
 			else
 			{
 				ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
-				return (false);
 			}
 		}
 		len--;
 	}
 	ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
-	return (false);
 }
 
 static void	ft_clear(char *line, int fd)
@@ -57,7 +50,7 @@ static void	ft_clear(char *line, int fd)
 	close(fd);
 }
 
-static bool	ft_open_file(char *input)
+static void	ft_open_file(char *input)
 {
 	char	*line;
 	int		fd;
@@ -65,28 +58,22 @@ static bool	ft_open_file(char *input)
 	fd = open(input, O_RDONLY);
 	if (fd == -1)
 	{
-		ERROR_PRINT(ERROR_MSG(3, ERROR_OPEN, input, "\"\n"), 1);
 		ft_clear(NULL, fd);
-		return (false);
+		ERROR_PRINT(ERROR_MSG(3, ERROR_OPEN, input, "\"\n"), 1);
 	}
 	line = get_next_line(fd);
 	if (line == NULL)
 	{
-		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, input, "\"\n"), 1);
 		ft_clear(line, fd);
-		return (false);
+		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, input, "\"\n"), 1);
 	}
 	ft_clear(line, fd);
-	return (true);
 }
 
 // confirm later if there is more to look for in the parse intput function and how many arguments the program receives
-bool	ft_parse_input(char **av, int ac) 
+void	ft_parse_input(char **av, int ac) 
 {
-	if (ft_validate_arguments(ac) && ft_validate_extension(av[1]) && ft_open_file(av[1]))
-	{
-		printf("All functions validated\n");
-		return (true);
-	}
-	return (false);
+	ft_validate_arguments(ac);
+	ft_validate_extension(av[1]);
+	ft_open_file(av[1]);
 }
