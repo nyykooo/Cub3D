@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 12:09:38 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 20:32:54 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 20:41:29 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int	main(int ac, char **av)
 	cub = ft_get_cub();
 	ft_init_cub(av[1]);
 	(void)cub;
+	return (0);
 }
