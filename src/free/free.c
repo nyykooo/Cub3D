@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 12:09:38 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 20:43:06 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
+/*   Updated: 2024/11/22 20:45:26 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers.h"
+#include "../../includes/headers.h"
 
-int	main(int ac, char **av)
+void	ft_clear_cub(void)
 {
-	ft_parse_input(av, ac);
-	ft_init_cub(av[1]);
-	ft_clear_cub();
-	return (0);
+	t_cub	*cub;
+
+	cub = ft_get_cub();
+	free(cub->map);
 }

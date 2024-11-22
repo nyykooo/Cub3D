@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 20:32:09 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/22 20:44:48 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define FUNCTIONS_H
 
 # include "headers.h"
+
+// FREE FUNCTIONS
+void	ft_clear_cub(void);
 
 // ERROR FUNCTIONS
 char	*ft_error_msg_construct(int nbr, ...);
