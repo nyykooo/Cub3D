@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 14:07:38 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 21:17:40 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,7 @@ void	ft_print_map(t_map *map)
 	printf("SO: %s\n", map->texture->south);
 	printf("WE: %s\n", map->texture->west);
 	printf("EA: %s\n", map->texture->east);
-	
 	printf("\nMAP\n");
-	
 	i = 0;
 	while (i < map->rows)
 	{
