@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 14:07:35 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 20:35:30 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_parse_map(char *name)
 	cub = ft_get_cub();
 	fd = open(name, O_RDONLY);
 	line = get_next_line(fd);
-	// ROLANDO BUG TENEBROSO AQUI COM A GET_NEXT_LINE
 	while (line)
 	{
 		cub->map->rows++;

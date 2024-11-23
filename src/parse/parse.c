@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 12:45:27 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 20:33:17 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ static void	ft_validate_extension(char *name)
 
 static void	ft_clear(char *line, int fd)
 {
+	int	buffclear;
+
+	buffclear = open("/dev/null", O_WRONLY);
+	if (line)
+		free(line);
+	line = get_next_line(buffclear);
 	if (line)
 		free(line);
 	close(fd);
