@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 20:32:04 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 12:45:27 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,9 @@ static void	ft_open_file(char *input)
 	ft_clear(line, fd);
 }
 
-// confirm later if there is more to look for in the parse intput function and how many arguments the program receives
-void	ft_parse_input(char **av, int ac) 
+// confirm later if there is more to look for in the parse intput function
+
+void	ft_parse_input(char **av, int ac)
 {
 	ft_validate_arguments(ac);
 	ft_validate_extension(av[1]);
