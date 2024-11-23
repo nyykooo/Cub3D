@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:44:27 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 23:47:09 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 00:14:11 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ void	ft_init_cub(char *av)
 	t_cub	*cub;
 
 	cub = ft_get_cub();
+	cub->file = ft_strdup(av);
 	ft_init_map(cub);
 	ft_parse_map(av);
-	printf("Rows: %d\n", cub->map->rows);
+	ft_alloc_map(cub);
+	ft_print_map(cub->map);
 }

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 23:47:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 00:15:37 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 // FREE FUNCTIONS
 void	ft_clear_cub(void);
+void	ft_clear_map(t_map *map);
 
 // ERROR FUNCTIONS
 char	*ft_error_msg_construct(int nbr, ...);
@@ -31,6 +32,8 @@ void	ft_init_cub(char *av);
 
 // MAP FUNCTIONS
 void	ft_init_map(t_cub *cub);
+void	ft_alloc_map(t_cub *cub);
+void	ft_print_map(t_map *map);
 void	ft_parse_map(char *name);
 
 #endif
