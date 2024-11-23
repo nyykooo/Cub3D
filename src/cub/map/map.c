@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 00:15:53 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 14:07:38 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_init_map(t_cub *cub)
 	cub->map->rows = 0;
 	cub->map->cols = 0;
 	cub->map->path = ft_strdup(cub->file);
+	cub->map->texture = ft_init_texture();
 }
 
 void	ft_alloc_map(t_cub *cub)
@@ -37,6 +38,7 @@ void	ft_alloc_map(t_cub *cub)
 	while (i < cub->map->rows)
 	{
 		cub->map->map[i] = ft_strdup(line);
+		ft_get_map_textures(cub->map, line);
 		if (!cub->map->map[i])
 			ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": char *map[i]", "\"\n"), 1);
 		free(line);
@@ -51,6 +53,14 @@ void	ft_print_map(t_map *map)
 {
 	int	i;
 
+	printf("TEXTURES\n");
+	printf("NO: %s\n", map->texture->north);
+	printf("SO: %s\n", map->texture->south);
+	printf("WE: %s\n", map->texture->west);
+	printf("EA: %s\n", map->texture->east);
+	
+	printf("\nMAP\n");
+	
 	i = 0;
 	while (i < map->rows)
 	{

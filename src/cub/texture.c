@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 13:38:24 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
+/*   Updated: 2024/11/23 13:54:59 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#include "../../includes/headers.h"
 
-# include "headers.h"
-
-typedef struct s_texture
-{
-	char	*north;
-	char	*south;
-	char	*east;
-	char	*west;
-}	t_texture;
-
-typedef struct s_map
+t_texture	*ft_init_texture()
 {
 	t_texture	*texture;
-	char		**map;
-	char		*path;
-	int			rows;
-	int			cols;
-}	t_map;
 
-typedef struct s_cub
-{
-	t_map	*map;
-	char	*file;
-}	t_cub;
-
-#endif
+	texture = (t_texture *)malloc(sizeof(t_texture));
+	texture->north = NULL;
+	texture->south = NULL;
+	texture->east = NULL;
+	texture->west = NULL;
+	return (texture);
+}

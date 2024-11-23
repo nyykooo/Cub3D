@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 00:11:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/23 13:35:07 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,24 @@ void	ft_clear_map(t_map *map)
 		}
 		free(map->map);
 	}
+	if (map->texture)
+		ft_clear_texture(map->texture);
 	if (map->path)
 		free(map->path);
 	if (map)
 		free(map);
+}
+
+void	ft_clear_texture(t_texture *texture)
+{
+	if (texture->north)
+		free(texture->north);
+	if (texture->south)
+		free(texture->south);
+	if (texture->east)
+		free(texture->east);
+	if (texture->west)
+		free(texture->west);
+	if (texture)
+		free(texture);
 }

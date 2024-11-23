@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/22 23:47:51 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/23 13:57:48 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 SRC_DIR = main
 
-SRC_CUB_DIR = cub
+SRC_CUB_DIR = cub texture
 SRC_CUB_MAP_DIR = map
 
 SRC_ERROR_DIR = error
