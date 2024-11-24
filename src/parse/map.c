@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 21:17:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/24 16:55:53 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ void	ft_get_map_textures(t_map *map, char *line)
 
 bool	ft_is_text_or_color(t_map *map, char **split)
 {
-	if (ft_strcmp(split[0], "NO") == 0)
+	if (ft_strncmp(split[0], "NO", 2) == 0)
 		map->texture->north = ft_strdup(split[1]);
-	else if (ft_strcmp(split[0], "SO") == 0)
+	else if (ft_strncmp(split[0], "SO", 2) == 0)
 		map->texture->south = ft_strdup(split[1]);
-	else if (ft_strcmp(split[0], "WE") == 0)
+	else if (ft_strncmp(split[0], "WE", 2) == 0)
 		map->texture->west = ft_strdup(split[1]);
-	else if (ft_strcmp(split[0], "EA") == 0)
+	else if (ft_strncmp(split[0], "EA", 2) == 0)
 		map->texture->east = ft_strdup(split[1]);
 	else if (map->texture->north && map->texture->south
 		&& map->texture->west && map->texture->east)
-		return (true);
-	return (false);
+		return (false);
+	return (true);
 }
