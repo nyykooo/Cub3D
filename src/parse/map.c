@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/24 17:18:16 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/24 20:13:43 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ void	ft_parse_map(char *name)
 	line = get_next_line(fd);
 	while (line)
 	{
-		cub->map->rows++;
+		if (!ft_is_text_or_color(line))
+			cub->map->rows++;
+		ft_get_map_info(cub, line);
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -37,7 +39,7 @@ void	ft_get_map_textures(t_map *map, char *line)
 	int		i;
 
 	split = ft_split(line, ' ');
-	ft_is_text_or_color(map, split);
+	ft_get_text_color(map, split);
 	i = 0;
 	while (split[i])
 	{

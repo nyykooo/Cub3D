@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 21:17:51 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/24 20:07:37 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ void	ft_clear_texture(t_texture *texture)
 		free(texture->east);
 	if (texture->west)
 		free(texture->west);
+	if (texture->ceiling)
+		free(texture->ceiling);
+	if (texture->floor)
+		free(texture->floor);
 	if (texture)
 		free(texture);
 }

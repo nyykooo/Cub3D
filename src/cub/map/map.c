@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/24 17:18:33 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/24 20:18:31 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,15 @@ void	ft_alloc_map(t_cub *cub)
 	line = get_next_line(fd);
 	while (i < cub->map->rows)
 	{
-		cub->map->map[i] = ft_strdup(line);
-		if (!cub->map->map[i])
-			ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": char *map[i]", "\"\n"), 1);
+		if (!ft_is_text_or_color(line))
+		{
+			cub->map->map[i] = ft_strdup(line);
+			if (!cub->map->map[i++])
+				ERROR_PRINT(ERROR_MSG(3, ERROR_READ,
+						": char *map[i]", "\"\n"), 1);
+		}
 		free(line);
 		line = get_next_line(fd);
-		i++;
 	}
 	free(line);
 	close(fd);
@@ -81,17 +84,8 @@ void	ft_print_map(t_map *map)
 	}
 }
 
-void	ft_get_map_info(t_cub *cub)
+void	ft_get_map_info(t_cub *cub, char *line)
 {
-	int	i;
-
-	i = -1;
-	while (++i < cub->map->rows)
-	{
-		if (ft_is_text_or_color(cub->map, &cub->map->map[i]))
-		{
-			ft_clean_map_spaces(&cub->map->map[i]);
-			ft_get_map_textures(cub->map, cub->map->map[i]);
-		}
-	}
+	ft_clean_map_spaces(&line);
+	ft_get_map_textures(cub->map, line);
 }
