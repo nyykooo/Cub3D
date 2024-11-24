@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/24 16:56:46 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/24 17:18:33 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ void	ft_print_map(t_map *map)
 	printf("SO: %s\n", map->texture->south);
 	printf("WE: %s\n", map->texture->west);
 	printf("EA: %s\n", map->texture->east);
+	printf("COLORS\n");
+	printf("C: %s\n", map->texture->ceiling);
+	printf("F: %s\n", map->texture->floor);
 	printf("\nMAP\n");
 	i = 0;
 	while (i < map->rows)
@@ -85,7 +88,7 @@ void	ft_get_map_info(t_cub *cub)
 	i = -1;
 	while (++i < cub->map->rows)
 	{
-		if (ft_is_text_or_color(cub->map,&cub->map->map[i]))
+		if (ft_is_text_or_color(cub->map, &cub->map->map[i]))
 		{
 			ft_clean_map_spaces(&cub->map->map[i]);
 			ft_get_map_textures(cub->map, cub->map->map[i]);

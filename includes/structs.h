@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 13:38:24 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/24 17:16:43 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_texture
 	char	*south;
 	char	*east;
 	char	*west;
+	char	*ceiling;
+	char	*floor;
 }	t_texture;
 
 typedef struct s_map
