@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 19:33:51 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 20:11:53 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 # define ERROR_READ "Error: Empty file \""
 # define ERROR_MLC "Error: Memory allocation failed \""
 # define ERROR_MAP_EMPTY "Error: Invalid map: empty line in map content\n"
+# define ERROR_MAP_CLOSE "Error: Invalid map: map not closed\n"
 
 #endif

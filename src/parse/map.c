@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/24 20:13:43 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 20:13:35 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,39 @@ void	ft_get_map_textures(t_map *map, char *line)
 	}
 	free(split);
 	return ;
+}
+
+void	ft_check_first_last(char *line)
+{
+	int		i;
+
+	i = -1;
+	while (line[++i])
+	{
+		if (line[i] != '1')
+			ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CLOSE), 1);
+	}
+}
+
+void	ft_check_line(char *line)
+{
+	int		len;
+
+	len = ft_strlen(line);
+	if (line[0] != '1' || line[len - 1] != '1')
+		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CLOSE), 1);
+}
+
+void	ft_closed_map(t_cub *cub)
+{
+	int		i;
+
+	i = -1;
+	while (++i < cub->map->rows)
+	{
+		if (i == 0)
+			ft_check_first_last(cub->map->map[i]);
+		else
+			ft_check_line(cub->map->map[i]);
+	}
 }
