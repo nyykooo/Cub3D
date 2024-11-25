@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/23 13:57:48 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/25 19:39:47 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,15 @@ SRC_PARSE_DIR = parse map
 
 SRC_FREE_DIR = free
 
+SRC_PRINT_DIR = print
+
 SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 	$(addsuffix .c, $(addprefix src/error/, $(SRC_ERROR_DIR))) \
 	$(addsuffix .c, $(addprefix src/parse/, $(SRC_PARSE_DIR))) \
 	$(addsuffix .c, $(addprefix src/free/, $(SRC_FREE_DIR))) \
 	$(addsuffix .c, $(addprefix src/cub/, $(SRC_CUB_DIR))) \
-	$(addsuffix .c, $(addprefix src/cub/map/, $(SRC_CUB_MAP_DIR)))
+	$(addsuffix .c, $(addprefix src/cub/map/, $(SRC_CUB_MAP_DIR))) \
+	$(addsuffix .c, $(addprefix src/print/, $(SRC_PRINT_DIR)))
 
 LIBFT = "includes/libs/libft/libft.a"
 GNL = "includes/libs/get_next_line/get_next_line.a"
