@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/23 20:33:17 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 18:49:27 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,37 +43,31 @@ static void	ft_validate_extension(char *name)
 	ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
 }
 
-static void	ft_clear(char *line, int fd)
+static void	ft_clear(t_cub *cub)
 {
 	int	buffclear;
 
 	buffclear = open("/dev/null", O_WRONLY);
-	if (line)
-		free(line);
-	line = get_next_line(buffclear);
-	if (line)
-		free(line);
-	close(fd);
+	if (cub->line)
+		free(cub->line);
+	cub->line = get_next_line(buffclear);
+	if (cub->line)
+		free(cub->line);
+	close(cub->fd);
 }
 
 static void	ft_open_file(char *input)
 {
-	char	*line;
-	int		fd;
+	t_cub	*cub;
 
-	fd = open(input, O_RDONLY);
-	if (fd == -1)
-	{
-		ft_clear(NULL, fd);
+	cub = ft_get_cub();
+	cub->fd = open(input, O_RDONLY);
+	if (cub->fd == -1)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_OPEN, input, "\"\n"), 1);
-	}
-	line = get_next_line(fd);
-	if (line == NULL)
-	{
-		ft_clear(line, fd);
+	cub->line = get_next_line(cub->fd);
+	if (cub->line == NULL)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, input, "\"\n"), 1);
-	}
-	ft_clear(line, fd);
+	ft_clear(cub);
 }
 
 // confirm later if there is more to look for in the parse intput function

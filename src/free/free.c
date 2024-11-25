@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/24 20:07:37 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 18:35:31 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	ft_clear_cub(void)
 	t_cub	*cub;
 
 	cub = ft_get_cub();
+	if (cub->fd != -1)
+		close(cub->fd);
+	if (cub->line)
+		free(cub->line);
 	if (cub->file)
 		free(cub->file);
 	if (cub->map)
