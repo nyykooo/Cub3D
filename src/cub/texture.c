@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/24 20:12:38 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:00:47 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ t_texture	*ft_init_texture(void)
 
 bool	ft_get_text_color(t_map *map, char **split)
 {
+	if (split[0] == NULL || split[0][0] == '\0' || split[1] == NULL)
+		return (true);
 	if (ft_strncmp(split[0], "NO", 2) == 0)
 		map->texture->north = ft_strdup(split[1]);
 	else if (ft_strncmp(split[0], "SO", 2) == 0)
@@ -49,6 +51,8 @@ bool	ft_get_text_color(t_map *map, char **split)
 
 bool	ft_is_text_or_color(char *line)
 {
+	if (line[0] == '\0' || line[0] == '\n')
+		return (true);
 	if (ft_strncmp(line, "NO", 2) == 0 || ft_strncmp(line, "SO", 2) == 0
 		|| ft_strncmp(line, "WE", 2) == 0
 		|| ft_strncmp(line, "EA", 2) == 0 || ft_strncmp(line, "C", 1) == 0

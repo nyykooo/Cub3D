@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 18:28:37 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:16:06 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_cub
 {
 	t_map	*map;
 	char	*file;
-	char 	*line;
+	char	*line;
 	int		fd;
 }	t_cub;
 
