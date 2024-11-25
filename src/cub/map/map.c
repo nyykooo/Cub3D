@@ -6,11 +6,20 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/24 20:18:31 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:34:19 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
+
+static void	ft_init_map_content(t_cub *cub)
+{
+	int		i;
+
+	i = 0;
+	while (i < cub->map->rows)
+		cub->map->map[i++] = NULL;
+}
 
 void	ft_init_map(t_cub *cub)
 {
@@ -25,30 +34,30 @@ void	ft_init_map(t_cub *cub)
 
 void	ft_alloc_map(t_cub *cub)
 {
-	char	*line;
-	int		fd;
 	int		i;
 
 	i = 0;
-	fd = open(cub->map->path, O_RDONLY);
+	cub->fd = open(cub->map->path, O_RDONLY);
 	cub->map->map = (char **)malloc(sizeof(char *) * cub->map->rows);
 	if (!cub->map->map)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": char **map", "\"\n"), 1);
-	line = get_next_line(fd);
+	ft_init_map_content(cub);
+	cub->line = get_next_line(cub->fd);
 	while (i < cub->map->rows)
 	{
-		if (!ft_is_text_or_color(line))
+		if (cub->line[0] == '\n' && i != 0)
+			ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_EMPTY), 1);
+		if (!ft_is_text_or_color(cub->line))
 		{
-			cub->map->map[i] = ft_strdup(line);
+			cub->map->map[i] = ft_strdup(cub->line);
 			if (!cub->map->map[i++])
 				ERROR_PRINT(ERROR_MSG(3, ERROR_READ,
 						": char *map[i]", "\"\n"), 1);
 		}
-		free(line);
-		line = get_next_line(fd);
+		free(cub->line);
+		cub->line = get_next_line(cub->fd);
 	}
-	free(line);
-	close(fd);
+	ft_clear(cub);
 }
 
 void	ft_clean_map_spaces(char **line)

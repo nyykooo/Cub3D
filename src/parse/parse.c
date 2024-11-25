@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 18:49:27 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:24:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,6 @@ static void	ft_validate_extension(char *name)
 		len--;
 	}
 	ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
-}
-
-static void	ft_clear(t_cub *cub)
-{
-	int	buffclear;
-
-	buffclear = open("/dev/null", O_WRONLY);
-	if (cub->line)
-		free(cub->line);
-	cub->line = get_next_line(buffclear);
-	if (cub->line)
-		free(cub->line);
-	close(cub->fd);
 }
 
 static void	ft_open_file(char *input)
