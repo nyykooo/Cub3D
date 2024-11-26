@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:44:27 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 20:25:18 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/26 13:20:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_init_cub(char *av)
 	ft_init_map(cub);
 	ft_parse_map(av);
 	ft_alloc_map(cub);
+	ft_trim_map(cub);
 	ft_closed_map(cub);
 	ft_print_map(cub->map);
 }
