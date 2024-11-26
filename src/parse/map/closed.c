@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:58:07 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/26 18:32:41 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/26 20:58:50 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_check_hole(int col, int row)
 	map = cub->map->map;
 	if (col == 0 && row == 0)
 		ft_fcol_fline(map, col, row);
-	else if (col == 0 && row == cub->map->rows)
+	else if (col == 0 && row == cub->map->rows - 1)
 		ft_fcol_lline(map, col, row);
 	else if (row == 0)
 		ft_fline(map, col, row);
