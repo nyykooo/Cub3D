@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:46:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 19:45:20 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 21:00:20 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	ft_analyze_cell(t_map *map, int col, int row)
 
 static void	ft_floodfill(t_map *map, int col, int row)
 {
-	printf("col: %d, row: %d\n", col, row);
 	if (col < 0 || col >= (int)ft_strlen(map->map[row])
 		|| row < 0 || row >= map->rows || map->map[row][col] == ' '
 		|| map->map[row][col] == '1' || map->map[row][col] == 'x'

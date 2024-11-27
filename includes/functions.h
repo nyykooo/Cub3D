@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 19:50:28 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:59:49 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void		ft_get_map_textures(t_map *map, char *line);
 void		ft_clean_map_spaces(char **line);
 void		ft_get_map_info(t_cub *cub, char *line);
 void		ft_trim_map(t_cub *cub);
+void		ft_look_for_invalid_map(t_cub *cub);
 
 // FLOODFILL FUNCTIONS
 void		ft_call_flood(t_map *map);

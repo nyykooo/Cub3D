@@ -6,11 +6,26 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/26 18:36:33 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:59:21 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
+
+void	ft_look_for_invalid_map(t_cub *cub)
+{
+	int	i;
+	int j;
+
+	i = -1;
+	while (++i < cub->map->rows)
+	{
+		j = -1;
+		while (++j < (int)ft_strlen(cub->map->map[i]))
+			if (cub->map->map[i][j] == '\t')
+				ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CHAR, 0), 1);
+	}
+}
 
 void	ft_parse_map(char *name)
 {
