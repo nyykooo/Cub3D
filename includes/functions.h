@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/26 18:35:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:50:28 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,9 @@ void		ft_get_map_textures(t_map *map, char *line);
 void		ft_clean_map_spaces(char **line);
 void		ft_get_map_info(t_cub *cub, char *line);
 void		ft_trim_map(t_cub *cub);
-void		ft_closed_map(t_cub *cub);
-void		ft_check_hole(int col, int row);
-void		ft_check_first_last(char *line, int row);
-void		ft_check_line(char *line, int row);
 
-// CLOSED MAP FUNCTIONS
-void		ft_closed_map(t_cub *cub);
-void		ft_check_first_last(char *line, int row);
-void		ft_check_line(char *line, int row);
+// FLOODFILL FUNCTIONS
+void		ft_call_flood(t_map *map);
 
-// HOLE FUNCTIONS
-void		ft_check_hole(int col, int row);
-void		ft_fcol_fline(char **map, int col, int row);
-void		ft_fcol_lline(char **map, int col, int row);
-void		ft_fline(char **map, int col, int row);
-void		ft_lline(char **map, int col, int row);
-void		ft_fcol(char **map, int col, int row);
-void		ft_lcol(char **map, int col, int row);
-void		ft_middle(char **map, int col, int row);
 
 #endif

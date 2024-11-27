@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/26 20:57:02 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/27 19:21:59 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC_ERROR_DIR = error
 
 SRC_PARSE_DIR = parse
 
-SRC_PARSE_MAP_DIR = map closed closed_utils closed_hole
+SRC_PARSE_MAP_DIR = map floodfill
 
 SRC_FREE_DIR = free
 
