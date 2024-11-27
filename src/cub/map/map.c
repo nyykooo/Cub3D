@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 19:38:14 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:32:28 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_alloc_map(t_cub *cub)
 		free(cub->line);
 		cub->line = get_next_line(cub->fd);
 	}
-	ft_clear(cub);
+	close(cub->fd);
 }
 
 void	ft_clean_map_spaces(char **line)

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 20:59:21 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:20:56 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,6 @@ void	ft_look_for_invalid_map(t_cub *cub)
 			if (cub->map->map[i][j] == '\t')
 				ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CHAR, 0), 1);
 	}
-}
-
-void	ft_parse_map(char *name)
-{
-	t_cub	*cub;
-	char	*line;
-	int		fd;
-
-	cub = ft_get_cub();
-	fd = open(name, O_RDONLY);
-	line = get_next_line(fd);
-	while (line)
-	{
-		if (!ft_is_text_or_color(line))
-			cub->map->rows++;
-		ft_get_map_info(cub, line);
-		free(line);
-		line = get_next_line(fd);
-	}
-	close(fd);
-	free(line);
 }
 
 void	ft_get_map_textures(t_map *map, char *line)

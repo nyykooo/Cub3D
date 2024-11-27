@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 19:24:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:35:44 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,21 @@ static void	ft_validate_extension(char *name)
 	ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
 }
 
+
+static void	ft_parse_map(t_cub *cub, char *file)
+{
+	cub->file = ft_strdup(file);
+	ft_init_map(cub);
+	while (cub->line)
+	{
+		if (!ft_is_text_or_color(cub->line))
+			cub->map->rows++;
+		ft_get_map_info(cub, cub->line);
+		free(cub->line);
+		cub->line = get_next_line(cub->fd);
+	}
+}
+
 static void	ft_open_file(char *input)
 {
 	t_cub	*cub;
@@ -54,7 +69,9 @@ static void	ft_open_file(char *input)
 	cub->line = get_next_line(cub->fd);
 	if (cub->line == NULL)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, input, "\"\n"), 1);
-	ft_clear(cub);
+	else
+		ft_parse_map(cub, input);
+	close(cub->fd);
 }
 
 // confirm later if there is more to look for in the parse intput function

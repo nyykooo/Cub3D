@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 19:24:33 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:30:59 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,4 @@ void	ft_clear_texture(t_texture *texture)
 		free(texture->floor);
 	if (texture)
 		free(texture);
-}
-
-void	ft_clear(t_cub *cub)
-{
-	int	buffclear;
-
-	buffclear = open("/dev/null", O_WRONLY);
-	if (cub->line)
-		free(cub->line);
-	cub->line = get_next_line(buffclear);
-	if (cub->line)
-		free(cub->line);
-	close(cub->fd);
 }
