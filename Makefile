@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/27 19:21:59 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/27 23:16:42 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,20 +55,20 @@ $(OBJ_SRC_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	make -C includes/libs/libft -s
+	$(MAKE) -C includes/libs/libft -s
 	
 $(GNL):
-	make -C includes/libs/get_next_line -s
+	$(MAKE) -C includes/libs/get_next_line -s
 
 clean:
 	rm -rfd $(OBJ_SRC_DIR)
-	make clean -C includes/libs/libft clean -s
-	make clean -C includes/libs/get_next_line -s
+	$(MAKE) clean -C includes/libs/libft clean -s
+	$(MAKE) clean -C includes/libs/get_next_line -s
 
 fclean: clean
 	rm -f $(NAME)
-	make fclean -C includes/libs/libft fclean -s
-	make fclean -C includes/libs/get_next_line -s
+	$(MAKE) fclean -C includes/libs/libft fclean -s
+	$(MAKE) fclean -C includes/libs/get_next_line -s
 
 re: fclean all
 
