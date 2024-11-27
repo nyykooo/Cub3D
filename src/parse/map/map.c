@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 23:20:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:42:57 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_look_for_invalid_map(t_cub *cub)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = -1;
 	while (++i < cub->map->rows)

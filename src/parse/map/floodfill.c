@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:46:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 21:00:20 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:42:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	ft_analyze_cell(t_map *map, int col, int row)
 {
-	if ((col >= 0 || col < (int)ft_strlen(map->map[row])
-			|| row >= 0 || row < map->rows ) &&
-		(map->map[row][col] == ' ' || map->map[row][col] == 0))
+	if ((col >= 0 || col < (int)ft_strlen(map->map[row]) \
+		|| row >= 0 || row < map->rows) && (map->map[row][col] == ' ' \
+		|| map->map[row][col] == 0))
 		return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 23:35:44 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:41:12 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ static void	ft_validate_extension(char *name)
 	}
 	ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
 }
-
 
 static void	ft_parse_map(t_cub *cub, char *file)
 {
