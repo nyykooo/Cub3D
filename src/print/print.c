@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:38:34 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 16:22:46 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:41:31 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ void	ft_print_map(t_map *map)
 	while (i < map->rows)
 	{
 		printf("%s\n", map->map[i]);
+		i++;
+	}
+	printf("\nFLOODED MAP\n");
+	i = 0;
+	while (i < map->rows)
+	{
+		printf("%s\n", map->ff_map[i]);
 		i++;
 	}
 }

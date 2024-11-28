@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 16:19:54 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:44:08 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,21 @@ void	ft_clear_map(t_map *map)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	if (map && map->map)
 	{
-		while (i < map->rows)
-		{
+		while (++i < map->rows)
 			if (map->map[i])
 				free(map->map[i]);
-			i++;
-		}
 		free(map->map);
+	}
+	i = -1;
+	if (map && map->ff_map)
+	{
+		while (++i < map->rows)
+			if (map->ff_map[i])
+				free(map->ff_map[i]);
+		free(map->ff_map);
 	}
 	if (map->texture)
 		ft_clear_texture(map->texture);

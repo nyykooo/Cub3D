@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 15:56:24 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:30:08 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_map
 {
 	t_texture	*texture;
 	char		**map;
+	char		**ff_map;
 	char		*path;
 	int			rows;
 	int			cols;

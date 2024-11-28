@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:17:14 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/17 12:36:45 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 19:38:51 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,7 @@ int		ft_itoui(int negative);
 bool	ft_is_number(char *str);
 
 bool	ft_is_pipe_redir(char c);
+
+char	**ft_strdupd(char **src);
 
 #endif

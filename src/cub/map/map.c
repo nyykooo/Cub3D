@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 00:04:03 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 22:52:08 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	ft_init_map_content(t_cub *cub)
 	int		i;
 
 	i = 0;
-	while (i < cub->map->rows)
+	while (i <= cub->map->rows)
 		cub->map->map[i++] = NULL;
 }
 
@@ -30,6 +30,7 @@ void	ft_init_map(t_cub *cub)
 	cub->map->cols = 0;
 	cub->map->path = ft_strdup(cub->file);
 	cub->map->map = NULL;
+	cub->map->ff_map = NULL;
 	cub->map->texture = ft_init_texture();
 }
 
@@ -39,7 +40,7 @@ void	ft_alloc_map(t_cub *cub)
 
 	i = 0;
 	cub->fd = open(cub->map->path, O_RDONLY);
-	cub->map->map = (char **)malloc(sizeof(char *) * cub->map->rows);
+	cub->map->map = (char **)malloc(sizeof(char *) * (cub->map->rows + 1));
 	if (!cub->map->map)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": char **map", "\"\n"), 1);
 	ft_init_map_content(cub);
@@ -58,6 +59,7 @@ void	ft_alloc_map(t_cub *cub)
 		free(cub->line);
 		cub->line = get_next_line(cub->fd);
 	}
+	cub->map->map[i] = NULL;
 	close(cub->fd);
 }
 
