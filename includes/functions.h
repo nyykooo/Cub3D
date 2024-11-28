@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 23:52:54 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:24:57 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 void		ft_clear_cub(void);
 void		ft_clear_map(t_map *map);
 void		ft_clear_texture(t_texture *texture);
+void		ft_clear_color(t_color *color);
 
 // ERROR FUNCTIONS
 char		*ft_error_msg_construct(int nbr, ...);
@@ -27,6 +28,7 @@ int			ft_put_error_msg(char *error_msg, int exit_status);
 // PARSE FUNCTIONS
 void		ft_parse_input(char **av, int ac);
 void		ft_parse_texture(t_cub *cub);
+void		ft_parse_color(t_cub *cub, char *line);
 
 // CUB FUNCTIONS
 t_cub		*ft_get_cub(void);
@@ -49,5 +51,9 @@ void		ft_look_for_invalid_map(t_cub *cub);
 
 // FLOODFILL FUNCTIONS
 void		ft_call_flood(t_map *map);
+
+// COLOR FUNCTIONS
+t_color		*ft_init_color(void);
+int			ft_create_rgb(int r, int g, int b);
 
 #endif

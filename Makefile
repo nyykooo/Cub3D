@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/27 23:16:42 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/28 15:47:46 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,15 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 SRC_DIR = main
 
-SRC_CUB_DIR = cub texture
+SRC_CUB_DIR = cub texture color
+
 SRC_CUB_MAP_DIR = map
 
 SRC_ERROR_DIR = error
 
 SRC_PARSE_DIR = parse
 
-SRC_PARSE_MAP_DIR = map floodfill
+SRC_PARSE_MAP_DIR = map floodfill color
 
 SRC_FREE_DIR = free
 

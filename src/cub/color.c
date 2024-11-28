@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 19:38:34 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 16:22:46 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/11/28 15:37:06 by ncampbel          #+#    #+#             */
+/*   Updated: 2024/11/28 16:19:17 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
 
-void	ft_print_map(t_map *map)
+t_color	*ft_init_color(void)
 {
-	int	i;
+	t_color	*color;
 
-	printf("TEXTURES\n");
-	printf("NO: %s\n", map->texture->north);
-	printf("SO: %s\n", map->texture->south);
-	printf("WE: %s\n", map->texture->west);
-	printf("EA: %s\n", map->texture->east);
-	printf("COLORS\n");
-	printf("C: %s\n", map->texture->ceiling->input);
-	printf("F: %s\n", map->texture->floor->input);
-	printf("\nMAP\n");
-	i = 0;
-	while (i < map->rows)
-	{
-		printf("%s\n", map->map[i]);
-		i++;
-	}
+	color = (t_color *)malloc(sizeof(t_color));
+	color->input = NULL;
+	color->color = -1;
+	color->red = -1;
+	color->green = -1;
+	color->blue = -1;
+	return (color);
+}
+
+int	ft_create_rgb(int r, int g, int b)
+{
+	int	new_color;
+
+	r = r % 256;
+	g = g % 256;
+	b = b % 256;
+	new_color = (r << 16 | g << 8 | b);
+	return (new_color);
 }

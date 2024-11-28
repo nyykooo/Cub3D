@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/25 19:00:47 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:24:13 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_texture	*ft_init_texture(void)
 	texture->south = NULL;
 	texture->east = NULL;
 	texture->west = NULL;
-	texture->ceiling = NULL;
-	texture->floor = NULL;
+	texture->ceiling = ft_init_color();
+	texture->floor = ft_init_color();
 	return (texture);
 }
 
@@ -38,13 +38,10 @@ bool	ft_get_text_color(t_map *map, char **split)
 		map->texture->west = ft_strdup(split[1]);
 	else if (ft_strncmp(split[0], "EA", 2) == 0)
 		map->texture->east = ft_strdup(split[1]);
-	else if (ft_strncmp(split[0], "C", 1) == 0)
-		map->texture->ceiling = ft_strdup(split[1]);
-	else if (ft_strncmp(split[0], "F", 1) == 0)
-		map->texture->floor = ft_strdup(split[1]);
 	else if (map->texture->north && map->texture->south
-		&& map->texture->west && map->texture->east && map->texture->ceiling
-		&& map->texture->floor)
+		&& map->texture->west && map->texture->east
+		&& map->texture->ceiling->input
+		&& map->texture->floor->input)
 		return (false);
 	return (true);
 }
@@ -55,8 +52,12 @@ bool	ft_is_text_or_color(char *line)
 		return (true);
 	if (ft_strncmp(line, "NO", 2) == 0 || ft_strncmp(line, "SO", 2) == 0
 		|| ft_strncmp(line, "WE", 2) == 0
-		|| ft_strncmp(line, "EA", 2) == 0 || ft_strncmp(line, "C", 1) == 0
-		|| ft_strncmp(line, "F", 1) == 0)
+		|| ft_strncmp(line, "EA", 2) == 0)
 		return (true);
+	else if (ft_strncmp(line, "C", 1) == 0 || ft_strncmp(line, "F", 1) == 0)
+	{
+		ft_parse_color(ft_get_cub(), line);
+		return (true);
+	}
 	return (false);
 }

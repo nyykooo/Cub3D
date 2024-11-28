@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 23:58:28 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:19:54 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,17 @@ void	ft_clear_texture(t_texture *texture)
 	if (texture->west)
 		free(texture->west);
 	if (texture->ceiling)
-		free(texture->ceiling);
+		ft_clear_color(texture->ceiling);
 	if (texture->floor)
-		free(texture->floor);
+		ft_clear_color(texture->floor);
 	if (texture)
 		free(texture);
+}
+
+void	ft_clear_color(t_color *color)
+{
+	if (color->input)
+		free(color->input);
+	if (color)
+		free(color);
 }

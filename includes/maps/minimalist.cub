@@ -1,7 +1,7 @@
 NO ./includes/textures/light_wall.xpm
 SO ./includes/textures/moss_wall.xpm
 WE ./includes/textures/stone_wall.xpm
-EA ./includes/textures/wod_wall.xpm
+EA ./includes/textures/wood_wall.xpm
 
 F 220,100,0
 C 225,30,0
