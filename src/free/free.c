@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 23:30:59 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:58:28 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_clear_map(t_map *map)
 	int	i;
 
 	i = 0;
-	if (map->map)
+	if (map && map->map)
 	{
 		while (i < map->rows)
 		{

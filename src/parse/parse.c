@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 23:41:12 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/27 23:56:30 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,5 @@ void	ft_parse_input(char **av, int ac)
 	ft_validate_arguments(ac);
 	ft_validate_extension(av[1]);
 	ft_open_file(av[1]);
+	ft_parse_texture(ft_get_cub());
 }

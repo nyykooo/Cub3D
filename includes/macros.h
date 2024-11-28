@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/27 20:58:17 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 00:06:00 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 # define ERROR_MAP_EMPTY "Error\n Invalid map: empty line in map content\n"
 # define ERROR_MAP_CLOSE "Error\n Invalid map: map not closed\n"
 # define ERROR_MAP_CHAR "Error\n Invalid map: invalid character in map\n"
+# define ERROR_TEXT "Error\n Invalid texture path: \""
 
 #endif
