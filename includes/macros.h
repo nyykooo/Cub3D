@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 00:06:00 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/28 00:15:36 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@
 # define ERROR_MAP_CLOSE "Error\n Invalid map: map not closed\n"
 # define ERROR_MAP_CHAR "Error\n Invalid map: invalid character in map\n"
 # define ERROR_TEXT "Error\n Invalid texture path: \""
+# define ERROR_NULL_TEXT "Error\n Missing texture or color\n"
 
 #endif
