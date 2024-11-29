@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:39:18 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 16:23:44 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/29 00:07:07 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ static void	ft_get_color(t_cub *cub, char *line)
 	split = ft_split(line, ',');
 	if (!split)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_SPLIT), 1);
-	if (ft_strcmp(split[0], "F") == 0)
+	if (ft_strcmp(split[0], "F") == 0 && !cub->map->texture->floor->input)
 	{
 		cub->map->texture->floor->input = ft_strdup(line);
 		cub->map->texture->floor->red = ft_atoi(split[0]);
 		cub->map->texture->floor->green = ft_atoi(split[1]);
 		cub->map->texture->floor->blue = ft_atoi(split[2]);
 	}
-	else if (ft_strcmp(split[0], "C") == 0)
+	else if (ft_strcmp(split[0], "C") == 0 && !cub->map->texture->ceiling->input)
 	{
 		cub->map->texture->ceiling->input = ft_strdup(line);
 		cub->map->texture->ceiling->red = ft_atoi(split[0]);
@@ -62,6 +62,7 @@ static void	ft_get_color(t_cub *cub, char *line)
 		cub->map->texture->ceiling->blue = ft_atoi(split[2]);
 	}
 	ft_check_errors(cub, split[0]);
+	ft_free_array(split);
 }
 
 static void	ft_create_colors(t_cub *cub, char *line)

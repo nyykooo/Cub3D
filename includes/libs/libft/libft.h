@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:17:14 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 19:38:51 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/29 00:08:31 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,7 @@ bool	ft_is_number(char *str);
 bool	ft_is_pipe_redir(char c);
 
 char	**ft_strdupd(char **src);
+
+void	ft_free_array(char **array);
 
 #endif
