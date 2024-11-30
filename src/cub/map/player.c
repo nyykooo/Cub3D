@@ -6,13 +6,13 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:23:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:42:16 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-static bool ft_player_dir(t_map *map, int x, int y)
+static bool	ft_player_dir(t_map *map, int x, int y)
 {
 	if (map->map[x][y] == 'N' || map->map[x][y] == 'S' ||
 		map->map[x][y] == 'E' || map->map[x][y] == 'W')

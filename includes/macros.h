@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:23:40 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:41:18 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@
 # define ERROR_NULL_TEXT "Error\n Missing texture or color\n"
 # define ERROR_SPLIT "Error\n Unable to split line\n"
 # define ERROR_PLAYER "Error\n Invalid amount of players\n"
+# define ERROR_MAP_SIZE "Error\n Invalid map size\n"
 
 #endif

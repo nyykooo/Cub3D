@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 19:57:29 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:43:35 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ void	ft_parse_texture(t_cub *cub)
 
 void	ft_look_for_invalid_map(t_cub *cub)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = -1;
 	while (++i < cub->map->rows)
 	{
 		j = -1;
-		while (++j < (int)ft_strlen(cub->map->map[i]))
+		while (++j < ft_strlen(cub->map->map[i]))
 			if (cub->map->map[i][j] == '\t')
 				ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CHAR, 0), 1);
 	}
@@ -77,8 +77,8 @@ void	ft_get_map_textures(t_map *map, char *line)
 
 void	ft_trim_map(t_cub *cub)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = -1;
 	while (++i < cub->map->rows)

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:38:34 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:25:05 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:51:13 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_map(t_map *map)
 {
-	int	i;
+	unsigned int	i;
 
 	printf("TEXTURES\n");
 	printf("NO: %s\n", map->texture->north);

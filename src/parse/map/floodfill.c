@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:46:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 19:42:20 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:50:29 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_analyze_cell(t_map *map, int col, int row)
 {
 	if ((col >= 0 || col < (int)ft_strlen(map->ff_map[row]) \
-		|| row >= 0 || row < map->rows) && (map->ff_map[row][col] == ' ' \
+		|| row >= 0 || row < (int)map->rows) && (map->ff_map[row][col] == ' ' \
 		|| map->ff_map[row][col] == 0))
 		return ;
 }
@@ -23,7 +23,7 @@ static void	ft_analyze_cell(t_map *map, int col, int row)
 static void	ft_floodfill(t_map *map, int col, int row)
 {
 	if (col < 0 || col >= (int)ft_strlen(map->ff_map[row])
-		|| row < 0 || row >= map->rows || map->ff_map[row][col] == ' '
+		|| row < 0 || row >= (int)map->rows || map->ff_map[row][col] == ' '
 		|| map->ff_map[row][col] == '1' || map->ff_map[row][col] == 'x'
 		|| map->ff_map[row][col] == 0)
 	{
@@ -42,17 +42,13 @@ void	ft_call_flood(t_map *map)
 	int		i;
 	int		j;
 
-	i = 0;
+	i = -1;
 	map->ff_map = ft_strdupd(map->map);
-	while (i < map->rows)
+	while (map->ff_map[++i])
 	{
-		j = 0;
-		while (j < (int)ft_strlen(map->ff_map[i]))
-		{
+		j = -1;
+		while (map->ff_map[i][++j])
 			if (map->ff_map[i][j] == '0')
 				ft_floodfill(map, j, i);
-			j++;
-		}
-		i++;
 	}
 }

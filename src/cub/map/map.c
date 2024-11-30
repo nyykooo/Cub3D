@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:10:26 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:50:50 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_init_map_content(t_cub *cub)
 {
-	int		i;
+	unsigned int	i;
 
 	i = 0;
 	while (i <= cub->map->rows)
@@ -37,7 +37,7 @@ void	ft_init_map(t_cub *cub)
 
 void	ft_alloc_map(t_cub *cub)
 {
-	int		i;
+	unsigned int	i;
 
 	i = 0;
 	cub->fd = open(cub->map->path, O_RDONLY);

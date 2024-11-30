@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:10:33 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:39:32 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ typedef struct s_texture
 
 typedef struct s_map
 {
-	t_player	*player;
-	t_texture	*texture;
-	char		**map;
-	char		**ff_map;
-	char		*path;
-	int			rows;
-	int			cols;
+	t_player		*player;
+	t_texture		*texture;
+	char			**map;
+	char			**ff_map;
+	char			*path;
+	unsigned int 	rows;
+	unsigned int	cols;
 }	t_map;
 
 typedef struct s_cub
