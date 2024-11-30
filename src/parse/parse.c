@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:42:36 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:54:27 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ static void	ft_parse_map(t_cub *cub, char *file)
 	{
 		if (!ft_is_text_or_color(cub->line))
 			cub->map->rows++;
+		if (ft_strlen(cub->line) > INT_MAX)
+			ERROR_PRINT(ERROR_MSG(3, ERROR_MAP_SIZE, file, "\"\n"), 1);
 		ft_get_map_info(cub, cub->line);
 		free(cub->line);
 		cub->line = get_next_line(cub->fd);
