@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 12:58:09 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:25:17 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,9 @@ void		ft_call_flood(t_map *map);
 // COLOR FUNCTIONS
 t_color		*ft_init_color(void);
 int			ft_create_rgb(int r, int g, int b);
+
+// PLAYER FUNCTIONS
+t_player	*ft_init_player(void);
+void		ft_check_player(t_map *map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 22:52:08 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:10:26 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ft_init_map(t_cub *cub)
 	cub->map->map = NULL;
 	cub->map->ff_map = NULL;
 	cub->map->texture = ft_init_texture();
+	cub->map->player = ft_init_player();
 }
 
 void	ft_alloc_map(t_cub *cub)

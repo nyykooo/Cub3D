@@ -6,11 +6,17 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 12:58:43 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:24:32 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
+
+static void	ft_clear_player(t_player *player)
+{
+	if (player)
+		free(player);
+}
 
 static void	ft_clear_color(t_color *color)
 {
@@ -48,6 +54,8 @@ static void	ft_clear_map(t_map *map)
 		ft_clear_texture(map->texture);
 	if (map->path)
 		free(map->path);
+	if (map->player)
+		ft_clear_player(map->player);
 	if (map)
 		free(map);
 }

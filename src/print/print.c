@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:38:34 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 19:41:31 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:25:05 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,9 @@ void	ft_print_map(t_map *map)
 		printf("%s\n", map->ff_map[i]);
 		i++;
 	}
+
+	printf("\nPLAYER\n");
+	printf("X: %d\n", map->player->p_x);
+	printf("Y: %d\n", map->player->p_y);
+	printf("DIR: %c\n", map->player->p_dir);
 }

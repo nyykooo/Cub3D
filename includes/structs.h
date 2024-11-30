@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 19:30:08 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:10:33 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define STRUCTS_H
 
 # include "headers.h"
+
+typedef struct s_player
+{
+	char	p_dir;
+	int		p_x;
+	int		p_y;
+}	t_player;
 
 typedef struct s_color
 {
@@ -36,6 +43,7 @@ typedef struct s_texture
 
 typedef struct s_map
 {
+	t_player	*player;
 	t_texture	*texture;
 	char		**map;
 	char		**ff_map;

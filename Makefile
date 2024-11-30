@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/30 13:00:19 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/30 13:25:32 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR = main
 
 SRC_CUB_DIR = cub texture color
 
-SRC_CUB_MAP_DIR = map
+SRC_CUB_MAP_DIR = map player
 
 SRC_ERROR_DIR = error
 
