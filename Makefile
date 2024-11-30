@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/28 15:47:46 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/11/30 13:00:19 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,5 +72,8 @@ fclean: clean
 	$(MAKE) fclean -C includes/libs/get_next_line -s
 
 re: fclean all
+
+valgrind:
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) includes/maps/minimalist.cub
 
 .PHONY: all clean fclean re

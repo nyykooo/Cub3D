@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 16:24:57 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 12:58:09 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 // FREE FUNCTIONS
 void		ft_clear_cub(void);
-void		ft_clear_map(t_map *map);
-void		ft_clear_texture(t_texture *texture);
-void		ft_clear_color(t_color *color);
 
 // ERROR FUNCTIONS
 char		*ft_error_msg_construct(int nbr, ...);
