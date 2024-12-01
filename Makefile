@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/01 11:38:59 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/01 18:20:18 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_CUB_DIR = cub texture color
 
 SRC_CUB_MAP_DIR = map player
 
-SRC_CUB_MLX_DIR = mlx hooks
+SRC_CUB_MLX_DIR = mlx hooks image
 
 SRC_ERROR_DIR = error
 

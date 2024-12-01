@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 16:09:32 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:39:05 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # define ERROR_MAP_SIZE "Error\n Invalid map size\n"
 # define ERROR_MLX "Error\n Unable to initialize mlx\n"
 # define ERROR_WIN "Error\n Unable to create window\n"
+# define ERROR_IMG "Error\n Unable to create image\n"
 
 // MLX MACROS
 # define MLX_NW mlx_new_window

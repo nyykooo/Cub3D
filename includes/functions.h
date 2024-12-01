@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/01 11:52:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:15:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,8 @@ void		ft_init_mlx(t_cub *cub);
 
 // MLX HOOKS
 int			ft_close_x(t_cub *cub);
+
+// MLX IMAGE FUNCTIONS
+void	ft_image_hub(t_cub *cub);
 
 #endif

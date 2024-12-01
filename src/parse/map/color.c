@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:39:18 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/29 00:07:07 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/01 15:57:13 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +42,26 @@ static void	ft_prepare_line(char *line)
 
 static void	ft_get_color(t_cub *cub, char *line)
 {
-	char	**split;
+	t_texture	*texture;
+	char		**split;
 
 	split = ft_split(line, ',');
+	texture = cub->map->texture;
 	if (!split)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_SPLIT), 1);
-	if (ft_strcmp(split[0], "F") == 0 && !cub->map->texture->floor->input)
+	if (ft_strcmp(split[0], "F") == 0 && !texture->floor->input)
 	{
-		cub->map->texture->floor->input = ft_strdup(line);
-		cub->map->texture->floor->red = ft_atoi(split[0]);
-		cub->map->texture->floor->green = ft_atoi(split[1]);
-		cub->map->texture->floor->blue = ft_atoi(split[2]);
+		texture->floor->input = ft_strdup(line);
+		texture->floor->red = ft_atoi(split[0]);
+		texture->floor->green = ft_atoi(split[1]);
+		texture->floor->blue = ft_atoi(split[2]);
 	}
-	else if (ft_strcmp(split[0], "C") == 0 && !cub->map->texture->ceiling->input)
+	else if (ft_strcmp(split[0], "C") == 0 && !texture->ceiling->input)
 	{
-		cub->map->texture->ceiling->input = ft_strdup(line);
-		cub->map->texture->ceiling->red = ft_atoi(split[0]);
-		cub->map->texture->ceiling->green = ft_atoi(split[1]);
-		cub->map->texture->ceiling->blue = ft_atoi(split[2]);
+		texture->ceiling->input = ft_strdup(line);
+		texture->ceiling->red = ft_atoi(split[0]);
+		texture->ceiling->green = ft_atoi(split[1]);
+		texture->ceiling->blue = ft_atoi(split[2]);
 	}
 	ft_check_errors(cub, split[0]);
 	ft_free_array(split);
