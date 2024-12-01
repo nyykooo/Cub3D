@@ -6,13 +6,21 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:41:18 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 16:09:32 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
 
+// SCREEN MACROS
+# define SCREEN_WIDTH 640
+# define SCREEN_HEIGHT 480
+
+// NAME
+# define NAME "Cub3D"
+
+// ERROR MACROS
 # define ERROR_MSG ft_error_msg_construct
 # define ERROR_PRINT ft_put_error_msg
 # define ERROR_AC "Error\n Invalid number of arguments\n"
@@ -28,5 +36,10 @@
 # define ERROR_SPLIT "Error\n Unable to split line\n"
 # define ERROR_PLAYER "Error\n Invalid amount of players\n"
 # define ERROR_MAP_SIZE "Error\n Invalid map size\n"
+# define ERROR_MLX "Error\n Unable to initialize mlx\n"
+# define ERROR_WIN "Error\n Unable to create window\n"
+
+// MLX MACROS
+# define MLX_NW mlx_new_window
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:24:32 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/01 15:53:22 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,12 @@ void	ft_clear_cub(void)
 		free(cub->file);
 	if (cub->map)
 		ft_clear_map(cub->map);
+	if (cub->win)
+		mlx_destroy_window(cub->mlx, cub->win);
+	if (cub->mlx)
+	{
+		mlx_destroy_display(cub->mlx);
+		mlx_loop_end(cub->mlx);
+		free(cub->mlx);
+	}
 }

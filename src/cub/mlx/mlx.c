@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub.c                                              :+:      :+:    :+:   */
+/*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 19:44:27 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 15:49:37 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
+/*   Updated: 2024/12/01 11:52:03 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers.h"
+#include "../../../includes/headers.h"
 
-t_cub	*ft_get_cub(void)
+static void	ft_call_hooks(t_cub *cub)
 {
-	static t_cub	cub;
-
-	return (&cub);
+	mlx_hook(cub->win, 17, 1L << 7, ft_close_x, cub);
 }
 
-void	ft_init_cub(void)
+void	ft_init_mlx(t_cub *cub)
 {
-	t_cub	*cub;
-
-	cub = ft_get_cub();
-	ft_alloc_map(cub);
-	ft_look_for_invalid_map(cub);
-	ft_trim_map(cub);
-	ft_call_flood(cub->map);
-	ft_check_player(cub->map);
-	ft_print_map(cub->map);
-	ft_init_mlx(cub);
+	cub->mlx = mlx_init();
+	if (!cub->mlx)
+		ERROR_PRINT(ERROR_MSG(1, ERROR_MLX), 1);
+	cub->win = MLX_NW(cub->mlx, SCREEN_HEIGHT, SCREEN_WIDTH, NAME);
+	if (!cub->win)
+		ERROR_PRINT(ERROR_MSG(1, ERROR_WIN), 1);
+	ft_call_hooks(cub);
+	mlx_loop(cub->mlx);
 }

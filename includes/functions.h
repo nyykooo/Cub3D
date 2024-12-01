@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:25:17 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/01 11:52:13 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,11 @@ int			ft_create_rgb(int r, int g, int b);
 // PLAYER FUNCTIONS
 t_player	*ft_init_player(void);
 void		ft_check_player(t_map *map);
+
+// MLX FUNCTIONS
+void		ft_init_mlx(t_cub *cub);
+
+// MLX HOOKS
+int			ft_close_x(t_cub *cub);
 
 #endif

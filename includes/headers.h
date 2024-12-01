@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:16:11 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/22 19:50:21 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 15:58:27 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # include <sys/stat.h> // to use the stat function
 # include <dirent.h> // to use the opendir function
 # include <termios.h> // to use the termios structure
+# include "libs/minilibx-linux/mlx.h" // to include the mlx library
+# include "libs/minilibx-linux/mlx_int.h" // to include the mlx library
 # include "libs/libft/libft.h" // to include the libft library
 # include <stdarg.h> // to use the va_list type to ft_error_msg_construct
 # include "structs.h" // to include the structs.h file

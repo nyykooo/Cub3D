@@ -6,19 +6,21 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/30 13:25:32 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/01 11:38:59 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -o3
 
 SRC_DIR = main
 
 SRC_CUB_DIR = cub texture color
 
 SRC_CUB_MAP_DIR = map player
+
+SRC_CUB_MLX_DIR = mlx hooks
 
 SRC_ERROR_DIR = error
 
@@ -37,10 +39,12 @@ SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 	$(addsuffix .c, $(addprefix src/free/, $(SRC_FREE_DIR))) \
 	$(addsuffix .c, $(addprefix src/cub/, $(SRC_CUB_DIR))) \
 	$(addsuffix .c, $(addprefix src/cub/map/, $(SRC_CUB_MAP_DIR))) \
+	$(addsuffix .c, $(addprefix src/cub/mlx/, $(SRC_CUB_MLX_DIR))) \
 	$(addsuffix .c, $(addprefix src/print/, $(SRC_PRINT_DIR)))
 
-LIBFT = "includes/libs/libft/libft.a"
-GNL = "includes/libs/get_next_line/get_next_line.a"
+LIBFT = includes/libs/libft/libft.a
+GNL = includes/libs/get_next_line/get_next_line.a
+MLX = includes/libs/minilibx-linux/libmlx.a -lXext -lX11
 
 OBJ_SRC_DIR = obj
 
@@ -48,8 +52,8 @@ OBJ = $(SRC:%.c=$(OBJ_SRC_DIR)/%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT) $(GNL)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(GNL) -o $(NAME)
+$(NAME): $(OBJ) $(MLX) $(LIBFT) $(GNL)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(GNL) $(MLX) -lm -o $(NAME)
 
 $(OBJ_SRC_DIR)/%.o: %.c
 	mkdir -p $(dir $@)
@@ -59,17 +63,22 @@ $(LIBFT):
 	$(MAKE) -C includes/libs/libft -s
 	
 $(GNL):
-	$(MAKE) -C includes/libs/get_next_line -s
+	$(MAKE) -C includes/libs/get_next_line -s	
+	
+$(MLX):
+	$(MAKE) -C includes/libs/minilibx-linux -s
 
 clean:
 	rm -rfd $(OBJ_SRC_DIR)
 	$(MAKE) clean -C includes/libs/libft clean -s
 	$(MAKE) clean -C includes/libs/get_next_line -s
+	$(MAKE) clean -C includes/libs/minilibx-linux -s
 
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) fclean -C includes/libs/libft fclean -s
 	$(MAKE) fclean -C includes/libs/get_next_line -s
+	$(MAKE) clean -C includes/libs/minilibx-linux -s
 
 re: fclean all
 

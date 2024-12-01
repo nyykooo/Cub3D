@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:39:32 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/11/30 15:46:50 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,15 @@ typedef struct s_map
 	char			**map;
 	char			**ff_map;
 	char			*path;
-	unsigned int 	rows;
+	unsigned int	rows;
 	unsigned int	cols;
 }	t_map;
 
 typedef struct s_cub
 {
 	t_map	*map;
+	void	*mlx;
+	void	*win;
 	char	*file;
 	char	*line;
 	int		fd;
