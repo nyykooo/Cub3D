@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/01 18:39:05 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:53:05 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@
 
 // MLX MACROS
 # define MLX_NW mlx_new_window
+# define MLX_GTA mlx_get_data_addr
+# define MLX_PITW mlx_put_image_to_window
+# define MLX_NI mlx_new_image
 
 #endif
