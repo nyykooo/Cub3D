@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/01 18:20:18 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/02 16:41:46 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 
 LIBFT = includes/libs/libft/libft.a
 GNL = includes/libs/get_next_line/get_next_line.a
-MLX = includes/libs/minilibx-linux/libmlx.a -lXext -lX11
+MLX = includes/libs/mlx-linux/libmlx.a -lXext -lX11
 
 OBJ_SRC_DIR = obj
 
@@ -66,19 +66,19 @@ $(GNL):
 	$(MAKE) -C includes/libs/get_next_line -s	
 	
 $(MLX):
-	$(MAKE) -C includes/libs/minilibx-linux -s
+	$(MAKE) -C includes/libs/mlx-linux -s
 
 clean:
 	rm -rfd $(OBJ_SRC_DIR)
 	$(MAKE) clean -C includes/libs/libft clean -s
 	$(MAKE) clean -C includes/libs/get_next_line -s
-	$(MAKE) clean -C includes/libs/minilibx-linux -s
+	$(MAKE) clean -C includes/libs/mlx-linux -s
 
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) fclean -C includes/libs/libft fclean -s
 	$(MAKE) fclean -C includes/libs/get_next_line -s
-	$(MAKE) clean -C includes/libs/minilibx-linux -s
+	$(MAKE) clean -C includes/libs/mlx-linux -s
 
 re: fclean all
 
