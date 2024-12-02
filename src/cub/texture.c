@@ -6,11 +6,21 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 16:24:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/02 17:25:11 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
+
+static bool	ft_check_order(t_cub *cub)
+{
+	if (cub->map->texture->north && cub->map->texture->south
+		&& cub->map->texture->west && cub->map->texture->east
+		&& cub->map->texture->ceiling->input
+		&& cub->map->texture->floor->input)
+		return (true);
+	return (false);
+}
 
 t_texture	*ft_init_texture(void)
 {
@@ -46,7 +56,7 @@ bool	ft_get_text_color(t_map *map, char **split)
 	return (true);
 }
 
-bool	ft_is_text_or_color(char *line)
+bool	ft_is_text_or_color(char *line, t_cub *cub)
 {
 	if (line[0] == '\0' || line[0] == '\n')
 		return (true);
@@ -59,5 +69,7 @@ bool	ft_is_text_or_color(char *line)
 		ft_parse_color(ft_get_cub(), line);
 		return (true);
 	}
+	if (!ft_check_order(cub))
+		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_ORDER), 1);
 	return (false);
 }

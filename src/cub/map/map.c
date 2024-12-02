@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/30 13:50:50 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/02 17:25:49 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_alloc_map(t_cub *cub)
 	{
 		if (cub->line[0] == '\n' && i != 0)
 			ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_EMPTY), 1);
-		if (!ft_is_text_or_color(cub->line))
+		if (!ft_is_text_or_color(cub->line, cub))
 		{
 			cub->map->map[i] = ft_strdup(cub->line);
 			if (!cub->map->map[i++])

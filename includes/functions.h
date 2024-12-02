@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/01 18:50:34 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/02 17:25:42 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		ft_init_cub(void);
 // TEXTURE FUNCTIONS
 t_texture	*ft_init_texture(void);
 bool		ft_get_text_color(t_map *map, char **split);
-bool		ft_is_text_or_color(char *line);
+bool		ft_is_text_or_color(char *line, t_cub *cub);
 
 // MAP FUNCTIONS
 void		ft_init_map(t_cub *cub);
