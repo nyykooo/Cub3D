@@ -5,41 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 18:45:12 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/02 17:25:57 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/12/02 19:09:31 by brunhenr          #+#    #+#             */
+/*   Updated: 2024/12/03 18:45:52 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
 
-static void	ft_validate_arguments(int ac)
+static void	ft_clean_map_spaces(char **line)
 {
-	if (ac == 2)
-		return ;
-	else
-		ERROR_PRINT(ERROR_MSG(1, ERROR_AC), 1);
-}
+	int	j;
 
-static void	ft_validate_extension(char *name)
-{
-	int	len;
-
-	len = ft_strlen(name);
-	while (len > 0)
+	j = -1;
+	while ((*line)[++j])
 	{
-		if (name[len] == '.')
-		{
-			if (ft_strcmp(&name[len], ".cub") == 0)
-				return ;
-			else
-				ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
-		}
-		len--;
+		if (ft_isspace((*line)[j]) && (*line)[j] != ' ')
+			(*line)[j] = ' ';
 	}
-	ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
 }
 
-static void	ft_parse_map(t_cub *cub, char *file)
+static void	ft_get_map_info(t_cub *cub, char *line)
+{
+	ft_clean_map_spaces(&line);
+	ft_get_map_textures(cub->map, line);
+}
+
+static void	ft_parse_input(t_cub *cub, char *file)
 {
 	cub->file = ft_strdup(file);
 	ft_init_map(cub);
@@ -69,16 +60,15 @@ static void	ft_open_file(char *input)
 	if (cub->line == NULL)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, input, "\"\n"), 1);
 	else
-		ft_parse_map(cub, input);
+		ft_parse_input(cub, input);
 	close(cub->fd);
+	free(cub->line); //esse free vai ficar aqui? vejamos se da na mesma
 }
 
-// confirm later if there is more to look for in the parse intput function
-
-void	ft_parse_input(char **av, int ac)
+void	ft_input_parse(char **av, int ac)
 {
-	ft_validate_arguments(ac);
-	ft_validate_extension(av[1]);
+	if (ac != 2)
+		ERROR_PRINT(ERROR_MSG(1, ERROR_AC), 1);
 	ft_open_file(av[1]);
 	ft_parse_texture(ft_get_cub());
 }
