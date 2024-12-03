@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 08:01:43 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/03 21:06:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-void	ft_mlx_inicialization(t_cub *cub)
+void	ft_init_mlx(t_cub *cub)
 {
 	cub->mlx_ptr = mlx_init();
 	if (!cub->mlx_ptr)
