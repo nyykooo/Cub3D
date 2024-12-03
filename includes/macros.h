@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/01 18:53:05 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/03 07:54:31 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define MACROS_H
 
 // SCREEN MACROS
-# define SCREEN_WIDTH 640
-# define SCREEN_HEIGHT 480
+# define SCREEN_WIDTH 320
+# define SCREEN_HEIGHT 300
+// 640
+// 480
 
 // NAME
 # define NAME "Cub3D"
+# define TITLE "Cub3d brunhenr e ncampbel - 42Lisboa"
 
 // ERROR MACROS
 # define ERROR_MSG ft_error_msg_construct

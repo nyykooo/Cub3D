@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/02 16:45:11 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/03 08:08:40 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,27 +60,36 @@ static void	ft_clear_map(t_map *map)
 		free(map);
 }
 
-void	ft_clear_cub(void)
+void ft_clear_cub(void)
 {
-	t_cub	*cub;
+    t_cub *cub;
 
-	cub = ft_get_cub();
-	if (cub->fd != -1)
-		close(cub->fd);
-	if (cub->line)
-		free(cub->line);
-	if (cub->file)
-		free(cub->file);
-	if (cub->map)
-		ft_clear_map(cub->map);
-	// if (cub->img_ptr)
-	// 	mlx_destroy_image(cub->mlx, cub->img_ptr);
-	// if (cub->win)
-	// 	mlx_destroy_window(cub->mlx, cub->win);
-	// if (cub->mlx)
-	// {
-	// 	mlx_destroy_display(cub->mlx);
-	// 	mlx_loop_end(cub->mlx);
-	// 	free(cub->mlx);
-	// }
+    cub = ft_get_cub();
+    if (cub->img)
+    {
+        printf("Destroying image\n");
+        mlx_destroy_image(cub->mlx_ptr, cub->img);
+    }
+    if (cub->win)
+    {
+        printf("Destroying window\n");
+        mlx_destroy_window(cub->mlx_ptr, cub->win);
+    }
+    if (cub->mlx_ptr)
+    {
+        printf("Ending mlx loop\n");
+        mlx_loop_end(cub->mlx_ptr);
+        printf("Destroying display\n");
+        mlx_destroy_display(cub->mlx_ptr);
+        printf("Freeing mlx\n");
+        free(cub->mlx_ptr);
+    }
+    if (cub->fd != -1)
+        close(cub->fd);
+    if (cub->line)
+        free(cub->line);				
+    if (cub->file)
+        free(cub->file);
+    if (cub->map)
+        ft_clear_map(cub->map);
 }

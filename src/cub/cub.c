@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:44:27 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/02 16:44:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/02 20:30:15 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_cub	*ft_get_cub(void)
 	return (&cub);
 }
 
-void	ft_init_cub(void)
+t_cub	*ft_init_cub(void)
 {
 	t_cub	*cub;
 
@@ -31,4 +31,6 @@ void	ft_init_cub(void)
 	ft_check_player(cub->map);
 	ft_print_map(cub->map);
 	// ft_init_mlx(cub);
+	// mlx_loop(cub->mlx);
+	return (cub);
 }
