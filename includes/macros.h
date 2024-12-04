@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 18:46:21 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:15:57 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@
 # define ERROR_MLX "Error\n Unable to initialize mlx\n"
 # define ERROR_WIN "Error\n Unable to create window\n"
 # define ERROR_IMG "Error\n Unable to create image\n"
+# define ERROR_GDA "Error\n Unable to get data address\n"
 
 // MLX MACROS
 # define MLX_NW mlx_new_window
-# define MLX_GTA mlx_get_data_addr
+# define MLX_GDA mlx_get_data_addr
 # define MLX_PITW mlx_put_image_to_window
 # define MLX_NI mlx_new_image
 

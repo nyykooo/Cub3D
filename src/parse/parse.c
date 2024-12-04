@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:09:31 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/03 18:45:52 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:20:54 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	ft_open_file(char *input)
 	else
 		ft_parse_input(cub, input);
 	close(cub->fd);
-	free(cub->line); //esse free vai ficar aqui? vejamos se da na mesma
+	free(cub->line);
 }
 
 void	ft_input_parse(char **av, int ac)

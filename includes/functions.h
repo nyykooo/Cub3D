@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 21:06:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:17:19 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		ft_check_player(t_map *map);
 
 // MLX FUNCTIONS
 void	ft_init_mlx(t_cub *cub);
-void	ft_mlx_getdata_and_loop(t_cub *cub);
+void	ft_mlx_hook_and_loop(t_cub *cub);
 
 // MLX HOOKS
 int			ft_close_x(t_cub *cub);

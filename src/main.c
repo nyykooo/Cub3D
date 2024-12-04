@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 12:09:38 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 21:06:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:19:22 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	main(int ac, char **av)
 	ft_input_parse(av, ac);
 	cub = ft_init_cub();
 	ft_init_mlx(cub);
-	ft_mlx_getdata_and_loop(cub);
+	ft_mlx_hook_and_loop(cub);
 	return (0);
 }

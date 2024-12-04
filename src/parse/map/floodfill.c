@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:46:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 22:06:58 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:21:25 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 static void	ft_analyze_cell(t_map *map, int col, int row)
 {
-	if (row < 0 || row >= (int)map->rows || col < 0 || col >= (int)ft_strlen(map->ff_map[row]))
+	if (row < 0 || row >= (int)map->rows || col < 0
+		|| col >= (int)ft_strlen(map->ff_map[row]))
 		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CLOSE), 1);
-    if (map->ff_map[row][col] == ' ' || map->ff_map[row][col] == 0)
-        ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CLOSE), 1);
+	if (map->ff_map[row][col] == ' ' || map->ff_map[row][col] == 0)
+		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CLOSE), 1);
 }
 
 static void	ft_floodfill(t_map *map, int col, int row)
