@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:11:30 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:52:43 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:28:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_game_keys(int keycode, t_cub *cub)
 {
 	if (keycode == KEY_ESC && cub)
-		ft_clear_cub();
+		ft_close_x(cub);
 	else if (keycode == KEY_W || keycode == KEY_S
 		|| keycode == KEY_A || keycode == KEY_D)
 		printf("Player moved %d\n", keycode);
