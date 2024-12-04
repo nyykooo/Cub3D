@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:17:19 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:40:49 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,12 @@ t_player	*ft_init_player(void);
 void		ft_check_player(t_map *map);
 
 // MLX FUNCTIONS
-void	ft_init_mlx(t_cub *cub);
-void	ft_mlx_hook_and_loop(t_cub *cub);
+void		ft_init_mlx(t_cub *cub);
+void		ft_mlx_hook_and_loop(t_cub *cub);
 
 // MLX HOOKS
 int			ft_close_x(t_cub *cub);
+int			ft_game_keys(int keycode, t_cub *cub);
 
 // MLX IMAGE FUNCTIONS
 void		ft_image_hub(t_cub *cub);

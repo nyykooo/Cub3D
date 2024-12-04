@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:24:21 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:38:45 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_init_mlx(t_cub *cub)
 
 void	ft_mlx_hook_and_loop(t_cub *cub)
 {
+	mlx_hook(cub->win, 2, 1L << 0, ft_game_keys, cub);
 	mlx_hook (cub->win, 17, 0, ft_close_x, cub);
 	//mlx_key_hook (cub->win, keys, cub); 
 	//mlx_expose_hook(cub->win, redraw, cub);

@@ -6,12 +6,21 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:15:57 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:42:56 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
+
+// KEY MACROS
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_ESC 65307
+# define KEY_LEFT 65361
+# define KEY_RIGHT 65363
 
 // SCREEN MACROS
 # define SCREEN_WIDTH 320
