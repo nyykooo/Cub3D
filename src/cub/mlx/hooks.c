@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:11:30 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 17:28:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:50:52 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_game_keys(int keycode, t_cub *cub)
 		ft_close_x(cub);
 	else if (keycode == KEY_W || keycode == KEY_S
 		|| keycode == KEY_A || keycode == KEY_D)
-		printf("Player moved %d\n", keycode);
+		ft_move_player(keycode, cub);
 	else if (keycode == KEY_LEFT || keycode == KEY_RIGHT)
 		printf("Player turned %d\n", keycode);
 	return (0);

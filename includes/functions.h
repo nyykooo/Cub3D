@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/05 21:00:09 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:52:14 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,8 @@ int			ft_game_keys(int keycode, t_cub *cub);
 
 // MLX IMAGE FUNCTIONS
 void		ft_image_hub(t_cub *cub);
+
+// MOVE FUNCTIONS
+void		ft_move_player(int keycode, t_cub *cub);
 
 #endif
