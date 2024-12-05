@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+         #
+#    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/02 19:11:46 by brunhenr         ###   ########.fr        #
+#    Updated: 2024/12/05 21:01:04 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC_ERROR_DIR = error
 
 SRC_PARSE_DIR = validation parse
 
-SRC_PARSE_MAP_DIR = map floodfill color
+SRC_PARSE_MAP_DIR = map floodfill color normalize
 
 SRC_FREE_DIR = free
 

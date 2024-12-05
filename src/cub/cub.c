@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:44:27 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:51:31 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:04:20 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ t_cub	*ft_init_cub(void)
 	ft_call_flood(cub->map);
 	ft_check_player(cub->map);
 	ft_print_map(cub->map);
+	ft_normalize_map(cub);
 	return (cub);
 }

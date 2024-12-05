@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:40:49 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/05 21:00:09 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		ft_input_parse(char **av, int ac);
 void		ft_input_validation(char **av, int ac);
 void		ft_parse_texture(t_cub *cub);
 void		ft_parse_color(t_cub *cub, char *line);
+void		ft_normalize_map(t_cub *cub);
 
 // CUB FUNCTIONS
 t_cub		*ft_get_cub(void);

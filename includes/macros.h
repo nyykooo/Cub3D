@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:42:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/05 19:39:47 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # define KEY_RIGHT 65363
 
 // SCREEN MACROS
-# define SCREEN_WIDTH 320
-# define SCREEN_HEIGHT 300
+# define SCREEN_WIDTH 1920
+# define SCREEN_HEIGHT 1080
 // 640
 // 480
 
@@ -58,6 +58,7 @@
 # define MLX_NW mlx_new_window
 # define MLX_GDA mlx_get_data_addr
 # define MLX_PITW mlx_put_image_to_window
+# define MLX_XFTI mlx_xpm_file_to_image
 # define MLX_NI mlx_new_image
 
 #endif
