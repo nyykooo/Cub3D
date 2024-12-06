@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:17:14 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/29 00:08:31 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/06 18:37:50 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,10 @@ bool	ft_is_pipe_redir(char c);
 char	**ft_strdupd(char **src);
 
 void	ft_free_array(char **array);
+
+int		ft_fixed_to_int(int fixed);
+float	ft_fixed_to_float(int fixed);
+int		ft_float_to_fixed(float const float_number);
+int		ft_int_to_fixed(int const i);
 
 #endif

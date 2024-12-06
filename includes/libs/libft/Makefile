@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 09:59:57 by ncampbel          #+#    #+#              #
-#    Updated: 2024/11/29 00:08:17 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/06 18:12:55 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,11 @@ SRC= ft_isalpha.c \
 		ft_itoui.c \
 		ft_is_number.c \
 		ft_is_pipe_redir.c \
-		ft_free_array.c
+		ft_free_array.c \
+		ft_float_to_fixed.c \
+		ft_fixed_to_float.c \
+		ft_int_to_fixed.c \
+		ft_fixed_to_int.c
 
 OBJ= $(SRC:.c=.o)
 

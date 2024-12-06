@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/05 19:03:32 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/06 17:09:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 # define STRUCTS_H
 
 # include "headers.h"
+
+typedef struct s_fixed
+{
+	const int	bits;
+	int			fixed_point;
+	int			(*to_int)(void);
+	float		(*to_float)(void);
+	int			(*get_raw_bits)(void);
+	void		(*set_raw_bits)(int const raw);
+}	t_fixed;
 
 typedef struct s_player
 {

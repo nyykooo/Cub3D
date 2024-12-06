@@ -6,12 +6,16 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/05 19:39:47 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/06 17:24:37 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
+
+// FIXED POINT MACROS
+
+# define F_BITS 8
 
 // KEY MACROS
 # define KEY_W 119
@@ -23,8 +27,8 @@
 # define KEY_RIGHT 65363
 
 // SCREEN MACROS
-# define SCREEN_WIDTH 1920
-# define SCREEN_HEIGHT 1080
+# define SCREEN_WIDTH 700
+# define SCREEN_HEIGHT 700
 // 640
 // 480
 
