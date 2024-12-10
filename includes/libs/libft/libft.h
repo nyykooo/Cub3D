@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:17:14 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/06 18:37:50 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/10 19:33:01 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,9 @@ int		ft_fixed_to_int(int fixed);
 float	ft_fixed_to_float(int fixed);
 int		ft_float_to_fixed(float const float_number);
 int		ft_int_to_fixed(int const i);
+
+t_list	*ft_lstget(t_list *lst, int index);
+void	ft_lstiter_param(t_list *lst, void (*f)(void *, void *), void *ptr);
+
 
 #endif

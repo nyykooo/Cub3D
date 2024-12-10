@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 09:59:57 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/06 18:12:55 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/10 19:32:31 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,9 @@ SRC= ft_isalpha.c \
 		ft_float_to_fixed.c \
 		ft_fixed_to_float.c \
 		ft_int_to_fixed.c \
-		ft_fixed_to_int.c
+		ft_fixed_to_int.c \
+		ft_lstget.c \
+		ft_lstiter_param.c
 
 OBJ= $(SRC:.c=.o)
 
