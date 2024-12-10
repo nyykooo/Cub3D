@@ -6,7 +6,7 @@
 #    By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/02 19:11:46 by brunhenr         ###   ########.fr        #
+#    Updated: 2024/12/10 19:35:47 by brunhenr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ NAME = cub3D
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g -o3
 
-SRC_DIR = main
+SRC_DIR = main utils
 
 SRC_CUB_DIR = cub texture color
 
 SRC_CUB_MAP_DIR = map player
 
-SRC_CUB_MLX_DIR = mlx hooks image
+SRC_CUB_MLX_DIR = mlx hooks image draw mlx_utils keys
 
 SRC_ERROR_DIR = error
 

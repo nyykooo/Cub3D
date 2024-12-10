@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:38:34 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/02 17:28:50 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/09 14:53:03 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 static void	ft_print_player(t_player *player)
 {
 	printf("\nPLAYER\n");
-	printf("X: %d\n", player->p_x);
-	printf("Y: %d\n", player->p_y);
+	printf("X: %f\n", player->p_x);
+	printf("Y: %f\n", player->p_y);
 	printf("DIR: %c\n", player->p_dir);
 }
 

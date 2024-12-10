@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 08:08:40 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:17:38 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 static void	ft_clear_player(t_player *player)
 {
 	if (player)
+	{
+		if (player->dirVector)
+			free(player->dirVector);
+		if (player->camVector)
+			free(player->camVector);
 		free(player);
+	}
 }
 
 static void	ft_clear_color(t_color *color)
@@ -67,21 +73,21 @@ void ft_clear_cub(void)
     cub = ft_get_cub();
     if (cub->img)
     {
-        printf("Destroying image\n");
+        //printf("Destroying image\n");
         mlx_destroy_image(cub->mlx_ptr, cub->img);
     }
     if (cub->win)
     {
-        printf("Destroying window\n");
+        //printf("Destroying window\n");
         mlx_destroy_window(cub->mlx_ptr, cub->win);
     }
     if (cub->mlx_ptr)
     {
-        printf("Ending mlx loop\n");
+        //printf("Ending mlx loop\n");
         mlx_loop_end(cub->mlx_ptr);
-        printf("Destroying display\n");
+        //printf("Destroying display\n");
         mlx_destroy_display(cub->mlx_ptr);
-        printf("Freeing mlx\n");
+        //printf("Freeing mlx\n");
         free(cub->mlx_ptr);
     }
     if (cub->fd != -1)

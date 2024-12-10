@@ -6,18 +6,38 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 07:54:31 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/09 18:42:45 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
 
+// NUMBER MACROS
+//# define ROTATION_ANGLE 0.2
+# define PI 3.14159265358979323846
+
+// EVENT MASKS
+# define KeyPressMask        (1L<<0) // 1L (o L é para long)
+# define KeyReleaseMask      (1L<<1) // 2L
+# define ButtonPressMask     (1L<<2) // 4L
+# define ButtonReleaseMask   (1L<<3) // 8L
+# define PointerMotionMask   (1L<<6) // 64L
+# define ExposureMask        (1L<<15) // 32768L
+# define StructureNotifyMask (1L<<17) // 131072L
+
 // SCREEN MACROS
-# define SCREEN_WIDTH 320
-# define SCREEN_HEIGHT 300
+# define SCREEN_WIDTH 640
+# define SCREEN_HEIGHT 480
 // 640
 // 480
+
+// COLORS
+# define Red 0xFF0000
+# define Green 0x00FF00
+# define Blue 0x0000FF
+# define White 0xFFFFFF
+# define Cyan 0x00FFFF
 
 // NAME
 # define NAME "Cub3D"
