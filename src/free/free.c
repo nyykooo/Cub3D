@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:55:17 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:20:33 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 static void	ft_clear_player(t_player *player)
 {
 	if (player)
+	{
+		if (player->dirVector)
+			free(player->dirVector);
+		if (player->camVector)
+			free(player->camVector);
 		free(player);
+	}
 }
 
 static void	ft_clear_color(t_color *color)

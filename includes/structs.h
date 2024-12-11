@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:10:55 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:40:46 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,34 @@ typedef struct s_fixed
 	int			(*get_raw_bits)(void);
 	void		(*set_raw_bits)(int const raw);
 }	t_fixed;
+typedef struct s_ray
+{
+	double	dirX;
+	double	dirY;
+	int		mapX;
+	int		mapY;
+	double	sideDistX;
+	double	sideDistY;
+	double	deltaDistX;
+	double	deltaDistY;
+	int		stepX;
+	int		stepY;
+	int		side;
+}	t_ray;
+
+typedef struct s_dirVector
+{
+	double	x;
+	double	y;
+}	t_dirVector;
 
 typedef struct s_player
 {
-	char	p_dir;
-	int		p_x;
-	int		p_y;
+	char		p_dir;
+	double		p_x;
+	double		p_y;
+	t_dirVector	*dirVector;
+	t_dirVector	*camVector;
 }	t_player;
 
 typedef struct s_color
@@ -112,6 +134,7 @@ typedef struct s_texture
 	char	*south;
 	char	*east;
 	char	*west;
+	int		untex;
 }	t_texture;
 
 typedef struct s_map
