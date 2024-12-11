@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/10 19:51:16 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:03:25 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,24 @@ void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub)
 		drawStart++;
 	}
 }
+
+int	*ft_get_image_pixels(t_img *img)
+{
+	int *pixels;
+	int x;
+	int	y;
+	int pixel_index;
+
+	pixels = malloc(sizeof(int) * TEX_HEIGHT * TEX_WIDTH);
+    for (y = 0; y < TEX_HEIGHT; y++)
+    {
+        for (x = 0; x < TEX_WIDTH; x++)
+        {
+            pixel_index = y * TEX_WIDTH + x;
+            pixels[pixel_index] = *(int *)(img->data + y * img->size_line + x * (img->bpp / 8));
+        }
+    }
+
+    return (pixels);
+}
+

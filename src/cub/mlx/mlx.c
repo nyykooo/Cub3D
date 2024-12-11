@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/10 19:51:51 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:21:47 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_mlx_inicialization(t_cub *cub)
 		perror("Error: mlx_init"); //colocar a perror dentro do contexto das nossas msg de erro
 		exit (1);
 	}
+	ft_get_tex_imgs(cub, cub->map->texture);
 	cub->win = mlx_new_window(cub->mlx_ptr, SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
 	if (!cub->win)
 	{

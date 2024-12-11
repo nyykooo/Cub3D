@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/10 18:40:59 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:11:54 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STRUCTS_H
 
 # include "headers.h"
+# include "macros.h"
 
 typedef struct s_ray
 {
@@ -54,14 +55,22 @@ typedef struct s_color
 	int		blue;
 }	t_color;
 
+typedef struct s_wall
+{
+	char	*path;
+	int		*tex;
+	//int		tex[TEX_HEIGHT * TEX_WIDTH]; //depois definir para int32
+	void	*img;
+}	t_wall;
+
 typedef struct s_texture
 {
 	t_color	*ceiling;
 	t_color	*floor;
-	char	*north;
-	char	*south;
-	char	*east;
-	char	*west;
+	t_wall	*north;
+	t_wall	*south;
+	t_wall	*east;
+	t_wall	*west;
 	int		untex;
 }	t_texture;
 

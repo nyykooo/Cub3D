@@ -6,7 +6,7 @@
 #    By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/10 19:35:47 by brunhenr         ###   ########.fr        #
+#    Updated: 2024/12/11 14:11:51 by brunhenr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC_CUB_MLX_DIR = mlx hooks image draw mlx_utils keys
 
 SRC_ERROR_DIR = error
 
-SRC_PARSE_DIR = validation parse
+SRC_PARSE_DIR = validation parse parse_texture
 
 SRC_PARSE_MAP_DIR = map floodfill color
 

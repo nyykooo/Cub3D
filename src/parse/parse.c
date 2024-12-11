@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:09:31 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/02 20:06:58 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:16:29 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,5 @@ void	ft_input_parse(char **av, int ac)
 	if (ac != 2)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_AC), 1);
 	ft_open_file(av[1]);
-	ft_parse_texture(ft_get_cub());
+	ft_parse_texture();
 }

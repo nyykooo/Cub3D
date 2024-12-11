@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/10 19:50:34 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:24:28 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
 bool		are_vectors_perpendicular(t_dirVector *dirVector, t_dirVector *camVector);
-void	normalize_vector(t_dirVector *vector);
+void		normalize_vector(t_dirVector *vector);
 
 
 // FREE FUNCTIONS
@@ -32,7 +32,7 @@ int			ft_put_error_msg(char *error_msg, int exit_status);
 // PARSE FUNCTIONS
 void		ft_input_parse(char **av, int ac);	
 void		ft_input_validation(char **av, int ac);
-void		ft_parse_texture(t_cub *cub);
+void		ft_parse_texture();
 void		ft_parse_color(t_cub *cub, char *line);
 
 // CUB FUNCTIONS
@@ -43,6 +43,8 @@ t_cub		*ft_init_cub(void);
 t_texture	*ft_init_texture(void);
 bool		ft_get_text_color(t_map *map, char **split);
 bool		ft_is_text_or_color(char *line);
+void		ft_get_tex_imgs(t_cub *cub, t_texture *texture);
+
 
 // MAP FUNCTIONS
 void		ft_init_map(t_cub *cub);
@@ -72,6 +74,8 @@ int			ft_ray_casting(t_cub *cub);
 // MLX UTILS
 void		clear_image(t_cub *cub, int color);
 void		ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub);
+int			*ft_get_image_pixels(t_img *img);
+
 
 // MLX HOOKS
 int			ft_close_x(t_cub *cub);

@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/10 19:52:45 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:04:46 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	ft_ray_casting(t_cub *cub)
 
 	x = 0;
 	player = cub->map->player;
-	clear_image(cub, 0x000000);
+	clear_image(cub, 0x000000); // pensar em destruir e criar nova imagem. Testar!
 	while (x < SCREEN_WIDTH)
 	{
 		draw_column(cub, x, player);

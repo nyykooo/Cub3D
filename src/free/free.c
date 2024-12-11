@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/09 13:17:38 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:41:07 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,34 @@ static void	ft_clear_color(t_color *color)
 
 static void	ft_clear_texture(t_texture *texture)
 {
-	if (texture->north)
+	if (texture->north->path)
+	{
+		free(texture->north->path);
+		if (texture->north->tex)
+			free(texture->north->tex);
 		free(texture->north);
-	if (texture->south)
+	}
+	if (texture->south->path)
+	{
+		free(texture->south->path);
+		if (texture->south->tex)
+			free(texture->south->tex);
 		free(texture->south);
-	if (texture->east)
+	}
+	if (texture->east->path)
+	{
+		free(texture->east->path);
+		if (texture->east->tex)
+			free(texture->east->tex);
 		free(texture->east);
-	if (texture->west)
+	}
+	if (texture->west->path)
+	{
+		free(texture->west->path);
+		if (texture->west->tex)
+			free(texture->west->tex);
 		free(texture->west);
+	}
 	if (texture->ceiling)
 		ft_clear_color(texture->ceiling);
 	if (texture->floor)
@@ -73,21 +93,24 @@ void ft_clear_cub(void)
     cub = ft_get_cub();
     if (cub->img)
     {
-        //printf("Destroying image\n");
         mlx_destroy_image(cub->mlx_ptr, cub->img);
+		if (cub->map->texture->north->img)
+			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->north->img);
+		if (cub->map->texture->south->img)
+			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->south->img);
+		if (cub->map->texture->west->img)
+			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->west->img);
+		if (cub->map->texture->east->img)
+			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->east->img);
     }
     if (cub->win)
     {
-        //printf("Destroying window\n");
         mlx_destroy_window(cub->mlx_ptr, cub->win);
     }
     if (cub->mlx_ptr)
     {
-        //printf("Ending mlx loop\n");
         mlx_loop_end(cub->mlx_ptr);
-        //printf("Destroying display\n");
         mlx_destroy_display(cub->mlx_ptr);
-        //printf("Freeing mlx\n");
         free(cub->mlx_ptr);
     }
     if (cub->fd != -1)

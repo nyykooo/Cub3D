@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/09 18:42:45 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 11:08:55 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@
 // SCREEN MACROS
 # define SCREEN_WIDTH 640
 # define SCREEN_HEIGHT 480
-// 640
-// 480
+
+// TEXTURE MACROS
+# define TEX_WIDTH 32
+# define TEX_HEIGHT 32
 
 // COLORS
 # define Red 0xFF0000

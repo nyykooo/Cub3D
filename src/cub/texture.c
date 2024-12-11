@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/11/28 16:24:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:20:11 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,25 @@ t_texture	*ft_init_texture(void)
 	t_texture	*texture;
 
 	texture = (t_texture *)malloc(sizeof(t_texture));
-	texture->north = NULL;
-	texture->south = NULL;
-	texture->east = NULL;
-	texture->west = NULL;
+	texture->north = malloc(sizeof(t_wall));
+	texture->south = malloc(sizeof(t_wall));
+	texture->east = malloc(sizeof(t_wall));
+	texture->west = malloc(sizeof(t_wall));
+	texture->north->path = NULL;
+    texture->north->tex = NULL;
+    texture->north->img = NULL;
+
+    texture->south->path = NULL;
+    texture->south->tex = NULL;
+    texture->south->img = NULL;
+
+    texture->east->path = NULL;
+    texture->east->tex = NULL;
+    texture->east->img = NULL;
+
+    texture->west->path = NULL;
+    texture->west->tex = NULL;
+    texture->west->img = NULL;
 	texture->ceiling = ft_init_color();
 	texture->floor = ft_init_color();
 	return (texture);
@@ -31,13 +46,13 @@ bool	ft_get_text_color(t_map *map, char **split)
 	if (split[0] == NULL || split[0][0] == '\0' || split[1] == NULL)
 		return (true);
 	if (ft_strncmp(split[0], "NO", 2) == 0)
-		map->texture->north = ft_strdup(split[1]);
+		map->texture->north->path = ft_strdup(split[1]);
 	else if (ft_strncmp(split[0], "SO", 2) == 0)
-		map->texture->south = ft_strdup(split[1]);
+		map->texture->south->path = ft_strdup(split[1]);
 	else if (ft_strncmp(split[0], "WE", 2) == 0)
-		map->texture->west = ft_strdup(split[1]);
+		map->texture->west->path = ft_strdup(split[1]);
 	else if (ft_strncmp(split[0], "EA", 2) == 0)
-		map->texture->east = ft_strdup(split[1]);
+		map->texture->east->path = ft_strdup(split[1]);
 	else if (map->texture->north && map->texture->south
 		&& map->texture->west && map->texture->east
 		&& map->texture->ceiling->input
