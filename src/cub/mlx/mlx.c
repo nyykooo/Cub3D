@@ -6,19 +6,12 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/12/04 17:31:29 by ncampbel         ###   ########.fr       */
-=======
-/*   Updated: 2024/12/10 19:51:51 by brunhenr         ###   ########.fr       */
->>>>>>> bruno
+/*   Updated: 2024/12/11 15:32:41 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-<<<<<<< HEAD
-void	ft_init_mlx(t_cub *cub)
-=======
 void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)
 {
 	char	*dst;
@@ -38,8 +31,7 @@ void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-void	ft_mlx_inicialization(t_cub *cub)
->>>>>>> bruno
+void	ft_init_mlx(t_cub *cub)
 {
 	cub->mlx_ptr = mlx_init();
 	if (!cub->mlx_ptr)
@@ -52,18 +44,6 @@ void	ft_mlx_inicialization(t_cub *cub)
 
 void	ft_mlx_hook_and_loop(t_cub *cub)
 {
-<<<<<<< HEAD
-	mlx_hook(cub->win, 2, 1L << 0, ft_game_keys, cub);
-=======
-	cub->addr = mlx_get_data_addr(cub->img, &cub->bpp, \
-	&cub->line_lenght, &cub->endian);
-	if (!cub->addr)
-	{
-		ft_clear_cub();
-		perror("Error: mlx_get_data_addr");
-		exit (1);
-	}
->>>>>>> bruno
 	mlx_hook (cub->win, 17, 0, ft_close_x, cub);
 	mlx_hook (cub->win, 2, KeyPressMask, ft_keys, cub);
 	mlx_key_hook (cub->win, ft_keys, cub); 
@@ -71,10 +51,3 @@ void	ft_mlx_hook_and_loop(t_cub *cub)
 	//mlx_loop_hook(); //tiago indicou o uso (estudar) é o loop do game. Para atualizar a tela.
 	mlx_loop (cub->mlx_ptr);
 }
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> bruno

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:18:24 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:36:21 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 
-// SCREEN MACROS
-# define SCREEN_WIDTH 700
-# define SCREEN_HEIGHT 700
 // NUMBER MACROS
 //# define ROTATION_ANGLE 0.2
 # define PI 3.14159265358979323846
@@ -80,6 +77,7 @@
 # define ERROR_WIN "Error\n Unable to create window\n"
 # define ERROR_IMG "Error\n Unable to create image\n"
 # define ERROR_GDA "Error\n Unable to get data address\n"
+# define ERROR_VECTORS "Error\n The vectors are not perpendicular.\n"
 
 // MLX MACROS
 # define MLX_NW mlx_new_window
