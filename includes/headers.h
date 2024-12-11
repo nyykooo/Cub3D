@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:16:11 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/06 18:38:36 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:18:18 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@
 # include "macros.h" // to include the macros.h file
 # include "libs/get_next_line/get_next_line.h" // to include gnl function
 # include "functions.h" // to include the functions.h file
+# include <math.h> // to use the math functions
 
 #endif

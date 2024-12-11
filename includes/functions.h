@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/05 21:52:14 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:17:57 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define FUNCTIONS_H
 
 # include "headers.h"
+
+// UTILS FUNCTIONS
+double		ft_deg_to_rad(double deg);
+bool		ft_is_walkable(char c);
+bool		are_vectors_perpendicular(t_dirVector *dirVector, t_dirVector *camVector);
+void	normalize_vector(t_dirVector *vector);
+
 
 // FREE FUNCTIONS
 void		ft_clear_cub(void);
@@ -64,6 +71,23 @@ void		ft_mlx_hook_and_loop(t_cub *cub);
 // MLX HOOKS
 int			ft_close_x(t_cub *cub);
 int			ft_game_keys(int keycode, t_cub *cub);
+void		ft_mlx_inicialization(t_cub *cub);
+void		ft_mlx_getdata_and_loop(t_cub *cub);
+void		ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color);
+int			ft_ray_casting(t_cub *cub);
+
+// MLX UTILS
+void		clear_image(t_cub *cub, int color);
+void		ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub);
+
+// MLX HOOKS
+int			ft_close_x(t_cub *cub);
+int			ft_keys(int keycode, t_cub *cub);
+
+// KEYS
+void		ft_rotate_left(t_player *player);
+void		ft_rotate_right(t_player *player);
+void		ft_move_forward(t_cub *cub);
 
 // MLX IMAGE FUNCTIONS
 void		ft_image_hub(t_cub *cub);
