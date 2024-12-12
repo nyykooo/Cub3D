@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/09 14:42:28 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:25:25 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,23 @@ static void initial_player_dir(t_map *map)
 {
 	if (map->player->p_dir == 78) // N
 	{
-		map->player->dirVector->x = -1;
+		map->player->dirVector->x = -0.66;
 		map->player->dirVector->y = 0;
 	}
 	else if (map->player->p_dir == 83) // S
 	{
-		map->player->dirVector->x = 1;
+		map->player->dirVector->x = 0.66;
 		map->player->dirVector->y = 0;
 	}
 	else if (map->player->p_dir == 69) // E
 	{
 		map->player->dirVector->x = 0;
-		map->player->dirVector->y = 1;
+		map->player->dirVector->y = 0.66;
 	}
 	else if (map->player->p_dir == 87) // W
 	{
 		map->player->dirVector->x = 0;
-		map->player->dirVector->y = -1;
+		map->player->dirVector->y = -0.66;
 	}
 }
 static void initial_cam_dir(t_map *map)
