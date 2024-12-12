@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:51:18 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/12 22:36:11 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,15 +130,21 @@ typedef struct s_color
 	int		blue;
 }	t_color;
 
+typedef struct s_wall
+{
+	char	*path;
+	int		**tex;
+	void	*img;
+}	t_wall;
+
 typedef struct s_texture
 {
 	t_color	*ceiling;
 	t_color	*floor;
-	char	*north;
-	char	*south;
-	char	*east;
-	char	*west;
-	int		untex;
+	t_wall	*north;
+	t_wall	*south;
+	t_wall	*east;
+	t_wall	*west;
 }	t_texture;
 
 typedef struct s_map

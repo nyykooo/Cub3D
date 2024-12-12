@@ -1,10 +1,10 @@
 NO ./includes/textures/light_wall.xpm
 SO ./includes/textures/moss_wall.xpm
 WE ./includes/textures/stone_wall.xpm
-EA ./includes/textures/wood_wall.xpm
+EA ./includes/textures/flag_wall.xpm
 
-F 00,255,0
 C 255,00,0
+F 00,255,0
 
 111111111111111111111111111111111
 100000000000000000110000000000001

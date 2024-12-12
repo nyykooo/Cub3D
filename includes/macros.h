@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:36:21 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/12 22:36:00 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@
 // SCREEN MACROS
 # define SCREEN_WIDTH 640
 # define SCREEN_HEIGHT 480
-// 640
-// 480
+
+// TEXTURE MACROS
+# define TEX_WIDTH 32
+# define TEX_HEIGHT 32
 
 // COLORS
 # define Red 0xFF0000

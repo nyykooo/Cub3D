@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 17:55:26 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/12 22:34:38 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ void	ft_init_mlx(t_cub *cub)
 	cub->mlx_ptr = mlx_init();
 	if (!cub->mlx_ptr)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_MLX), 1);
-	cub->win = MLX_NW(cub->mlx_ptr, SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
+	cub->win = mlx_new_window(cub->mlx_ptr, SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
 	if (!cub->win)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_WIN), 1);
+	ft_get_tex_imgs(cub, cub->map->texture);
 	ft_image_hub(cub);
 }
 

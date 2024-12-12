@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/11 16:06:24 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/12 22:35:16 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC_CUB_MLX_DIR = mlx hooks image draw mlx_utils keys move
 
 SRC_ERROR_DIR = error
 
-SRC_PARSE_DIR = validation parse
+SRC_PARSE_DIR = validation parse parse_texture
 
 SRC_PARSE_MAP_DIR = map floodfill color normalize
 
