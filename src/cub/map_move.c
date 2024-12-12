@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   map_move.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 21:51:17 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/05 21:52:52 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/12 18:43:11 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers.h"
 
-static void	ft_move_up(t_cub *cub)
+static void	ft_mm_move_up(t_cub *cub)
 {
 	int		x;
 	int		y;
@@ -27,7 +27,7 @@ static void	ft_move_up(t_cub *cub)
 	}
 }
 
-static void	ft_move_down(t_cub *cub)
+static void	ft_mm_move_down(t_cub *cub)
 {
 	int		x;
 	int		y;
@@ -42,7 +42,7 @@ static void	ft_move_down(t_cub *cub)
 	}
 }
 
-static void	ft_move_left(t_cub *cub)
+static void	ft_mm_move_left(t_cub *cub)
 {
 	int		x;
 	int		y;
@@ -57,7 +57,7 @@ static void	ft_move_left(t_cub *cub)
 	}
 }
 
-static void	ft_move_right(t_cub *cub)
+static void	ft_mm_move_right(t_cub *cub)
 {
 	int		x;
 	int		y;
@@ -72,15 +72,15 @@ static void	ft_move_right(t_cub *cub)
 	}
 }
 
-void	ft_move_player(int keycode, t_cub *cub)
+void	ft_mm_move_player(int keycode, t_cub *cub)
 {
 	if (keycode == KEY_W)
-		ft_move_up(cub);
+		ft_mm_move_up(cub);
 	else if (keycode == KEY_S)
-		ft_move_down(cub);
+		ft_mm_move_down(cub);
 	else if (keycode == KEY_A)
-		ft_move_left(cub);
+		ft_mm_move_left(cub);
 	else if (keycode == KEY_D)
-		ft_move_right(cub);
+		ft_mm_move_right(cub);
 	ft_image_hub(cub);
 }
