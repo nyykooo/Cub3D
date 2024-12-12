@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 18:41:07 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:16:36 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,34 +32,47 @@ static void	ft_clear_color(t_color *color)
 		free(color);
 }
 
+void	free_array(int **array)
+{
+	int	i;
+
+	i = 0;
+	while (i < TEX_WIDTH)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
 static void	ft_clear_texture(t_texture *texture)
 {
 	if (texture->north->path)
 	{
 		free(texture->north->path);
 		if (texture->north->tex)
-			free(texture->north->tex);
+			free_array(texture->north->tex);
 		free(texture->north);
 	}
 	if (texture->south->path)
 	{
 		free(texture->south->path);
 		if (texture->south->tex)
-			free(texture->south->tex);
+			free_array(texture->south->tex);
 		free(texture->south);
 	}
 	if (texture->east->path)
 	{
 		free(texture->east->path);
 		if (texture->east->tex)
-			free(texture->east->tex);
+			free_array(texture->east->tex);
 		free(texture->east);
 	}
 	if (texture->west->path)
 	{
 		free(texture->west->path);
 		if (texture->west->tex)
-			free(texture->west->tex);
+			free_array(texture->west->tex);
 		free(texture->west);
 	}
 	if (texture->ceiling)

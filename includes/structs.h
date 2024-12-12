@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 16:11:54 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/12 21:45:07 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ typedef struct s_color
 typedef struct s_wall
 {
 	char	*path;
-	int		*tex;
-	//int		tex[TEX_HEIGHT * TEX_WIDTH]; //depois definir para int32
+	int		**tex;
 	void	*img;
 }	t_wall;
 
@@ -71,7 +70,6 @@ typedef struct s_texture
 	t_wall	*south;
 	t_wall	*east;
 	t_wall	*west;
-	int		untex;
 }	t_texture;
 
 typedef struct s_map

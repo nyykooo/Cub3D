@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/11 16:03:25 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/12 21:44:15 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,39 +28,50 @@ void	clear_image(t_cub *cub, int color)
 	}
 }
 
-void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub)
+//tirar um argumento
+void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *buffer)
 {
 	int	color;
+	int	i;
 
-	color = cub->map->texture->untex;
+	i = 0;
 	if (drawStart < 0)
 		drawStart = 0;
 	if (drawEnd >= SCREEN_HEIGHT)
 		drawEnd = SCREEN_HEIGHT - 1;
-	while (drawStart <= drawEnd)
+	while (drawStart < drawEnd)
 	{
+		color = buffer[i];
 		ft_my_mlx_pixel_put(cub, x, drawStart, color);
 		drawStart++;
+		i++;
 	}
 }
 
-int	*ft_get_image_pixels(t_img *img)
+int	**ft_get_image_pixels(t_img *img)
 {
-	int *pixels;
-	int x;
+	int	**pixels;
+	int	x;
 	int	y;
-	int pixel_index;
 
-	pixels = malloc(sizeof(int) * TEX_HEIGHT * TEX_WIDTH);
-    for (y = 0; y < TEX_HEIGHT; y++)
-    {
-        for (x = 0; x < TEX_WIDTH; x++)
-        {
-            pixel_index = y * TEX_WIDTH + x;
-            pixels[pixel_index] = *(int *)(img->data + y * img->size_line + x * (img->bpp / 8));
-        }
-    }
-
-    return (pixels);
+	x = 0;
+	pixels = malloc(TEX_WIDTH * sizeof(int *));
+	while (x < TEX_WIDTH)
+	{
+		pixels[x] = malloc(TEX_HEIGHT * sizeof(int));
+		x++;
+	}
+	y = 0;
+	while (y < TEX_HEIGHT)
+	{
+		x = 0;
+		while (x < TEX_WIDTH)
+		{
+			pixels[x][y] = *(int *)(img->data + y * img->size_line \
+			+ x * (img->bpp / 8));
+			x++;
+		}
+		y++;
+	}
+	return (pixels);
 }
-

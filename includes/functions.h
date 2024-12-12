@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 18:24:28 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/12 12:53:32 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ int			ft_ray_casting(t_cub *cub);
 
 // MLX UTILS
 void		clear_image(t_cub *cub, int color);
-void		ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub);
-int			*ft_get_image_pixels(t_img *img);
+void		ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *buffer);
+int			**ft_get_image_pixels(t_img *img);
 
 
 // MLX HOOKS
