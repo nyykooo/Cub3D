@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:16:11 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:25:36 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:51:46 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@
 # include <stdarg.h> // to use the va_list type to ft_error_msg_construct
 # include "libs/minilibx-linux/mlx.h" // to include the mlx library
 # include "libs/minilibx-linux/mlx_int.h" // to include the mlx library
-# include "libs/libft/libft.h" // to include the libft library
 # include "structs.h" // to include the structs.h file
+# include "libs/libft/libft.h" // to include the libft library
 # include "macros.h" // to include the macros.h file
 # include "libs/get_next_line/get_next_line.h" // to include gnl function
 # include "functions.h" // to include the functions.h file

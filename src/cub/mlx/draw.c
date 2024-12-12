@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/10 19:52:45 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/11 17:23:10 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	perform_dda(t_cub *cub, t_ray *ray)
 			ray->mapY += ray->stepY;
 			ray->side = 1;
 		}
+		if (cub->map->rows <= (unsigned int)ray->mapX || cub->map->cols <= (unsigned int)ray->mapY)
+			break ;
 		if (cub->map->map[ray->mapX][ray->mapY] == '1') //corrigir! Antes de checar a parede, checar se está dentro do mapa
 			hit = 1;
 	}
@@ -117,7 +119,8 @@ int	ft_ray_casting(t_cub *cub)
 
 	x = 0;
 	player = cub->map->player;
-	clear_image(cub, 0x000000);
+	mlx_destroy_image(cub->mlx_ptr, cub->img);
+	ft_image_hub(cub);
 	while (x < SCREEN_WIDTH)
 	{
 		draw_column(cub, x, player);

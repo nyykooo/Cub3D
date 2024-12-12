@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:17:57 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:09:38 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // UTILS FUNCTIONS
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
-bool		are_vectors_perpendicular(t_dirVector *dirVector, t_dirVector *camVector);
+bool		ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector);
 void	normalize_vector(t_dirVector *vector);
 
 
@@ -87,12 +87,15 @@ int			ft_keys(int keycode, t_cub *cub);
 // KEYS
 void		ft_rotate_left(t_player *player);
 void		ft_rotate_right(t_player *player);
-void		ft_move_forward(t_cub *cub);
 
 // MLX IMAGE FUNCTIONS
 void		ft_image_hub(t_cub *cub);
 
 // MOVE FUNCTIONS
 void		ft_move_player(int keycode, t_cub *cub);
+void		ft_move_forward(t_cub *cub);
+void		ft_move_backward(t_cub *cub);
+void		ft_move_right(t_cub *cub);
+void		ft_move_left(t_cub *cub);
 
 #endif

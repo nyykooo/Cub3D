@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:17:14 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/10 19:33:01 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:51:06 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define LIBFT_H
 
 # include "../../headers.h"
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 
 //PARTE1
 int		ft_isalpha(int c);
