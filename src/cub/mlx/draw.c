@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/12 22:03:44 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/12 23:29:38 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,7 +166,6 @@ int	ft_ray_casting(t_cub *cub)
 
 	x = 0;
 	player = cub->map->player;
-	mlx_destroy_image(cub->mlx_ptr, cub->img);
 	ft_image_hub(cub);
 	while (x < SCREEN_WIDTH)
 	{
