@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/12 22:35:16 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/13 16:57:58 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,16 @@ SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 	$(addsuffix .c, $(addprefix src/cub/map/, $(SRC_CUB_MAP_DIR))) \
 	$(addsuffix .c, $(addprefix src/cub/mlx/, $(SRC_CUB_MLX_DIR))) \
 	$(addsuffix .c, $(addprefix src/print/, $(SRC_PRINT_DIR)))
+
+# SRC_DIR_BONUS = main_bonus
+
+# SRC_BONUS_BON = mlx 
+
+# SRC_BONUS = $(addsuffix .c, $(addprefix src/, $(SRC_DIR_BONUS))) \
+# 	$(addsuffix .c, $(addprefix src/cub/, $(SRC_CUB_DIR))) \
+# 	$(addsuffix .c, $(addprefix src/cub/map/, $(SRC_CUB_MAP_DIR))) \
+# 	$(addsuffix .c, $(addprefix src/cub/mlx/, $(SRC_CUB_MLX_DIR))) \
+# 	$(addsuffix .c, $(addprefix src/bonus/, $(SRC_BONUS_BON)))
 
 LIBFT = includes/libs/libft/libft.a
 GNL = includes/libs/get_next_line/get_next_line.a
@@ -81,6 +91,8 @@ fclean: clean
 	$(MAKE) clean -C includes/libs/minilibx-linux -s
 
 re: fclean all
+
+bonus: 
 
 valgrind:
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) includes/maps/minimalist.cub

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 22:36:11 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:25:16 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,8 @@ typedef struct s_cub
 	int		bpp;
 	int		line_lenght;
 	int		endian;
+	int		mouse_x;
+	int		mouse_y;
 	char	*file;
 	char	*line;
 	int		fd;

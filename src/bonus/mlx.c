@@ -5,36 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/13 17:48:28 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/12/13 16:38:47 by ncampbel          #+#    #+#             */
+/*   Updated: 2024/12/13 16:57:48 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-int	ft_mouse(int x, int y, t_cub *cub)
-{
-	t_player	*player;
-
-	player = cub->map->player;
-	(void)y;
-	if (cub->mouse_x < x)
-	{
-		ft_rotate_right(player);
-		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
-			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
-		ft_ray_casting(cub);
-	}
-	else if (cub->mouse_x > x)
-	{
-		ft_rotate_left(player);
-		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
-			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
-		ft_ray_casting(cub);
-	}
-	cub->mouse_x = x;
-	return (0);
-}
 
 void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)
 {
@@ -69,11 +46,10 @@ void	ft_init_mlx(t_cub *cub)
 
 void	ft_mlx_hook_and_loop(t_cub *cub)
 {
-	cub->mouse_x = SCREEN_WIDTH / 2;
-	mlx_hook(cub->win, 6, PointerMotionMask, ft_mouse, cub);
 	mlx_hook (cub->win, 17, 0, ft_close_x, cub);
 	mlx_hook (cub->win, 2, KeyPressMask, ft_keys, cub);
-	mlx_key_hook (cub->win, ft_keys, cub); 
+	mlx_key_hook (cub->win, ft_keys, cub);
+	mlx_mouse_hook(cub->win, ft_mouse, cub);
 	mlx_expose_hook(cub->win, ft_ray_casting, cub);
 	//mlx_loop_hook(); //tiago indicou o uso (estudar) é o loop do game. Para atualizar a tela.
 	mlx_loop (cub->mlx_ptr);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 12:09:38 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/13 17:17:17 by ncampbel         ###   ########.fr       */
+/*   Created: 2024/12/13 16:36:55 by ncampbel          #+#    #+#             */
+/*   Updated: 2024/12/13 16:38:20 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	main(int ac, char **av)
 	ft_input_parse(av, ac);
 	cub = ft_init_cub();
 	ft_init_mlx(cub);
-	ft_mlx_hook_and_loop(cub);
+	ft_mlx_hook_and_loop_bonus(cub);
 	return (0);
 }

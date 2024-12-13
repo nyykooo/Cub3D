@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 22:36:00 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:12:24 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define ButtonPressMask     (1L<<2) // 4L
 # define ButtonReleaseMask   (1L<<3) // 8L
 # define PointerMotionMask   (1L<<6) // 64L
+# define PointerMotionHintMask (1L<<7) // 128L
 # define ExposureMask        (1L<<15) // 32768L
 # define StructureNotifyMask (1L<<17) // 131072L
 
