@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/12 21:44:15 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:52:56 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *b
 		drawStart = 0;
 	if (drawEnd >= SCREEN_HEIGHT)
 		drawEnd = SCREEN_HEIGHT - 1;
+	while (i < drawStart)
+		ft_my_mlx_pixel_put(cub, x, i++, cub->map->texture->ceiling->color);
+	i = 0;
 	while (drawStart < drawEnd)
 	{
 		color = buffer[i];
@@ -46,6 +49,8 @@ void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *b
 		drawStart++;
 		i++;
 	}
+	while (drawEnd < SCREEN_HEIGHT)
+		ft_my_mlx_pixel_put(cub, x, drawEnd++, cub->map->texture->floor->color);
 }
 
 int	**ft_get_image_pixels(t_img *img)

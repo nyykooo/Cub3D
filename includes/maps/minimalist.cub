@@ -3,8 +3,8 @@ SO ./includes/textures/moss_wall.xpm
 WE ./includes/textures/stone_wall.xpm
 EA ./includes/textures/flag_wall.xpm
 
-C 255,00,0
-F 00,255,0
+C 153,153,153
+F 0,0,0
 
 111111111111111111111111111111111
 100000000000000000000000000000001

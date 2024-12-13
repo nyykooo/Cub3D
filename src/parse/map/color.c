@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:39:18 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/01 15:57:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:59:46 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ static void	ft_get_color(t_cub *cub, char *line)
 	if (ft_strcmp(split[0], "F") == 0 && !texture->floor->input)
 	{
 		texture->floor->input = ft_strdup(line);
-		texture->floor->red = ft_atoi(split[0]);
-		texture->floor->green = ft_atoi(split[1]);
-		texture->floor->blue = ft_atoi(split[2]);
+		texture->floor->red = ft_atoi(split[1]);
+		texture->floor->green = ft_atoi(split[2]);
+		texture->floor->blue = ft_atoi(split[3]);
 	}
 	else if (ft_strcmp(split[0], "C") == 0 && !texture->ceiling->input)
 	{
 		texture->ceiling->input = ft_strdup(line);
-		texture->ceiling->red = ft_atoi(split[0]);
-		texture->ceiling->green = ft_atoi(split[1]);
-		texture->ceiling->blue = ft_atoi(split[2]);
+		texture->ceiling->red = ft_atoi(split[1]);
+		texture->ceiling->green = ft_atoi(split[2]);
+		texture->ceiling->blue = ft_atoi(split[3]);
 	}
 	ft_check_errors(cub, split[0]);
 	ft_free_array(split);
