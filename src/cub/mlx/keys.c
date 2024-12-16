@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:29:57 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/10 19:52:23 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/16 22:45:14 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ void	ft_rotate_right(t_player *player)
 
 void	ft_move_forward(t_cub *cub)
 {
-	if (ft_is_walkable(cub->map->map[(int)cub->map->player->p_x + (int)cub->map->player->dirVector->x][(int)cub->map->player->p_y]))
+	if (ft_is_walkable(cub->map->map[(int)cub->map->player->p_x + (int)(cub->map->player->dirVector->x * cub->move_speed)][(int)cub->map->player->p_y]))
 	{
-		cub->map->player->p_x += cub->map->player->dirVector->x;
-		if (ft_is_walkable(cub->map->map[(int)cub->map->player->p_x][(int)cub->map->player->p_y + (int)cub->map->player->dirVector->y]))
+		cub->map->player->p_x += cub->map->player->dirVector->x * cub->move_speed;
+		if (ft_is_walkable(cub->map->map[(int)cub->map->player->p_x][(int)cub->map->player->p_y + ((int)(cub->map->player->dirVector->y * cub->move_speed))]))
 		{
-			cub->map->player->p_y += cub->map->player->dirVector->y;
+			cub->map->player->p_y += cub->map->player->dirVector->y * cub->move_speed;
 			ft_ray_casting(cub);
 		}
 		else 
 		{
-			printf("OUT OF BOUNDS VETOR Y coordenadas: x: %d, y: %d\n", (int)cub->map->player->p_x, (int)cub->map->player->p_y + (int)cub->map->player->dirVector->y);
+			printf("OUT OF BOUNDS VETOR Y coordenadas: x: %d, y: %d\n", (int)cub->map->player->p_x, (int)cub->map->player->p_y + (int)((cub->map->player->dirVector->y * cub->move_speed)));
 			printf("Player out of the walkable zone\n");
 			ft_clear_cub();
 			exit(1);
@@ -70,7 +70,7 @@ void	ft_move_forward(t_cub *cub)
 	}
 	else 
 	{
-		printf("OUT OF BOUNDS VETOR X coordenadas: x: %d, y: %d\n", (int)cub->map->player->p_x + (int)cub->map->player->dirVector->x, (int)cub->map->player->p_y);
+		printf("OUT OF BOUNDS VETOR X coordenadas: x: %d, y: %d\n", (int)cub->map->player->p_x + (int)(cub->map->player->dirVector->x * cub->move_speed), (int)cub->map->player->p_y);
 		printf("Player out of the walkable zone\n");
 		ft_clear_cub();
 		exit(1);

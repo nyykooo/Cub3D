@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 21:45:07 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/16 22:33:04 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,11 @@ typedef struct s_cub
 	char	*file;
 	char	*line;
 	int		fd;
+	double	time;
+	double	old_time;
+	double	frame_time;
+	double	move_speed;
+	double	rot_speed;
 }	t_cub;
 
 #endif

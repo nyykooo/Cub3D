@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/12 21:56:35 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/16 22:32:49 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,8 @@ int	ft_ray_casting(t_cub *cub)
 {
 	int			x;
 	t_player	*player;
+	struct timeval tv;
+	double		frame_time;
 
 	x = 0;
 	player = cub->map->player;
@@ -170,6 +172,14 @@ int	ft_ray_casting(t_cub *cub)
 		draw_column(cub, x, player);
 		x++;
 	}
+	
+	cub->old_time = cub->time;
+	gettimeofday(&tv, NULL);
+	cub->time = tv.tv_sec + tv.tv_usec / 1000000.0;
+	frame_time = cub->time - cub->old_time;
+	//calcular vel de rotacao e de movimento
+	cub->rot_speed = frame_time * 3.0;
+	cub->move_speed = frame_time * 5.0;
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win, cub->img, 0, 0);
 	return (0);
 }

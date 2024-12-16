@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:16:11 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/07 19:00:04 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/16 13:10:25 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@
 # include "libs/get_next_line/get_next_line.h" // to include gnl function
 # include "functions.h" // to include the functions.h file
 # include <math.h> // to use the math functions
+# include <sys/time.h> // to use the gettimeofday function
 
 #endif
