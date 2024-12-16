@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/09 14:42:28 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:50:55 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,7 @@ t_player	*ft_init_player(void)
 	player->p_dir = -1;
 	player->p_x = -1;
 	player->p_y = -1;
+	player->dirVector = NULL;
+	player->camVector = NULL;
 	return (player);
 }
