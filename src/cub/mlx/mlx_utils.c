@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/17 10:32:47 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:16:17 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,12 @@ void	clear_image(t_cub *cub, int color)
 	}
 }
 
-//tirar um argumento
 void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *buffer)
 {
 	int	color;
 	int	i;
 
 	i = 0;
-	// if (drawStart < 0)
-	// 	drawStart = 0;
-	if (drawEnd >= SCREEN_HEIGHT)
-		drawEnd = SCREEN_HEIGHT - 1;
 	while (i < drawStart)
 		ft_my_mlx_pixel_put(cub, x, i++, cub->map->texture->ceiling->color);
 	i = 0;
