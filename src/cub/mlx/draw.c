@@ -6,11 +6,50 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/12 23:29:38 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:50:55 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
+
+void	ft_draw_sword(t_cub *cub, t_player *player)
+{
+    int	width;
+    int	height;
+    int	y;
+    int x;
+    int new_width;
+    int new_height;
+    float scale;
+    int start_x;
+    int start_y;
+
+    width = SWORD_WIDTH;
+    height = SWORD_HEIGHT;
+    player->sword = malloc(sizeof(t_wall));
+    player->sword->img = mlx_xpm_file_to_image(cub->mlx_ptr, "./includes/textures/anduril_rest.xpm", &width, &height);
+    player->sword->tex = ft_get_image_pixels(player->sword->img, width, height);
+
+    scale = (float)SCREEN_HEIGHT / (height);
+    new_width = width * scale;
+    new_height = height * scale;
+
+    start_x = SCREEN_WIDTH - (SCREEN_WIDTH / 1.7f);
+    start_y = SCREEN_HEIGHT - (new_height / 1.3f);
+
+    // Desenhar a espada na nova posição e tamanho
+    for (y = 0; y < new_height; y++)
+    {
+        for (x = 0; x < new_width; x++)
+        {
+            int tex_x = x / scale;
+            int tex_y = y / scale;
+            if (player->sword->tex[tex_x][tex_y] != NONE){
+				if (start_y + y >= 0 && start_y + y < SCREEN_HEIGHT)
+                ft_my_mlx_pixel_put(cub, start_x + x, start_y + y, player->sword->tex[tex_x][tex_y]);}
+        }
+    }
+}
 
 void	calculate_ray_direction(int x, t_ray *ray, t_player *player)
 {
@@ -172,6 +211,7 @@ int	ft_ray_casting(t_cub *cub)
 		draw_column(cub, x, player);
 		x++;
 	}
+	ft_draw_sword(cub, player);
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win, cub->img, 0, 0);
 	return (0);
 }

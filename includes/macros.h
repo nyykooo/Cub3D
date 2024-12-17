@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/14 11:59:01 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:52:50 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,18 @@
 # define TEX_WIDTH 32
 # define TEX_HEIGHT 32
 
+// SWORD MACROS
+# define SWORD_WIDTH 64
+# define SWORD_HEIGHT 64
+
 // COLORS
+#define NONE -16777216
 # define Red 0xFF0000
 # define Green 0x00FF00
 # define Blue 0x0000FF
 # define White 0xFFFFFF
 # define Cyan 0x00FFFF
+
 
 // NAME
 # define NAME "Cub3D"

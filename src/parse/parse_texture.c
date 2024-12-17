@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:10:15 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/17 12:15:14 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:05:48 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	ft_get_tex_imgs(t_cub *cub, t_texture *texture)
 	texture->west->path, &width, &height);
 	texture->east->img = mlx_xpm_file_to_image(cub->mlx_ptr, \
 	texture->east->path, &width, &height);
-	texture->north->tex = ft_get_image_pixels(texture->north->img);
-	texture->south->tex = ft_get_image_pixels(texture->south->img);
-	texture->west->tex = ft_get_image_pixels(texture->west->img);
-	texture->east->tex = ft_get_image_pixels(texture->east->img);
+	texture->north->tex = ft_get_image_pixels(texture->north->img, width, height);
+	texture->south->tex = ft_get_image_pixels(texture->south->img, width, height);
+	texture->west->tex = ft_get_image_pixels(texture->west->img, width, height);
+	texture->east->tex = ft_get_image_pixels(texture->east->img, width, height);
 }
 
 void	ft_parse_texture(void)

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/13 17:25:16 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:58:53 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_image
 	t_win	win;
 	void	*img_ptr;
 	char	*addr;
+	char	*file_path;
 	int		h;
 	int		w;
 	int		bpp;
@@ -112,13 +113,21 @@ typedef struct s_dirVector
 	double	y;
 }	t_dirVector;
 
+typedef struct s_wall
+{
+	char	*path;
+	int		**tex;
+	void	*img;
+}	t_wall;
+
 typedef struct s_player
 {
-	char		p_dir;
-	double		p_x;
-	double		p_y;
 	t_dirVector	*dirVector;
 	t_dirVector	*camVector;
+	t_wall		*sword;
+	double		p_y;
+	double		p_x;
+	char		p_dir;
 }	t_player;
 
 typedef struct s_color
@@ -129,13 +138,6 @@ typedef struct s_color
 	int		green;
 	int		blue;
 }	t_color;
-
-typedef struct s_wall
-{
-	char	*path;
-	int		**tex;
-	void	*img;
-}	t_wall;
 
 typedef struct s_texture
 {

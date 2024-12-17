@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/13 15:52:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:05:06 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,24 @@ void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *b
 		ft_my_mlx_pixel_put(cub, x, drawEnd++, cub->map->texture->floor->color);
 }
 
-int	**ft_get_image_pixels(t_img *img)
+int	**ft_get_image_pixels(t_img *img, int w, int h)
 {
 	int	**pixels;
 	int	x;
 	int	y;
 
 	x = 0;
-	pixels = malloc(TEX_WIDTH * sizeof(int *));
-	while (x < TEX_WIDTH)
+	pixels = malloc(w * sizeof(int *));
+	while (x < w)
 	{
-		pixels[x] = malloc(TEX_HEIGHT * sizeof(int));
+		pixels[x] = malloc(h * sizeof(int));
 		x++;
 	}
 	y = 0;
-	while (y < TEX_HEIGHT)
+	while (y < h)
 	{
 		x = 0;
-		while (x < TEX_WIDTH)
+		while (x < w)
 		{
 			pixels[x][y] = *(int *)(img->data + y * img->size_line \
 			+ x * (img->bpp / 8));
