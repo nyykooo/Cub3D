@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 00:09:15 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:05:11 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define MACROS_H
 
 // CONSTANTS
-# define MOVE_FACTOR 5
-# define ROTATE_FACTOR 3
+# define MOVE_FACTOR 6
+# define ROTATE_FACTOR 5
 
 // FIXED POINT MACROS
 

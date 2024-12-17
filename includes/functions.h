@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 00:27:30 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:08:44 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
 bool		ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector);
-void	normalize_vector(t_dirVector *vector);
-
 
 // FREE FUNCTIONS
 void		ft_clear_cub(void);
@@ -77,6 +75,8 @@ void		ft_mlx_inicialization(t_cub *cub);
 void		ft_mlx_getdata_and_loop(t_cub *cub);
 void		ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color);
 int			ft_ray_casting(t_cub *cub);
+int			ft_mouse(int x, int y, t_cub *cub);
+
 
 // MLX UTILS
 void		clear_image(t_cub *cub, int color);
