@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/16 23:49:48 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:22:53 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,11 @@ int	perform_dda(t_cub *cub, t_ray *ray)
 				ray->side = 1;
 		}
 		if (cub->map->rows <= (unsigned int)ray->mapX || cub->map->cols <= (unsigned int)ray->mapY)
+		{
+			hit = 1;
 			break ;
-		if (cub->map->map[ray->mapX][ray->mapY] == '1') //corrigir! Antes de checar a parede, checar se está dentro do mapa
+		}
+		if (cub->map->map[ray->mapX][ray->mapY] == '1')
 			hit = 1;
 	}
 	return (hit);
