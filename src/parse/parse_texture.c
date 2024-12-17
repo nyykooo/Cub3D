@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:10:15 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/12 21:39:04 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:15:14 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,25 @@ static void	ft_check_for_null(t_texture *texture)
 
 static void	ft_check_files(t_cub *cub, t_texture *texture)
 {
+	ft_validate_extension(texture->north->path, ".xpm");
 	cub->fd = open(texture->north->path, O_RDONLY);
 	if (cub->fd < 0)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \
 		texture->north->path, "\"\n", 0), 1);
 	close(cub->fd);
+	ft_validate_extension(texture->south->path, ".xpm");
 	cub->fd = open(texture->south->path, O_RDONLY);
 	if (cub->fd < 0)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \
 		texture->south->path, "\"\n", 0), 1);
 	close(cub->fd);
+	ft_validate_extension(texture->west->path, ".xpm");
 	cub->fd = open(texture->west->path, O_RDONLY);
 	if (cub->fd < 0)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \
 		texture->west->path, "\"\n", 0), 1);
 	close(cub->fd);
+	ft_validate_extension(texture->east->path, ".xpm");
 	cub->fd = open(texture->east->path, O_RDONLY);
 	if (cub->fd < 0)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \

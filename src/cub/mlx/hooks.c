@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:11:30 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 16:10:49 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/14 11:59:59 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,12 @@ int	ft_close_x(t_cub *cub)
 	exit (0);
 }
 
+void	ft_open_door(t_cub *cub)
+{
+	(void)cub;
+	printf("Open door\n");
+}
+
 int	ft_keys(int keycode, t_cub *cub)
 {
 	if (keycode == KEY_ESC)
@@ -61,5 +67,7 @@ int	ft_keys(int keycode, t_cub *cub)
 	if (keycode == KEY_W || keycode == KEY_S
 		|| keycode == KEY_A || keycode == KEY_D)
 		ft_move_hub(keycode, cub);
+	if (keycode == KEY_SPC)
+		ft_open_door(cub);
 	return (0);
 }

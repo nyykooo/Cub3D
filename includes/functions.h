@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 23:12:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/14 12:05:21 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
 bool		ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector);
-void	normalize_vector(t_dirVector *vector);
+void		normalize_vector(t_dirVector *vector);
 
 
 // FREE FUNCTIONS
@@ -30,9 +30,10 @@ char		*ft_error_msg_construct(int nbr, ...);
 int			ft_put_error_msg(char *error_msg, int exit_status);
 
 // PARSE FUNCTIONS
-void		ft_input_parse(char **av, int ac);	
+void		ft_validate_extension(char *name, char *ext);
+void		ft_input_parse(char **av, int ac);
 void		ft_input_validation(char **av, int ac);
-void		ft_parse_texture();
+void		ft_parse_texture(void);
 void		ft_parse_color(t_cub *cub, char *line);
 void		ft_normalize_map(t_cub *cub);
 
