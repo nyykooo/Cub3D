@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 23:12:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 00:27:30 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ int			ft_close_x(t_cub *cub);
 int			ft_keys(int keycode, t_cub *cub);
 
 // KEYS
-void		ft_rotate_left(t_player *player);
-void		ft_rotate_right(t_player *player);
+void		ft_rotate_left(t_player *player, t_cub *cub);
+void		ft_rotate_right(t_player *player, t_cub *cub);
 
 // MLX IMAGE FUNCTIONS
 void		ft_image_hub(t_cub *cub);
@@ -101,5 +101,9 @@ void		ft_move_forward(t_cub *cub);
 void		ft_move_backward(t_cub *cub);
 void		ft_move_right(t_cub *cub);
 void		ft_move_left(t_cub *cub);
+
+// TIME FUNCTIONS
+void		ft_start_frame(t_frametime *frameTime);
+void		ft_end_frame(t_frametime *frameTime);
 
 #endif

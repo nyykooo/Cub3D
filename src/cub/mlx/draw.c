@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/12 23:29:38 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/16 23:49:48 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,11 +167,13 @@ int	ft_ray_casting(t_cub *cub)
 	x = 0;
 	player = cub->map->player;
 	ft_image_hub(cub);
+	ft_start_frame(&cub->frameTime);
 	while (x < SCREEN_WIDTH)
 	{
 		draw_column(cub, x, player);
 		x++;
 	}
+	ft_end_frame(&cub->frameTime);
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win, cub->img, 0, 0);
 	return (0);
 }

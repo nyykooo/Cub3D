@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:11:30 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 16:10:49 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 00:27:34 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	ft_rotate_hub(int keycode, t_cub *cub)
 	player = cub->map->player;
 	if (keycode == KEY_LEFT)
 	{
-		ft_rotate_left(cub->map->player);
+		ft_rotate_left(cub->map->player, cub);
 		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
 			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
 		ft_ray_casting(cub);
 	}
 	if (keycode == KEY_RIGHT)
 	{
-		ft_rotate_right(cub->map->player);
+		ft_rotate_right(cub->map->player, cub);
 		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
 			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
 		ft_ray_casting(cub);

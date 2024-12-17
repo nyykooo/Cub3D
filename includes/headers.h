@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   headers.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:16:11 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:51:46 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/16 23:31:20 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@
 # include "macros.h" // to include the macros.h file
 # include "libs/get_next_line/get_next_line.h" // to include gnl function
 # include "functions.h" // to include the functions.h file
+# include <sys/time.h> // to use the gettimeofday function
 
 #endif

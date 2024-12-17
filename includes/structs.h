@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/13 17:25:16 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/16 23:50:40 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,15 @@ typedef struct s_map
 	unsigned int	cols;
 }	t_map;
 
+typedef struct s_frametime
+{
+	struct timeval	start;
+	struct timeval	end;
+	double	frame_time;
+	double	move_speed;
+	double	rot_speed;
+}	t_frametime;
+
 typedef struct s_cub
 {
 	t_map	*map;
@@ -175,6 +184,8 @@ typedef struct s_cub
 	char	*file;
 	char	*line;
 	int		fd;
+	t_frametime	frameTime;
 }	t_cub;
+
 
 #endif

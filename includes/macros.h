@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/13 17:12:24 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 00:09:15 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
+
+// CONSTANTS
+# define MOVE_FACTOR 5
+# define ROTATE_FACTOR 3
 
 // FIXED POINT MACROS
 
