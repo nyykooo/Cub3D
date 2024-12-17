@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/13 15:52:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 10:32:47 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *b
 	int	i;
 
 	i = 0;
-	if (drawStart < 0)
-		drawStart = 0;
+	// if (drawStart < 0)
+	// 	drawStart = 0;
 	if (drawEnd >= SCREEN_HEIGHT)
 		drawEnd = SCREEN_HEIGHT - 1;
 	while (i < drawStart)
