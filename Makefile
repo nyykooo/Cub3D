@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
+#    By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/13 16:57:58 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/16 23:46:10 by brunhenr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -g -o3
 
 SRC_DIR = main utils
 
-SRC_CUB_DIR = cub texture color map_move
+SRC_CUB_DIR = cub texture color map_move time
 
 SRC_CUB_MAP_DIR = map player
 

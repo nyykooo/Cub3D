@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/13 17:48:28 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 10:41:10 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	ft_mouse(int x, int y, t_cub *cub)
 	(void)y;
 	if (cub->mouse_x < x)
 	{
-		ft_rotate_right(player);
+		ft_rotate_right(player, cub);
 		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
 			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
 		ft_ray_casting(cub);
 	}
 	else if (cub->mouse_x > x)
 	{
-		ft_rotate_left(player);
+		ft_rotate_left(player, cub);
 		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
 			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
 		ft_ray_casting(cub);
@@ -40,17 +40,8 @@ void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)
 {
 	char	*dst;
 
-	// if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT)
-	// {
-	// 	write (2, "Error: my_mlx_pixel_put\n", 24);
-	// 	return;
-	// }
-	// if (!cub->addr)
-	// {
-	// 	perror("Error: cub->addr is not initialized");
-	// 	return;
-	// }
-	
+	if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT)
+		return;
 	dst = cub->addr + (y * cub->line_lenght + x * (cub->bpp / 8));
 	*(unsigned int *)dst = color;
 }

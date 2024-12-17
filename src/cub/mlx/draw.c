@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/17 13:50:55 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 21:44:00 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,11 @@ int	perform_dda(t_cub *cub, t_ray *ray)
 				ray->side = 1;
 		}
 		if (cub->map->rows <= (unsigned int)ray->mapX || cub->map->cols <= (unsigned int)ray->mapY)
+		{
+			hit = 1;
 			break ;
-		if (cub->map->map[ray->mapX][ray->mapY] == '1') //corrigir! Antes de checar a parede, checar se está dentro do mapa
+		}
+		if (cub->map->map[ray->mapX][ray->mapY] == '1')
 			hit = 1;
 	}
 	return (hit);
@@ -206,12 +209,14 @@ int	ft_ray_casting(t_cub *cub)
 	x = 0;
 	player = cub->map->player;
 	ft_image_hub(cub);
+	ft_start_frame(&cub->frameTime);
 	while (x < SCREEN_WIDTH)
 	{
 		draw_column(cub, x, player);
 		x++;
 	}
 	ft_draw_sword(cub, player);
+	ft_end_frame(&cub->frameTime);
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win, cub->img, 0, 0);
 	return (0);
 }

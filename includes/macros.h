@@ -6,12 +6,16 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 13:52:50 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 21:43:05 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MACROS_H
 # define MACROS_H
+
+// CONSTANTS
+# define MOVE_FACTOR 6
+# define ROTATE_FACTOR 5
 
 // FIXED POINT MACROS
 

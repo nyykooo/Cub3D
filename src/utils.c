@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:34:16 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/11 15:45:24 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:08:43 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,4 @@ bool	ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector)
 
 	dot_product = dirVector->x * camVector->x + dirVector->y * camVector->y;
 	return (fabs(dot_product) < 0.000001);
-}
-
-void	normalize_vector(t_dirVector *vector)
-{
-	double length = sqrt(vector->x * vector->x + vector->y * vector->y);
-	if (length != 0)
-	{
-		vector->x /= length;
-		vector->y /= length;
-	}
 }
