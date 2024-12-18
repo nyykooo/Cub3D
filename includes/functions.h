@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 17:08:44 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/18 18:42:03 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,24 @@
 
 # include "headers.h"
 
+// COLLISION 
+int		ft_collision(t_map *map, t_cub *cub);
+int		ft_collision_dda(t_player *player, t_cub *cub);
+void	ft_collision_dists(t_player *player);
+void	ft_prepare_vec(double angle, t_dirVector *dir_vector, t_cub *cub);
+
+// DRAW UTILS
+void	calculate_delta_distances(t_ray *ray);
+void	calculate_ray_direction(int x, t_ray *ray, t_player *player);
+void	calculate_initial_distances(t_player *player, t_ray *ray);
+int		perform_dda(t_cub *cub, t_ray *ray);
+
+
+
+
+
 // UTILS FUNCTIONS
+void		ft_rotate_vect(double angle, t_dirVector *vector);
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
 bool		ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector);

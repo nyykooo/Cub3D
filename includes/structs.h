@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/18 09:40:49 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/18 11:35:22 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ typedef struct s_player
 	double		p_y;
 	t_dirVector	*dirVector;
 	t_dirVector	*camVector;
+	t_ray		*ray; // Agora o player tem um ray para emitir um raio para verificar a distância até a parede
 }	t_player;
 
 typedef struct s_color
