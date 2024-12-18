@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/16 23:50:40 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:40:49 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ typedef struct s_cub
 	void	*img;
 	char	*addr;
 	int		bpp;
-	int		line_lenght;
+	int		line_length;
 	int		endian;
 	int		mouse_x;
 	int		mouse_y;

@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 10:41:10 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:40:49 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)
 
 	if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT)
 		return;
-	dst = cub->addr + (y * cub->line_lenght + x * (cub->bpp / 8));
+	dst = cub->addr + (y * cub->line_length + x * (cub->bpp / 8));
 	*(unsigned int *)dst = color;
 }
 

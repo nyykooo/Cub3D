@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/17 17:16:17 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:40:49 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	clear_image(t_cub *cub, int color)
 	{
 		for (x = 0; x < SCREEN_WIDTH; x++)
 		{
-			dst = cub->addr + (y * cub->line_lenght + x * (cub->bpp / 8));
+			dst = cub->addr + (y * cub->line_length + x * (cub->bpp / 8));
 			*(unsigned int *)dst = color;
 		}
 	}
