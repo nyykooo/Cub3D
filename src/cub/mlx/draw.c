@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/19 15:27:50 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:13:36 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ void	ft_draw_sword(t_cub *cub, t_player *player)
 
     width = SWORD_WIDTH;
     height = SWORD_HEIGHT;
-    player->sword = malloc(sizeof(t_wall));
-    player->sword->img = mlx_xpm_file_to_image(cub->mlx_ptr, "./includes/textures/anduril_rest.xpm", &width, &height);
-    player->sword->tex = ft_get_image_pixels(player->sword->img, width, height);
 
     scale = (float)SCREEN_HEIGHT / (height);
     new_width = width * scale;
@@ -46,7 +43,7 @@ void	ft_draw_sword(t_cub *cub, t_player *player)
             int tex_y = y / scale;
             if (player->sword->tex[tex_x][tex_y] != NONE){
 				if (start_y + y >= 0 && start_y + y < SCREEN_HEIGHT)
-                ft_my_mlx_pixel_put(cub, start_x + x, start_y + y, player->sword->tex[tex_x][tex_y]);}
+              	  ft_my_mlx_pixel_put(cub, start_x + x, start_y + y, player->sword->tex[tex_x][tex_y]);}
         }
     }
 }
@@ -131,7 +128,10 @@ int	ft_ray_casting(t_cub *cub)
 		draw_column(cub, x, player);
 		x++;
 	}
-	ft_draw_sword(cub, player);
+	if (!player->is_attacking)
+		ft_draw_sword(cub, player);
+	else
+		draw_sword_attack(cub, player);
 	ft_end_frame(&cub->frameTime);
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win, cub->img, 0, 0);
 	return (0);

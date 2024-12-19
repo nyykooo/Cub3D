@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 15:24:51 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:12:44 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,69 +20,26 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-// ------ sprite study --------
-
-
-typedef struct s_win
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	int		width;	
-	int		height;	
-}		t_win;
-
 typedef struct s_image
 {
-	t_win	win;
-	void	*img_ptr;
-	char	*addr;
-	char	*file_path;
-	int		h;
-	int		w;
-	int		bpp;
-	int		endian;
-	int		line_len;
-}		t_image;
-
-
-enum entity {
-	PLAYER,
-	ENEMY,
-	EVENT,
-	OBJ,
-};
-
-typedef struct s_animation {
-	t_list *	frames;
+	void	*img;
+	int		**tex;
+	char	*path;
 	int		width;
 	int		height;
-	int		delay;			// How many fps it takes to change animation
-	int		_tmp_delay;		// Delay Iterator
-	int		current_frame_num;	// Which frame is selected
-	long int	last_updated;		// When was the last update
-	long int	frame_count;		// The frame count
-	enum entity	entity;
-}		t_animation;
+}	t_image;
 
+typedef struct s_sprite
+{
+	t_image	*sprite_sheet;
+	int		frame_w;
+	int		frame_h;
+	int		num_frames;
+	int		cur_frame;
+	long	frame_time;
+	long	last_frame_time;
+} t_sprite;
 
-typedef struct s_sprite {
-	t_list	* animations;
-	char	* name;
-	char	* file_path;
-	t_image	sprite_img;
-	int	width;
-	int	height;
-	int	z_index;
-}		t_sprite;
-
-typedef	struct sprite_slice {
-	int x;
-	int y;
-	int width;
-	int height;
-}	sprite_slice;
-
-// ----------------------
 typedef struct s_fixed
 {
 	const int	bits;
@@ -113,22 +70,17 @@ typedef struct s_dirVector
 	double	y;
 }	t_dirVector;
 
-typedef struct s_wall
-{
-	char	*path;
-	int		**tex;
-	void	*img;
-}	t_wall;
-
 typedef struct s_player
 {
 	t_dirVector	*dirVector;
 	t_dirVector	*camVector;
-	t_wall		*sword;
+	t_image		*sword;
+	t_sprite	*attack;
 	double		p_y;
 	double		p_x;
 	char		p_dir;
 	t_ray		*ray; // Agora o player tem um ray para emitir um raio para verificar a distância até a parede
+	bool		is_attacking;
 }	t_player;
 
 typedef struct s_color
@@ -144,10 +96,10 @@ typedef struct s_texture
 {
 	t_color	*ceiling;
 	t_color	*floor;
-	t_wall	*north;
-	t_wall	*south;
-	t_wall	*east;
-	t_wall	*west;
+	t_image	*north;
+	t_image	*south;
+	t_image	*east;
+	t_image	*west;
 }	t_texture;
 
 typedef struct s_map
