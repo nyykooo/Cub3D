@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 19:25:25 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:48:19 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ static void	ft_fill_player(t_map *map, int x, int y)
 	map->player->p_dir = map->map[x][y];
 	map->player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
 	map->player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	map->player->is_attacking = false;
 	initial_player_dir(map);
 	initial_cam_dir(map);
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+         #
+#    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/16 23:46:10 by brunhenr         ###   ########.fr        #
+#    Updated: 2024/12/18 14:38:38 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_CUB_DIR = cub texture color map_move time
 
 SRC_CUB_MAP_DIR = map player
 
-SRC_CUB_MLX_DIR = mlx hooks image draw mlx_utils keys move
+SRC_CUB_MLX_DIR = mlx hooks image draw mlx_utils keys move sprite
 
 SRC_ERROR_DIR = error
 

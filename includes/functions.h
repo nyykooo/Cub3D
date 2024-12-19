@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 21:43:38 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:20:51 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,16 @@ void		ft_move_left(t_cub *cub);
 // TIME FUNCTIONS
 void		ft_start_frame(t_frametime *frameTime);
 void		ft_end_frame(t_frametime *frameTime);
+long	ft_get_time_s(void);
+
+
+// SPITES
+
+void draw_sword_attack(t_cub *cub, t_player *player);
+// void draw_sword_attack(t_cub *cub, t_player *player, int current_time);
+// void draw_cur_frame(t_cub *cub, t_sprite *anim, int x, int y);
+void update_animation(t_sprite *anim);
+t_sprite *init_sprite(t_image *sprite_sheet, int frame_w, int frame_h, int num_frames, float frame_time);
+t_image *load_sprite_sheet(void *mlx_ptr, char *file_path, int width, int height);
 
 #endif
