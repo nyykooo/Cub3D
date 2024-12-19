@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:38:47 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 16:52:11 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:40:49 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)
 	// 	return;
 	// }
 	
-	dst = cub->addr + (y * cub->line_lenght + x * (cub->bpp / 8));
+	dst = cub->addr + (y * cub->line_length + x * (cub->bpp / 8));
 	*(unsigned int *)dst = color;
 }
 

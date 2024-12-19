@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 19:25:25 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/18 11:34:42 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,13 @@ static void	ft_fill_player(t_map *map, int x, int y)
 	map->player->p_dir = map->map[x][y];
 	map->player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
 	map->player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	if (!map->player->dirVector || !map->player->camVector)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_dirVector dirVector or camVector", "\"\n"), 1);
+	map->player->ray = (t_ray *)malloc(sizeof(t_ray));
+	if (!map->player->ray)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
 	initial_player_dir(map);
 	initial_cam_dir(map);
-
-	printf("##########\n");
-	printf("PLAYER POSITION: x: %f, y: %f\n", map->player->p_x, map->player->p_y);
-	printf("PLAYER DIRECTION: x: %f, y: %f\n", map->player->dirVector->x, map->player->dirVector->y);
-	printf("CAMERA DIRECTION: x: %f, y: %f\n", map->player->camVector->x, map->player->camVector->y);
-	printf("##########\n");
-
 }
 
 void	ft_check_player(t_map *map)

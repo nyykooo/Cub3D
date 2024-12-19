@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 21:43:12 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:24:51 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ typedef struct s_player
 	double		p_y;
 	double		p_x;
 	char		p_dir;
+	t_ray		*ray; // Agora o player tem um ray para emitir um raio para verificar a distância até a parede
 }	t_player;
 
 typedef struct s_color
@@ -166,27 +167,39 @@ typedef struct s_frametime
 {
 	struct timeval	start;
 	struct timeval	end;
-	double	frame_time;
-	double	move_speed;
-	double	rot_speed;
+	double			frame_time;
+	double			move_speed;
+	double			rot_speed;
 }	t_frametime;
+
+typedef struct s_keys
+{
+	bool	w;
+	bool	a;
+	bool	s;
+	bool	d;
+	bool	left;
+	bool	right;
+	bool	esc;
+}	t_keys;
 
 typedef struct s_cub
 {
-	t_map	*map;
-	void	*mlx_ptr;
-	void	*win;
-	void	*img;
-	char	*addr;
-	int		bpp;
-	int		line_lenght;
-	int		endian;
-	int		mouse_x;
-	int		mouse_y;
-	char	*file;
-	char	*line;
-	int		fd;
+	t_map		*map;
+	void		*mlx_ptr;
+	void		*win;
+	void		*img;
+	char		*addr;
+	int			bpp;
+	int			line_length;
+	int			endian;
+	int			mouse_x;
+	int			mouse_y;
+	char		*file;
+	char		*line;
+	int			fd;
 	t_frametime	frameTime;
+	t_keys		keys;
 }	t_cub;
 
 

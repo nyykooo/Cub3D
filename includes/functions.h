@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 21:43:38 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:24:16 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,20 @@
 
 # include "headers.h"
 
+// COLLISION 
+int			ft_collision(t_map *map, t_cub *cub);
+int			ft_collision_dda(t_player *player, t_cub *cub);
+void		ft_collision_dists(t_player *player);
+void		ft_prepare_vec(double angle, t_dirVector *dir_vector, t_cub *cub);
+
+// DRAW UTILS
+void		calculate_delta_distances(t_ray *ray);
+void		calculate_ray_direction(int x, t_ray *ray, t_player *player);
+void		calculate_initial_distances(t_player *player, t_ray *ray);
+int			perform_dda(t_cub *cub, t_ray *ray);
+
 // UTILS FUNCTIONS
+void		ft_rotate_vect(double angle, t_dirVector *vector);
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
 bool		ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector);
@@ -47,7 +60,6 @@ bool		ft_get_text_color(t_map *map, char **split);
 bool		ft_is_text_or_color(char *line, t_cub *cub);
 void		ft_get_tex_imgs(t_cub *cub, t_texture *texture);
 
-
 // MAP FUNCTIONS
 void		ft_init_map(t_cub *cub);
 void		ft_alloc_map(t_cub *cub);
@@ -73,23 +85,20 @@ void		ft_mlx_hook_and_loop(t_cub *cub);
 
 // MLX HOOKS
 int			ft_close_x(t_cub *cub);
+int			ft_keys(t_cub *cub);
 int			ft_game_keys(int keycode, t_cub *cub);
 void		ft_mlx_inicialization(t_cub *cub);
 void		ft_mlx_getdata_and_loop(t_cub *cub);
 void		ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color);
 int			ft_ray_casting(t_cub *cub);
 int			ft_mouse(int x, int y, t_cub *cub);
-
+int			ft_key_press(int keycode, t_cub *cub);
+int			ft_key_release(int keycode, t_cub *cub);
 
 // MLX UTILS
 void		clear_image(t_cub *cub, int color);
 void		ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *buffer);
 int			**ft_get_image_pixels(t_img *img, int w, int h);
-
-
-// MLX HOOKS
-int			ft_close_x(t_cub *cub);
-int			ft_keys(int keycode, t_cub *cub);
 
 // KEYS
 void		ft_rotate_left(t_player *player, t_cub *cub);

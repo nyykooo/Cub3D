@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:29:57 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/17 17:04:51 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/19 11:40:07 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,55 @@
 void	ft_rotate_left(t_player *player, t_cub *cub)
 {
 	double	angle;
-	double	oldDirX; 
-	double	oldPlaneX;
-	
+
 	angle = cub->frameTime.rot_speed;
-	oldDirX = player->dirVector->x;
-	player->dirVector->x = player->dirVector->x * cos(angle) - player->dirVector->y * sin(angle);
-	player->dirVector->y = oldDirX * sin(angle) + player->dirVector->y * cos(angle);
-
-	oldPlaneX = player->camVector->x;
-	player->camVector->x = player->camVector->x * cos(angle) - player->camVector->y * sin(angle);
-	player->camVector->y = oldPlaneX * sin(angle) + player->camVector->y * cos(angle);
-
+	ft_rotate_vect(angle, player->dirVector);
+	ft_rotate_vect(angle, player->camVector);
 }
 
 void	ft_rotate_right(t_player *player, t_cub *cub)
 {
-	double angle;
-	double oldDirX;
-	double oldPlaneX;
+	double	angle;
 
 	angle = cub->frameTime.rot_speed * -1;
-	oldDirX = player->dirVector->x;
-	player->dirVector->x = player->dirVector->x * cos(angle) - player->dirVector->y * sin(angle);
-	player->dirVector->y = oldDirX * sin(angle) + player->dirVector->y * cos(angle);
+	ft_rotate_vect(angle, player->dirVector);
+	ft_rotate_vect(angle, player->camVector);
+}
 
-	oldPlaneX = player->camVector->x;
-	player->camVector->x = player->camVector->x * cos(angle) - player->camVector->y * sin(angle);
-	player->camVector->y = oldPlaneX * sin(angle) + player->camVector->y * cos(angle);
+int	ft_key_press(int keycode, t_cub *cub)
+{
+	if (keycode == KEY_W)
+		cub->keys.w = true;
+	else if (keycode == KEY_S)
+		cub->keys.s = true;
+	else if (keycode == KEY_A)
+		cub->keys.a = true;
+	else if (keycode == KEY_D)
+		cub->keys.d = true;
+	else if (keycode == KEY_LEFT)
+		cub->keys.left = true;
+	else if (keycode == KEY_RIGHT)
+		cub->keys.right = true;
+	else if (keycode == KEY_ESC)
+		cub->keys.esc = true;
+	return (0);
+}
 
+int	ft_key_release(int keycode, t_cub *cub)
+{
+	if (keycode == KEY_W)
+		cub->keys.w = false;
+	else if (keycode == KEY_S)
+		cub->keys.s = false;
+	else if (keycode == KEY_A)
+		cub->keys.a = false;
+	else if (keycode == KEY_D)
+		cub->keys.d = false;
+	else if (keycode == KEY_LEFT)
+		cub->keys.left = false;
+	else if (keycode == KEY_RIGHT)
+		cub->keys.right = false;
+	else if (keycode == KEY_ESC)
+		cub->keys.esc = false;
+	return (0);
 }

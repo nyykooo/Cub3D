@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 10:41:10 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/19 11:42:55 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)
 	char	*dst;
 
 	if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT)
-		return;
-	dst = cub->addr + (y * cub->line_lenght + x * (cub->bpp / 8));
+		return ;
+	dst = cub->addr + (y * cub->line_length + x * (cub->bpp / 8));
 	*(unsigned int *)dst = color;
 }
 
@@ -63,9 +63,9 @@ void	ft_mlx_hook_and_loop(t_cub *cub)
 	cub->mouse_x = SCREEN_WIDTH / 2;
 	mlx_hook(cub->win, 6, PointerMotionMask, ft_mouse, cub);
 	mlx_hook (cub->win, 17, 0, ft_close_x, cub);
-	mlx_hook (cub->win, 2, KeyPressMask, ft_keys, cub);
-	mlx_key_hook (cub->win, ft_keys, cub); 
+	mlx_hook(cub->win, 2, KeyPressMask, ft_key_press, cub);
+	mlx_hook(cub->win, 3, KeyReleaseMask, ft_key_release, cub);
 	mlx_expose_hook(cub->win, ft_ray_casting, cub);
-	//mlx_loop_hook(); //tiago indicou o uso (estudar) é o loop do game. Para atualizar a tela.
+	mlx_loop_hook(cub->mlx_ptr, ft_keys, cub);
 	mlx_loop (cub->mlx_ptr);
 }
