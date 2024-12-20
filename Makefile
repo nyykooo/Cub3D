@@ -6,7 +6,7 @@
 #    By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/18 17:57:03 by brunhenr         ###   ########.fr        #
+#    Updated: 2024/12/20 10:26:30 by brunhenr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CFLAGS = -Wall -Wextra -Werror -g -o3
 
 SRC_DIR = main utils
 
-SRC_CUB_DIR = cub texture color map_move time
+SRC_CUB_DIR = cub texture color map_move time ray_casting
 
 SRC_CUB_MAP_DIR = map player
 
-SRC_CUB_MLX_DIR = mlx hooks image draw mlx_utils keys move draw_utils collision
+SRC_CUB_MLX_DIR = mlx hooks image draw_column fill_buffer mlx_utils keys move draw_utils collision
 
 SRC_ERROR_DIR = error
 

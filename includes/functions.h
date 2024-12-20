@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 11:41:30 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/20 10:35:45 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define FUNCTIONS_H
 
 # include "headers.h"
+
+// RAY CASTING
+int			ft_ray_casting(t_cub *cub);
+void		ft_draw_column(t_cub *cub, int x, t_player *player);
+void		ft_fill_buffer(t_column *column, t_ray *ray, t_cub *cub);
 
 // COLLISION 
 int			ft_collision(t_map *map, t_cub *cub);
@@ -95,8 +100,7 @@ int			ft_key_release(int keycode, t_cub *cub);
 
 // MLX UTILS
 void		clear_image(t_cub *cub, int color);
-void		ft_draw_vertical_line(int x, int drawStart, int drawEnd, \
-t_cub *cub, int *buffer);
+void		ft_draw_vertical_line(int x, t_column *column, t_cub *cub);
 int			**ft_get_image_pixels(t_img *img);
 
 // KEYS

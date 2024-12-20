@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/18 09:40:49 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:43:39 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@ void	clear_image(t_cub *cub, int color)
 	}
 }
 
-void	ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *buffer)
+void	ft_draw_vertical_line(int x, t_column *column, t_cub *cub)
 {
 	int	color;
 	int	i;
 
 	i = 0;
-	while (i < drawStart)
+	while (i < column->draw_start)
 		ft_my_mlx_pixel_put(cub, x, i++, cub->map->texture->ceiling->color);
 	i = 0;
-	while (drawStart < drawEnd)
+	while (column->draw_start < column->draw_end)
 	{
-		color = buffer[i];
-		ft_my_mlx_pixel_put(cub, x, drawStart, color);
-		drawStart++;
+		color = column->buffer[i];
+		ft_my_mlx_pixel_put(cub, x, column->draw_start, color);
+		column->draw_start++;
 		i++;
 	}
-	while (drawEnd < SCREEN_HEIGHT)
-		ft_my_mlx_pixel_put(cub, x, drawEnd++, cub->map->texture->floor->color);
+	while (column->draw_end < SCREEN_HEIGHT)
+		ft_my_mlx_pixel_put(cub, x, column->draw_end++, cub->map->texture->floor->color);
 }
 
 int	**ft_get_image_pixels(t_img *img)

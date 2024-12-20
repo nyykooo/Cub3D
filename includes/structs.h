@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 11:45:44 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:20:45 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,5 +200,13 @@ typedef struct s_cub
 	t_keys		keys;
 }	t_cub;
 
+typedef struct	s_column
+{
+	int			line_height;
+	int			draw_start;
+	int			draw_end;
+	int			tex_x;
+	int			*buffer;
+}	t_column;
 
 #endif
