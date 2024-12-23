@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 17:05:11 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:41:12 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define KEY_ESC 65307
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
+# define KEY_E 101
+# define KEY_C 99
 
 // NUMBER MACROS
 //# define ROTATION_ANGLE 0.2
@@ -49,8 +51,8 @@
 # define SCREEN_HEIGHT 480
 
 // TEXTURE MACROS
-# define TEX_WIDTH 32
-# define TEX_HEIGHT 32
+# define TEX_WIDTH 64
+# define TEX_HEIGHT 64
 
 // COLORS
 # define Red 0xFF0000

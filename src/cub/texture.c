@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/12 23:11:42 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/23 10:45:37 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,22 @@ t_texture	*ft_init_texture(void)
 	texture->south = malloc(sizeof(t_wall));
 	texture->east = malloc(sizeof(t_wall));
 	texture->west = malloc(sizeof(t_wall));
+	texture->door = malloc(sizeof(t_wall));
 	texture->north->path = NULL;
     texture->north->tex = NULL;
     texture->north->img = NULL;
-
     texture->south->path = NULL;
     texture->south->tex = NULL;
     texture->south->img = NULL;
-
     texture->east->path = NULL;
     texture->east->tex = NULL;
     texture->east->img = NULL;
-
     texture->west->path = NULL;
     texture->west->tex = NULL;
     texture->west->img = NULL;
+	texture->door->path = NULL;
+	texture->door->tex = NULL;
+	texture->door->img = NULL;
 	texture->ceiling = ft_init_color();
 	texture->floor = ft_init_color();
 	return (texture);
@@ -63,6 +64,8 @@ bool	ft_get_text_color(t_map *map, char **split)
 		map->texture->west->path = ft_strdup(split[1]);
 	else if (ft_strncmp(split[0], "EA", 2) == 0)
 		map->texture->east->path = ft_strdup(split[1]);
+	else if (ft_strncmp(split[0], "DO", 2) == 0)
+		map->texture->door->path = ft_strdup(split[1]);
 	else if (map->texture->north && map->texture->south
 		&& map->texture->west && map->texture->east
 		&& map->texture->ceiling->input
@@ -76,8 +79,8 @@ bool	ft_is_text_or_color(char *line, t_cub *cub)
 	if (line[0] == '\0' || line[0] == '\n')
 		return (true);
 	if (ft_strncmp(line, "NO", 2) == 0 || ft_strncmp(line, "SO", 2) == 0
-		|| ft_strncmp(line, "WE", 2) == 0
-		|| ft_strncmp(line, "EA", 2) == 0)
+		|| ft_strncmp(line, "WE", 2) == 0 || ft_strncmp(line, "EA", 2) == 0 \
+		|| ft_strncmp(line, "DO", 2) == 0)
 		return (true);
 	else if (ft_strncmp(line, "C", 1) == 0 || ft_strncmp(line, "F", 1) == 0)
 	{

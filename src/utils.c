@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:34:16 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/18 13:54:41 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:30:16 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ double	ft_deg_to_rad(double deg)
 
 bool	ft_is_walkable(char c)
 {
-	if (c == '0' || c == 'N' || c == 'S' || c == 'E' || c == 'W')
+	if (c == '0' || c == 'N' || c == 'S' || c == 'E' || c == 'W' || c == '3')
 		return (true);
 	return (false);
 }

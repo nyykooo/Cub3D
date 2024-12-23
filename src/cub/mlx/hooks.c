@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:11:30 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 11:43:27 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:43:09 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,36 @@ int	ft_close_x(t_cub *cub)
 	exit (0);
 }
 
+static void	ft_open_door(t_cub *cub)
+{
+	int	x;
+	int	y;
+
+	x = (int)(cub->map->player->p_x + cub->map->player->dirVector->x);
+	y = (int)(cub->map->player->p_y + cub->map->player->dirVector->y);
+	if (cub->map->map[x][y] == '2')
+	{
+		//cub->map->map[x][y] = '0';
+		cub->map->map[x][y] = '3';
+		ft_ray_casting(cub);
+	}
+}
+
+static void	ft_close_door(t_cub *cub)
+{
+	int	x;
+	int	y;
+
+	x = (int)(cub->map->player->p_x + cub->map->player->dirVector->x);
+	y = (int)(cub->map->player->p_y + cub->map->player->dirVector->y);
+	if (cub->map->map[x][y] == '3')
+	{
+		cub->map->map[x][y] = '2';
+		ft_ray_casting(cub);
+	}
+}
+
+
 int	ft_keys(t_cub *cub)
 {
 	if (cub->keys.esc)
@@ -61,5 +91,9 @@ int	ft_keys(t_cub *cub)
 	if (cub->keys.w || cub->keys.s
 		|| cub->keys.a || cub->keys.d)
 		ft_move_hub(cub);
+	if (cub->keys.e)
+		ft_open_door(cub);
+	else if (cub->keys.c)
+		ft_close_door(cub);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 16:20:45 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:38:03 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ typedef struct s_ray
 	int		stepX;
 	int		stepY;
 	int		side;
+	int		hit;
 }	t_ray;
 
 typedef struct s_dirVector
@@ -146,6 +147,7 @@ typedef struct s_texture
 	t_wall	*south;
 	t_wall	*east;
 	t_wall	*west;
+	t_wall	*door;
 }	t_texture;
 
 typedef struct s_map
@@ -176,6 +178,8 @@ typedef struct s_keys
 	bool	a;
 	bool	s;
 	bool	d;
+	bool	e;
+	bool	c;
 	bool	left;
 	bool	right;
 	bool	esc;

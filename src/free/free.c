@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/18 12:03:32 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:52:42 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,13 @@ static void	ft_clear_texture(t_texture *texture)
 			free_array(texture->west->tex);
 		free(texture->west);
 	}
+	if (texture->door->path)
+	{
+		free(texture->door->path);
+		if (texture->door->tex)
+			free_array(texture->door->tex);
+		free(texture->door);
+	}
 	if (texture->ceiling)
 		ft_clear_color(texture->ceiling);
 	if (texture->floor)
@@ -117,6 +124,8 @@ void	ft_clear_cub(void)
 			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->west->img);
 		if (cub->map->texture->east->img)
 			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->east->img);
+		if (cub->map->texture->door->img)
+			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->door->img);
     }
     if (cub->win)
     {

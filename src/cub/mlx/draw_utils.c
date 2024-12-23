@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:20:48 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/18 16:17:57 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:26:14 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,10 @@ void	calculate_initial_distances(t_player *player, t_ray *ray)
 	}
 }
 
-int	perform_dda(t_cub *cub, t_ray *ray)
+void	perform_dda(t_cub *cub, t_ray *ray)
 {
-	int	hit;
-
-	hit = 0;
-	while (hit == 0)
+	ray->hit = 0;
+	while (ray->hit == 0)
 	{
 		if (ray->sideDistX < ray->sideDistY)
 		{
@@ -87,11 +85,15 @@ int	perform_dda(t_cub *cub, t_ray *ray)
 		}
 		if (cub->map->rows <= (unsigned int)ray->mapX || cub->map->cols <= (unsigned int)ray->mapY)
 		{
-			hit = 1;
+			ray->hit = 1;
 			break ;
 		}
 		if (cub->map->map[ray->mapX][ray->mapY] == '1')
-			hit = 1;
+			ray->hit = 1;
+		else if (cub->map->map[ray->mapX][ray->mapY] == '2')
+		{
+			ray->hit = 2;
+			break ;
+		}
 	}
-	return (hit);
 }

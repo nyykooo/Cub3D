@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/18 11:34:42 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:02:04 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,15 @@ static void	ft_fill_player(t_map *map, int x, int y)
 	map->player->p_x = x + 0.5;
 	map->player->p_y = y + 0.5;
 	map->player->p_dir = map->map[x][y];
-	map->player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
-	map->player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
-	if (!map->player->dirVector || !map->player->camVector)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_dirVector dirVector or camVector", "\"\n"), 1);
-	map->player->ray = (t_ray *)malloc(sizeof(t_ray));
-	if (!map->player->ray)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
+	// map->player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	// map->player->dirVector = NULL;
+	// map->player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	// map->player->camVector = NULL;
+	// if (!map->player->dirVector || !map->player->camVector)
+	// 	ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_dirVector dirVector or camVector", "\"\n"), 1);
+	// map->player->ray = (t_ray *)malloc(sizeof(t_ray));
+	// if (!map->player->ray)
+	// 	ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
 	initial_player_dir(map);
 	initial_cam_dir(map);
 }
@@ -112,5 +114,12 @@ t_player	*ft_init_player(void)
 	player->p_dir = -1;
 	player->p_x = -1;
 	player->p_y = -1;
+	player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	if (!player->dirVector || !player->camVector)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_dirVector dirVector or camVector", "\"\n"), 1);
+	player->ray = (t_ray *)malloc(sizeof(t_ray));
+	if (!player->ray)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
 	return (player);
 }

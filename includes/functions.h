@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/20 10:35:45 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:25:21 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		ft_prepare_vec(double angle, t_dirVector *dir_vector, t_cub *cub);
 void		calculate_delta_distances(t_ray *ray);
 void		calculate_ray_direction(int x, t_ray *ray, t_player *player);
 void		calculate_initial_distances(t_player *player, t_ray *ray);
-int			perform_dda(t_cub *cub, t_ray *ray);
+void		perform_dda(t_cub *cub, t_ray *ray);
 
 // UTILS FUNCTIONS
 void		ft_rotate_vect(double angle, t_dirVector *vector);

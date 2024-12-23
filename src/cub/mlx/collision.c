@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:54:18 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/18 18:41:42 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 14:42:58 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	ft_collision_dda(t_player *player, t_cub *cub)
 		if (cub->map->rows <= (unsigned int)player->ray->mapX || \
 		cub->map->cols <= (unsigned int)player->ray->mapY)
 			break ;
-		if (cub->map->map[player->ray->mapX][player->ray->mapY] == '1')
+		if (cub->map->map[player->ray->mapX][player->ray->mapY] == '1' || \
+		cub->map->map[player->ray->mapX][player->ray->mapY] == '2')
 			break ;
 	}
 	return (0);

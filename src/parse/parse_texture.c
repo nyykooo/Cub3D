@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:10:15 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/12 21:39:04 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:04:19 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_check_for_null(t_texture *texture)
 {
 	if (!texture->north->path || !texture->south->path || \
-	!texture->west->path || !texture->east->path \
+	!texture->west->path || !texture->east->path || !texture->door->path \
 	|| !texture->ceiling || !texture->floor)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_NULL_TEXT), 1);
 }
@@ -41,6 +41,10 @@ static void	ft_check_files(t_cub *cub, t_texture *texture)
 	if (cub->fd < 0)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \
 		texture->east->path, "\"\n", 0), 1);
+	cub->fd = open(texture->door->path, O_RDONLY);
+	if (cub->fd < 0)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \
+		texture->door->path, "\"\n", 0), 1);
 	close(cub->fd);
 }
 
@@ -59,10 +63,13 @@ void	ft_get_tex_imgs(t_cub *cub, t_texture *texture)
 	texture->west->path, &width, &height);
 	texture->east->img = mlx_xpm_file_to_image(cub->mlx_ptr, \
 	texture->east->path, &width, &height);
+	texture->door->img = mlx_xpm_file_to_image(cub->mlx_ptr, \
+	texture->door->path, &width, &height);
 	texture->north->tex = ft_get_image_pixels(texture->north->img);
 	texture->south->tex = ft_get_image_pixels(texture->south->img);
 	texture->west->tex = ft_get_image_pixels(texture->west->img);
 	texture->east->tex = ft_get_image_pixels(texture->east->img);
+	texture->door->tex = ft_get_image_pixels(texture->door->img);
 }
 
 void	ft_parse_texture(void)

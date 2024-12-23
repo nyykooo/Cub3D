@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   floodfill.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:46:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/04 15:21:25 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:35:51 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ static void	ft_floodfill(t_map *map, int col, int row)
 {
 	if (row < 0 || row >= (int)map->rows
 		|| col < 0 || col >= (int)ft_strlen(map->ff_map[row])
-		|| map->ff_map[row][col] == ' '
-		|| map->ff_map[row][col] == '1' || map->ff_map[row][col] == 'x'
+		|| map->ff_map[row][col] == ' ' \
+		|| map->ff_map[row][col] == '1' \
+		|| map->ff_map[row][col] == '2' \
+		|| map->ff_map[row][col] == 'x' \
 		|| map->ff_map[row][col] == 0)
 	{
 		ft_analyze_cell(map, col, row);
