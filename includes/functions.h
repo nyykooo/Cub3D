@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/21 17:43:14 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:08:09 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define FUNCTIONS_H
 
 # include "headers.h"
+
+// RAY CASTING
+int			ft_ray_casting(t_cub *cub);
+void		ft_draw_column(t_cub *cub, int x, t_player *player);
+void		ft_fill_buffer(t_column *column, t_ray *ray, t_cub *cub);
 
 // COLLISION 
 int			ft_collision(t_map *map, t_cub *cub);
@@ -97,7 +102,7 @@ int			ft_key_release(int keycode, t_cub *cub);
 
 // MLX UTILS
 void		clear_image(t_cub *cub, int color);
-void		ft_draw_vertical_line(int x, int drawStart, int drawEnd, t_cub *cub, int *buffer);
+void		ft_draw_vertical_line(int x, t_column *column, t_cub *cub);
 int			**ft_get_image_pixels(t_img *img, int w, int h);
 
 // KEYS
@@ -119,8 +124,8 @@ void		ft_start_frame(t_frametime *frameTime);
 void		ft_end_frame(t_frametime *frameTime);
 long	ft_get_time_s(void);
 
-// IMAGE FUNCTIONS
-void	ft_draw_image(t_image *img, int w, int h, float scale);
+// SWORD FUNCTIONS
+void	ft_draw_sword(t_image *sword, int w, int h, float scale);
 
 // MINIMAP
 void	ft_draw_minimap(t_cub *cub, t_player *player);

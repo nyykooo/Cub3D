@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 23:49:32 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:54:30 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,13 @@ typedef struct s_cub
 	t_keys		keys;
 }	t_cub;
 
+typedef struct	s_column
+{
+	int			line_height;
+	int			draw_start;
+	int			draw_end;
+	int			tex_x;
+	int			*buffer;
+}	t_column;
 
 #endif
