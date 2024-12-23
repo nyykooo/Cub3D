@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:34:16 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/18 13:54:41 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:54:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ void	ft_rotate_vect(double angle, t_dirVector *vector)
 	old_x = vector->x;
 	vector->x = vector->x * cos(angle) - vector->y * sin(angle);
 	vector->y = old_x * sin(angle) + vector->y * cos(angle);
-	return;
+	return ;
 }

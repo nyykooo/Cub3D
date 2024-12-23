@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:14:36 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 12:05:06 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:56:37 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	ft_ray_casting(t_cub *cub)
 		x++;
 	}
 	if (!player->is_attacking)
-		ft_draw_sword(player->sword, SWORD_WIDTH, SWORD_HEIGHT, (SCREEN_HEIGHT / SWORD_HEIGHT));
+		ft_draw_sword(player->sword, SWORD_WIDTH,
+			SWORD_HEIGHT, (SCREEN_HEIGHT / SWORD_HEIGHT));
 	else
 		draw_sword_attack(cub, player);
 	ft_draw_minimap(cub, player);
