@@ -6,46 +6,50 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/19 16:13:36 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/22 09:26:52 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-void	ft_draw_sword(t_cub *cub, t_player *player)
+void	ft_print_img_pixel( t_image *img, int x, int y, float scale)
 {
-    int	width;
-    int	height;
-    int	y;
-    int x;
-    int new_width;
-    int new_height;
-    float scale;
-    int start_x;
-    int start_y;
+	t_cub	*cub;
+	int		tex_x;
+	int		tex_y;
 
-    width = SWORD_WIDTH;
-    height = SWORD_HEIGHT;
+	cub = ft_get_cub();
+	tex_x = x / scale;
+	tex_y = y / scale;
+	if (img->tex[tex_x][tex_y] != NONE)
+		if (img->print_y + y >= 0 && img->print_y + y < SCREEN_HEIGHT)
+			ft_my_mlx_pixel_put(cub, img->print_x + x, img->print_y + y, img->tex[tex_x][tex_y]);
+}
 
-    scale = (float)SCREEN_HEIGHT / (height);
-    new_width = width * scale;
-    new_height = height * scale;
+void	ft_draw_image(t_image *img, int n_w, int n_h, float scale)
+{
+	int			y;
+	int			x;
 
-    start_x = SCREEN_WIDTH - (SCREEN_WIDTH / 1.7f);
-    start_y = SCREEN_HEIGHT - (new_height / 1.3f);
+	y = -1;
+	while (++y < n_h)
+	{
+		x = -1;
+		while (++x < n_w)
+			ft_print_img_pixel(img, x, y, scale);
+	}
+}
 
-    // Desenhar a espada na nova posição e tamanho
-    for (y = 0; y < new_height; y++)
-    {
-        for (x = 0; x < new_width; x++)
-        {
-            int tex_x = x / scale;
-            int tex_y = y / scale;
-            if (player->sword->tex[tex_x][tex_y] != NONE){
-				if (start_y + y >= 0 && start_y + y < SCREEN_HEIGHT)
-              	  ft_my_mlx_pixel_put(cub, start_x + x, start_y + y, player->sword->tex[tex_x][tex_y]);}
-        }
-    }
+void	ft_draw_sword(t_image *sword, int w, int h, float scale)
+{
+	int			new_height;
+	int			new_width;
+
+	new_width = w * scale;
+	new_height = h * scale;
+	sword->print_x = SCREEN_WIDTH - (SCREEN_WIDTH / 1.7f);
+	sword->print_y = SCREEN_HEIGHT - (new_height / 1.3f);
+	ft_draw_image(sword, new_width, new_height, scale);
 }
 
 void	draw_column(t_cub *cub, int x, t_player *player)
@@ -129,9 +133,10 @@ int	ft_ray_casting(t_cub *cub)
 		x++;
 	}
 	if (!player->is_attacking)
-		ft_draw_sword(cub, player);
+		ft_draw_sword(player->sword, SWORD_WIDTH, SWORD_HEIGHT, (SCREEN_HEIGHT / SWORD_HEIGHT));
 	else
 		draw_sword_attack(cub, player);
+	ft_draw_minimap(cub, player);
 	ft_end_frame(&cub->frameTime);
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win, cub->img, 0, 0);
 	return (0);

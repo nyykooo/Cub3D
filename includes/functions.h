@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 16:12:54 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/21 17:43:14 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void		ft_rotate_right(t_player *player, t_cub *cub);
 void		ft_image_hub(t_cub *cub);
 
 // MOVE FUNCTIONS
-void		ft_move_player(int keycode, t_cub *cub);
+void		ft_map_move(t_cub *cub);
 void		ft_move_forward(t_cub *cub);
 void		ft_move_backward(t_cub *cub);
 void		ft_move_right(t_cub *cub);
@@ -119,9 +119,13 @@ void		ft_start_frame(t_frametime *frameTime);
 void		ft_end_frame(t_frametime *frameTime);
 long	ft_get_time_s(void);
 
+// IMAGE FUNCTIONS
+void	ft_draw_image(t_image *img, int w, int h, float scale);
 
-// SPITES
+// MINIMAP
+void	ft_draw_minimap(t_cub *cub, t_player *player);
 
+// SPRITES
 void draw_sword_attack(t_cub *cub, t_player *player);
 // void draw_sword_attack(t_cub *cub, t_player *player, int current_time);
 // void draw_cur_frame(t_cub *cub, t_sprite *anim, int x, int y);

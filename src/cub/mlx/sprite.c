@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:19:08 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/18 22:41:09 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/21 17:16:49 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_image *load_sprite_sheet(void *mlx_ptr, char *file_path, int width, int height
     img->img = mlx_xpm_file_to_image(mlx_ptr, file_path, &width, &height);
     img->width = width;
     img->height = height;
+    img->path = ft_strdup(file_path);
     img->tex = ft_get_image_pixels(img->img, width, height);
     return img;
 }

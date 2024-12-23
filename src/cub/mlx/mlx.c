@@ -6,19 +6,20 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 16:14:48 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/22 09:24:32 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-void	ft_get_sword_images(t_cub *cub, t_player *player)
+void	ft_get_player_images(t_cub *cub, t_player *player)
 {
 	t_image		*sprite;
 
-	sprite = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/sprites/attack/attackss2.xpm", 192, 64);
-	player->attack = init_sprite(sprite, 64, 64, 3, 120);
+	sprite = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/sprites/attack/attackss.xpm", 384, 64);
+	player->attack = init_sprite(sprite, 64, 64, 6, 120);
 	player->sword = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/anduril_rest.xpm", 64, 64);
+	player->helmet = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/helmet.xpm", 64, 64);
 }
 
 int	ft_mouse_click(int button, int x, int y, t_cub *cub)
@@ -89,7 +90,7 @@ void	ft_init_mlx(t_cub *cub)
 	if (!cub->win)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_WIN), 1);
 	ft_get_tex_imgs(cub, cub->map->texture);
-	ft_get_sword_images(cub, cub->map->player);
+	ft_get_player_images(cub, cub->map->player);
 	ft_image_hub(cub);
 }
 

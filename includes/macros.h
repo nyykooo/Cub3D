@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/17 21:43:05 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:14:13 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,14 @@
 # define ROTATE_FACTOR 5
 
 // FIXED POINT MACROS
-
 # define F_BITS 8
+
+// MINIMAP MACROS
+# define MINIMAP_SIZE 200     // Tamanho do minimap quadrado
+# define PLAYER_MARKER_SIZE 4 // Tamanho do player sprite
+# define MINIMAP_MARGIN 20    // margem da janela da window
+# define MINIMAP_SCALE 0.9    // escala do minimap
+# define TILE_SIZE 10         // tamanho de cada quadricula
 
 // KEY MACROS
 # define KEY_W 119
@@ -56,6 +62,10 @@
 // SWORD MACROS
 # define SWORD_WIDTH 64
 # define SWORD_HEIGHT 64
+
+// HELMET MACROS
+# define HELMET_WIDTH 64
+# define HELMET_HEIGHT 64
 
 // COLORS
 #define NONE -16777216

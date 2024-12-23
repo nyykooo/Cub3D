@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 16:12:44 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/19 23:49:32 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,19 @@ typedef struct s_image
 	char	*path;
 	int		width;
 	int		height;
+	int		print_x;
+	int		print_y;
 }	t_image;
 
 typedef struct s_sprite
 {
 	t_image	*sprite_sheet;
+	long	last_frame_time;
+	long	frame_time;
 	int		frame_w;
 	int		frame_h;
 	int		num_frames;
 	int		cur_frame;
-	long	frame_time;
-	long	last_frame_time;
 } t_sprite;
 
 typedef struct s_fixed
@@ -74,6 +76,7 @@ typedef struct s_player
 {
 	t_dirVector	*dirVector;
 	t_dirVector	*camVector;
+	t_image		*helmet;
 	t_image		*sword;
 	t_sprite	*attack;
 	double		p_y;

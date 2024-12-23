@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/19 16:14:38 by ncampbel         ###   ########.fr        #
+#    Updated: 2024/12/19 16:43:03 by ncampbel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -g -o3
 
 SRC_DIR = main utils
 
-SRC_CUB_DIR = cub texture color map_move time
+SRC_CUB_DIR = cub texture color map_move time minimap
 
 SRC_CUB_MAP_DIR = map player
 
