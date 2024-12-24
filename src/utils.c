@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:34:16 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 17:30:16 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/24 18:56:42 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,18 @@ void	ft_rotate_vect(double angle, t_dirVector *vector)
 	old_x = vector->x;
 	vector->x = vector->x * cos(angle) - vector->y * sin(angle);
 	vector->y = old_x * sin(angle) + vector->y * cos(angle);
-	return;
+	return ;
+}
+
+void	ft_free_int_array(int **array)
+{
+	int	i;
+
+	i = 0;
+	while (i < TEX_WIDTH)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }

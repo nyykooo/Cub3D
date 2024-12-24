@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:20:48 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 11:26:14 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/24 14:55:44 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,43 +57,5 @@ void	calculate_initial_distances(t_player *player, t_ray *ray)
 	{
 		ray->stepY = 1;
 		ray->sideDistY = (ray->mapY + 1.0 - player->p_y) * ray->deltaDistY;
-	}
-}
-
-void	perform_dda(t_cub *cub, t_ray *ray)
-{
-	ray->hit = 0;
-	while (ray->hit == 0)
-	{
-		if (ray->sideDistX < ray->sideDistY)
-		{
-			ray->sideDistX += ray->deltaDistX;
-			ray->mapX += ray->stepX;
-			if (ray->stepX == 1)
-				ray->side = 0;
-			else if (ray->stepX == -1)
-				ray->side = 2;
-		}
-		else
-		{
-			ray->sideDistY += ray->deltaDistY;
-			ray->mapY += ray->stepY;
-			if (ray->stepY == -1)
-				ray->side = 3;
-			else
-				ray->side = 1;
-		}
-		if (cub->map->rows <= (unsigned int)ray->mapX || cub->map->cols <= (unsigned int)ray->mapY)
-		{
-			ray->hit = 1;
-			break ;
-		}
-		if (cub->map->map[ray->mapX][ray->mapY] == '1')
-			ray->hit = 1;
-		else if (cub->map->map[ray->mapX][ray->mapY] == '2')
-		{
-			ray->hit = 2;
-			break ;
-		}
 	}
 }

@@ -6,27 +6,11 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/19 16:43:39 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/24 14:34:05 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
-
-void	clear_image(t_cub *cub, int color)
-{
-	int		x;
-	int		y;
-	char	*dst;
-
-	for (y = 0; y < SCREEN_HEIGHT; y++)
-	{
-		for (x = 0; x < SCREEN_WIDTH; x++)
-		{
-			dst = cub->addr + (y * cub->line_length + x * (cub->bpp / 8));
-			*(unsigned int *)dst = color;
-		}
-	}
-}
 
 void	ft_draw_vertical_line(int x, t_column *column, t_cub *cub)
 {
@@ -45,7 +29,8 @@ void	ft_draw_vertical_line(int x, t_column *column, t_cub *cub)
 		i++;
 	}
 	while (column->draw_end < SCREEN_HEIGHT)
-		ft_my_mlx_pixel_put(cub, x, column->draw_end++, cub->map->texture->floor->color);
+		ft_my_mlx_pixel_put(cub, x, column->draw_end++, \
+		cub->map->texture->floor->color);
 }
 
 int	**ft_get_image_pixels(t_img *img)

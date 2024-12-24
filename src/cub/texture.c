@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/23 10:45:37 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/24 14:12:44 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,6 @@ t_texture	*ft_init_texture(void)
 	texture->east = malloc(sizeof(t_wall));
 	texture->west = malloc(sizeof(t_wall));
 	texture->door = malloc(sizeof(t_wall));
-	texture->north->path = NULL;
-    texture->north->tex = NULL;
-    texture->north->img = NULL;
-    texture->south->path = NULL;
-    texture->south->tex = NULL;
-    texture->south->img = NULL;
-    texture->east->path = NULL;
-    texture->east->tex = NULL;
-    texture->east->img = NULL;
-    texture->west->path = NULL;
-    texture->west->tex = NULL;
-    texture->west->img = NULL;
-	texture->door->path = NULL;
-	texture->door->tex = NULL;
-	texture->door->img = NULL;
 	texture->ceiling = ft_init_color();
 	texture->floor = ft_init_color();
 	return (texture);

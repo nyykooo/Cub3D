@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:38:34 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/09 14:53:03 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/24 18:58:24 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static void	ft_print_maps(char **map)
 
 void	ft_print_map(t_map *map)
 {
-	//ft_print_texture(map->texture);
 	printf("\nMAP\n");
 	ft_print_maps(map->map);
 	printf("\nFLOODED MAP\n");

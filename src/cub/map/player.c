@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/20 17:02:04 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/24 14:30:23 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,47 +20,48 @@ static bool	ft_player_dir(t_map *map, int x, int y)
 	return (false);
 }
 
-static void initial_player_dir(t_map *map)
+static void	initial_player_dir(t_map *map)
 {
-	if (map->player->p_dir == 78) // N
+	if (map->player->p_dir == 78)
 	{
 		map->player->dirVector->x = -0.66;
 		map->player->dirVector->y = 0;
 	}
-	else if (map->player->p_dir == 83) // S
+	else if (map->player->p_dir == 83)
 	{
 		map->player->dirVector->x = 0.66;
 		map->player->dirVector->y = 0;
 	}
-	else if (map->player->p_dir == 69) // E
+	else if (map->player->p_dir == 69)
 	{
 		map->player->dirVector->x = 0;
 		map->player->dirVector->y = 0.66;
 	}
-	else if (map->player->p_dir == 87) // W
+	else if (map->player->p_dir == 87)
 	{
 		map->player->dirVector->x = 0;
 		map->player->dirVector->y = -0.66;
 	}
 }
-static void initial_cam_dir(t_map *map)
+
+static void	initial_cam_dir(t_map *map)
 {
-	if (map->player->p_dir == 78) // N
+	if (map->player->p_dir == 78)
 	{
 		map->player->camVector->x = 0;
 		map->player->camVector->y = 0.66;
 	}
-	else if (map->player->p_dir == 83) // S
+	else if (map->player->p_dir == 83)
 	{
 		map->player->camVector->x = 0;
 		map->player->camVector->y = -0.66;
 	}
-	else if (map->player->p_dir == 69) // E
+	else if (map->player->p_dir == 69)
 	{
 		map->player->camVector->x = 0.66;
 		map->player->camVector->y = 0;
 	}
-	else if (map->player->p_dir == 87) // W
+	else if (map->player->p_dir == 87)
 	{
 		map->player->camVector->x = -0.66;
 		map->player->camVector->y = 0;
@@ -74,15 +75,6 @@ static void	ft_fill_player(t_map *map, int x, int y)
 	map->player->p_x = x + 0.5;
 	map->player->p_y = y + 0.5;
 	map->player->p_dir = map->map[x][y];
-	// map->player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
-	// map->player->dirVector = NULL;
-	// map->player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
-	// map->player->camVector = NULL;
-	// if (!map->player->dirVector || !map->player->camVector)
-	// 	ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_dirVector dirVector or camVector", "\"\n"), 1);
-	// map->player->ray = (t_ray *)malloc(sizeof(t_ray));
-	// if (!map->player->ray)
-	// 	ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
 	initial_player_dir(map);
 	initial_cam_dir(map);
 }
@@ -102,24 +94,4 @@ void	ft_check_player(t_map *map)
 	}
 	if (map->player->p_dir == -1)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_PLAYER), 1);
-}
-
-t_player	*ft_init_player(void)
-{
-	t_player	*player;
-
-	player = (t_player *)malloc(sizeof(t_player));
-	if (!player)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": t_player player", "\"\n"), 1);
-	player->p_dir = -1;
-	player->p_x = -1;
-	player->p_y = -1;
-	player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
-	player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
-	if (!player->dirVector || !player->camVector)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_dirVector dirVector or camVector", "\"\n"), 1);
-	player->ray = (t_ray *)malloc(sizeof(t_ray));
-	if (!player->ray)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
-	return (player);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 18:45:47 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/24 14:25:27 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,27 @@ static void	ft_init_map_content(t_cub *cub)
 	i = 0;
 	while (i <= cub->map->rows)
 		cub->map->map[i++] = NULL;
+}
+
+static t_player	*ft_init_player(void)
+{
+	t_player	*player;
+
+	player = (t_player *)malloc(sizeof(t_player));
+	if (!player)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": t_player player", "\"\n"), 1);
+	player->p_dir = -1;
+	player->p_x = -1;
+	player->p_y = -1;
+	player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	if (!player->dirVector || !player->camVector)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
+		": t_dirVector dirVector or camVector", "\"\n"), 1);
+	player->ray = (t_ray *)malloc(sizeof(t_ray));
+	if (!player->ray)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
+	return (player);
 }
 
 void	ft_init_map(t_cub *cub)
