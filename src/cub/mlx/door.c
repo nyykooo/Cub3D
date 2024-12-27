@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 15:02:39 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/24 15:05:19 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/27 22:59:10 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void	ft_close_door(t_cub *cub)
 	int	x;
 	int	y;
 
+	x = (int)(cub->map->player->p_x);
+	y = (int)(cub->map->player->p_y);
+	if (cub->map->map[x][y] == '3')
+	{
+		return ;
+	}
 	x = (int)(cub->map->player->p_x + cub->map->player->dirVector->x);
 	y = (int)(cub->map->player->p_y + cub->map->player->dirVector->y);
 	if (cub->map->map[x][y] == '3')
