@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/24 14:34:05 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:31:33 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,39 @@ void	ft_draw_vertical_line(int x, t_column *column, t_cub *cub)
 		cub->map->texture->floor->color);
 }
 
+static int	**allocate_pixel_memory(int width, int height)
+{
+	int	**pixels;
+	int	x;
+
+	pixels = malloc(width * sizeof(int *));
+	if (!pixels)
+		return (NULL);
+	x = 0;
+	while (x < width)
+	{
+		pixels[x] = malloc(height * sizeof(int));
+		if (!pixels[x])
+		{
+			while (--x >= 0)
+				free(pixels[x]);
+			free(pixels);
+			return (NULL);
+		}
+		x++;
+	}
+	return (pixels);
+}
+
 int	**ft_get_image_pixels(t_img *img)
 {
 	int	**pixels;
 	int	x;
 	int	y;
 
-	x = 0;
-	pixels = malloc(TEX_WIDTH * sizeof(int *));
-	while (x < TEX_WIDTH)
-	{
-		pixels[x] = malloc(TEX_HEIGHT * sizeof(int));
-		x++;
-	}
+	pixels = allocate_pixel_memory(TEX_WIDTH, TEX_HEIGHT);
+	if (!pixels)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": int** pixels", "\"\n"), 1);
 	y = 0;
 	while (y < TEX_HEIGHT)
 	{
