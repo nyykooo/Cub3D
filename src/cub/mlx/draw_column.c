@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/24 15:07:43 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:17:47 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	ft_draw_column(t_cub *cub, int x, t_player *player)
 	len = column.draw_end - column.draw_start;
 	column.buffer = (int *)malloc(sizeof(int) * len);
 	ft_fill_buffer(&column, &ray, cub);
+	ft_shading(column.buffer, len, orto_wall_dist);
 	ft_draw_vertical_line(x, &column, cub);
 	free(column.buffer);
 }

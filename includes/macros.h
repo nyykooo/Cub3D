@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/26 23:25:08 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:03:37 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 // CONSTANTS
 # define MOVE_FACTOR 6
 # define ROTATE_FACTOR 5
+# define SHADE_FACTOR 0.02
 
 // FIXED POINT MACROS
-
 # define F_BITS 8
 
 // KEY MACROS

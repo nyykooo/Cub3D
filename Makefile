@@ -6,7 +6,7 @@
 #    By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/24 18:49:26 by brunhenr         ###   ########.fr        #
+#    Updated: 2025/01/02 13:16:12 by brunhenr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_CUB_DIR = cub texture color map_move time ray_casting
 
 SRC_CUB_MAP_DIR = map player
 
-SRC_CUB_MLX_DIR = mlx hooks image draw_column fill_buffer mlx_utils keys move draw_utils collision dda door
+SRC_CUB_MLX_DIR = mlx hooks image draw_column fill_buffer mlx_utils keys move draw_utils collision dda door shading
 
 SRC_ERROR_DIR = error
 

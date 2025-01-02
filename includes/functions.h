@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/24 18:57:13 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:15:58 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 int			ft_ray_casting(t_cub *cub);
 void		ft_draw_column(t_cub *cub, int x, t_player *player);
 void		ft_fill_buffer(t_column *column, t_ray *ray, t_cub *cub);
+void		ft_shading(int *buffer, int len, double orto_wall_dist);
 
 // COLLISION 
 int			ft_collision(t_map *map, t_cub *cub);
