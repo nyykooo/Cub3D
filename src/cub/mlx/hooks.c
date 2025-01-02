@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:11:30 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/27 22:42:14 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:41:52 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ void	ft_rotate_hub(t_cub *cub)
 void	ft_move_hub(t_cub *cub)
 {
 	if (cub->keys.w)
+	{
+		if (cub->keys.shift)
+			cub->frameTime.move_speed = cub->frameTime.move_speed * 2;
 		ft_move_forward(cub);
+	}
 	else if (cub->keys.s)
 		ft_move_backward(cub);
 	else if (cub->keys.a)

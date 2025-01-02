@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/02 14:24:57 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:41:35 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define KEY_RIGHT 65363
 # define KEY_E 101
 # define KEY_C 99
+# define KEY_SHIFT 65505
 
 // NUMBER MACROS
 //# define ROTATION_ANGLE 0.2

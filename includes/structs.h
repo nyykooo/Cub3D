@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/23 17:38:03 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:41:46 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,7 @@ typedef struct s_keys
 	bool	left;
 	bool	right;
 	bool	esc;
+	bool	shift;
 }	t_keys;
 
 typedef struct s_cub

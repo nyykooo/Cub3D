@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:29:57 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 17:41:25 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:41:25 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_key_press(int keycode, t_cub *cub)
 		cub->keys.e = true;
 	else if (keycode == KEY_C)
 		cub->keys.c = true;
+	else if (keycode == KEY_SHIFT)
+		cub->keys.shift = true;
 	return (0);
 }
 
@@ -73,5 +75,7 @@ int	ft_key_release(int keycode, t_cub *cub)
 		cub->keys.e = false;
 	else if (keycode == KEY_C)
 		cub->keys.c = false;
+	else if (keycode == KEY_SHIFT)
+		cub->keys.shift = false;
 	return (0);
 }
