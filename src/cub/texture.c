@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/24 14:12:44 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:51:15 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,23 @@ t_texture	*ft_init_texture(void)
 	t_texture	*texture;
 
 	texture = (t_texture *)malloc(sizeof(t_texture));
+	if (!texture)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_texture texture", "\"\n"), 1);
 	texture->north = malloc(sizeof(t_wall));
+	if (!texture->north)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_wall north", "\"\n"), 1);
 	texture->south = malloc(sizeof(t_wall));
+	if (!texture->south)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_wall south", "\"\n"), 1);
 	texture->east = malloc(sizeof(t_wall));
+	if (!texture->east)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_wall east", "\"\n"), 1);
 	texture->west = malloc(sizeof(t_wall));
+	if (!texture->west)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_wall west", "\"\n"), 1);
 	texture->door = malloc(sizeof(t_wall));
+	if (!texture->door)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_wall door", "\"\n"), 1);
 	texture->ceiling = ft_init_color();
 	texture->floor = ft_init_color();
 	return (texture);

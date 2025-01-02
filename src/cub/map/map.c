@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/24 14:25:27 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:51:53 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,14 @@ static t_player	*ft_init_player(void)
 
 	player = (t_player *)malloc(sizeof(t_player));
 	if (!player)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": t_player player", "\"\n"), 1);
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_player player", "\"\n"), 1);
 	player->p_dir = -1;
 	player->p_x = -1;
 	player->p_y = -1;
 	player->dirVector = (t_dirVector *)malloc(sizeof(t_dirVector));
+	if (!player->dirVector)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
+		": t_dirVector dirVector", "\"\n"), 1);
 	player->camVector = (t_dirVector *)malloc(sizeof(t_dirVector));
 	if (!player->dirVector || !player->camVector)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
