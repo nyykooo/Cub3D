@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/20 10:34:47 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:52:34 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_player *player, t_cub *cub)
 {
 	calculate_ray_direction(x, ray, player);
 	calculate_initial_distances(player, ray);
-	perform_dda(cub, ray);
+	ft_perform_dda(cub, ray);
 }
 
 static double	ft_calculate_orto_wall_dist(t_ray *ray)
@@ -68,8 +68,11 @@ void	ft_draw_column(t_cub *cub, int x, t_player *player)
 	&column.draw_start, &column.draw_end);
 	column.tex_x = ft_calculate_tex_x(&ray, player, orto_wall_dist);
 	len = column.draw_end - column.draw_start;
-	column.buffer = (int *)malloc(sizeof(int) * len); // proteger malloc
+	column.buffer = (int *)malloc(sizeof(int) * len);
+	if (!column.buffer)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": int *column.buffer", "\"\n"), 1);
 	ft_fill_buffer(&column, &ray, cub);
+	ft_shading(column.buffer, len, orto_wall_dist);
 	ft_draw_vertical_line(x, &column, cub);
 	free(column.buffer);
 }

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/20 17:14:13 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:41:35 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // CONSTANTS
 # define MOVE_FACTOR 6
 # define ROTATE_FACTOR 5
+# define SHADE_FACTOR 0.02
 
 // FIXED POINT MACROS
 # define F_BITS 8
@@ -36,6 +37,9 @@
 # define KEY_ESC 65307
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
+# define KEY_E 101
+# define KEY_C 99
+# define KEY_SHIFT 65505
 
 // NUMBER MACROS
 //# define ROTATION_ANGLE 0.2

@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:23:21 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/20 10:31:27 by brunhenr         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:31:06 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,19 @@ static double	calculate_tex_pos(int draw_start, int line_height)
 
 static int	ft_get_texture_color(t_ray *ray, t_cub *cub, int tex_x, int tex_y)
 {
-	if (ray->side == 1)
-		return (cub->map->texture->east->tex[tex_x][tex_y]);
-	else if (ray->side == 0)
-		return (cub->map->texture->south->tex[tex_x][tex_y]);
-	else if (ray->side == 2)
-		return (cub->map->texture->north->tex[tex_x][tex_y]);
-	else if (ray->side == 3)
-		return (cub->map->texture->west->tex[tex_x][tex_y]);
+	if (ray->hit == 2)
+		return (cub->map->texture->door->tex[tex_x][tex_y]);
+	else
+	{
+		if (ray->side == 1)
+			return (cub->map->texture->east->tex[tex_x][tex_y]);
+		else if (ray->side == 0)
+			return (cub->map->texture->south->tex[tex_x][tex_y]);
+		else if (ray->side == 2)
+			return (cub->map->texture->north->tex[tex_x][tex_y]);
+		else if (ray->side == 3)
+			return (cub->map->texture->west->tex[tex_x][tex_y]);
+	}
 	return (0);
 }
 

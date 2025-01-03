@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:44:27 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/19 23:49:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:38:06 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	ft_init_keys(t_cub *cub)
 	cub->keys.left = false;
 	cub->keys.right = false;
 	cub->keys.esc = false;
+	cub->keys.e = false;
+	cub->keys.c = false;
 }
 
 t_cub	*ft_init_cub(void)

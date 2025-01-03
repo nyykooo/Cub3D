@@ -22,8 +22,15 @@ void	ft_look_for_invalid_map(t_cub *cub)
 	{
 		j = -1;
 		while (++j < ft_strlen(cub->map->map[i]))
-			if (cub->map->map[i][j] == '\t')
+			if (cub->map->map[i][j] != '1' && cub->map->map[i][j] != '0' \
+			&& cub->map->map[i][j] != '2' && cub->map->map[i][j] != ' ' \
+			&& cub->map->map[i][j] != 'N' && cub->map->map[i][j] != 'S' \
+			&& cub->map->map[i][j] != 'E' && cub->map->map[i][j] != 'W' \
+			&& cub->map->map[i][j] != '\n' && cub->map->map[i][j] != '\0')
+			{
+				printf("map[%d][%d] = %c\n", i, j, cub->map->map[i][j]);
 				ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CHAR, 0), 1);
+			}
 	}
 }
 

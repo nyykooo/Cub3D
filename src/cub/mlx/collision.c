@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:54:18 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/18 18:41:42 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:42:27 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	ft_collision_dda(t_player *player, t_cub *cub)
 		if (cub->map->rows <= (unsigned int)player->ray->mapX || \
 		cub->map->cols <= (unsigned int)player->ray->mapY)
 			break ;
-		if (cub->map->map[player->ray->mapX][player->ray->mapY] == '1')
+		if (cub->map->map[player->ray->mapX][player->ray->mapY] == '1' || \
+		cub->map->map[player->ray->mapX][player->ray->mapY] == '2')
 			break ;
 	}
 	return (0);
@@ -87,7 +88,7 @@ int	ft_collision(t_map *map, t_cub *cub)
 	ft_collision_dda(map->player, cub);
 	if (map->player->ray->sideDistX < 2.0 || map->player->ray->sideDistY < 2.0)
 	{
-		system("printf \"BEEP! \\a\"");
+		//system("printf \"\\a\"");
 		return (1);
 	}
 	return (0);

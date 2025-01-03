@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:34:16 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 12:54:23 by ncampbel         ###   ########.fr       */
+/*   Updated: 2024/12/24 18:56:42 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ double	ft_deg_to_rad(double deg)
 
 bool	ft_is_walkable(char c)
 {
-	if (c == '0' || c == 'N' || c == 'S' || c == 'E' || c == 'W')
+	if (c == '0' || c == 'N' || c == 'S' || c == 'E' || c == 'W' || c == '3')
 		return (true);
 	return (false);
 }
@@ -41,4 +41,17 @@ void	ft_rotate_vect(double angle, t_dirVector *vector)
 	vector->x = vector->x * cos(angle) - vector->y * sin(angle);
 	vector->y = old_x * sin(angle) + vector->y * cos(angle);
 	return ;
+}
+
+void	ft_free_int_array(int **array)
+{
+	int	i;
+
+	i = 0;
+	while (i < TEX_WIDTH)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }

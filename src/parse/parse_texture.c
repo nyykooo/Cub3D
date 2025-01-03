@@ -15,7 +15,7 @@
 static void	ft_check_for_null(t_texture *texture)
 {
 	if (!texture->north->path || !texture->south->path || \
-	!texture->west->path || !texture->east->path \
+	!texture->west->path || !texture->east->path || !texture->door->path \
 	|| !texture->ceiling || !texture->floor)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_NULL_TEXT), 1);
 }
@@ -45,6 +45,10 @@ static void	ft_check_files(t_cub *cub, t_texture *texture)
 	if (cub->fd < 0)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \
 		texture->east->path, "\"\n", 0), 1);
+	cub->fd = open(texture->door->path, O_RDONLY);
+	if (cub->fd < 0)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_TEXT, \
+		texture->door->path, "\"\n", 0), 1);
 	close(cub->fd);
 }
 
@@ -63,12 +67,13 @@ void	ft_get_tex_imgs(t_cub *cub, t_texture *texture)
 	texture->west->path, &width, &height);
 	texture->east->img = mlx_xpm_file_to_image(cub->mlx_ptr, \
 	texture->east->path, &width, &height);
-	texture->north->tex = ft_get_image_pixels(texture->north->img,
-			width, height);
-	texture->south->tex = ft_get_image_pixels(texture->south->img,
-			width, height);
-	texture->west->tex = ft_get_image_pixels(texture->west->img, width, height);
-	texture->east->tex = ft_get_image_pixels(texture->east->img, width, height);
+	texture->door->img = mlx_xpm_file_to_image(cub->mlx_ptr, \
+	texture->door->path, &width, &height);
+	texture->north->tex = ft_get_image_pixels(texture->north->img, TEX_WIDTH, TEX_HEIGHT);
+	texture->south->tex = ft_get_image_pixels(texture->south->img, TEX_WIDTH, TEX_HEIGHT);
+	texture->west->tex = ft_get_image_pixels(texture->west->img, TEX_WIDTH, TEX_HEIGHT);
+	texture->east->tex = ft_get_image_pixels(texture->east->img, TEX_WIDTH, TEX_HEIGHT);
+	texture->door->tex = ft_get_image_pixels(texture->door->img, TEX_WIDTH, TEX_HEIGHT);
 }
 
 void	ft_parse_texture(void)

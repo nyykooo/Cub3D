@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/23 12:08:09 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:15:58 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 int			ft_ray_casting(t_cub *cub);
 void		ft_draw_column(t_cub *cub, int x, t_player *player);
 void		ft_fill_buffer(t_column *column, t_ray *ray, t_cub *cub);
+void		ft_shading(int *buffer, int len, double orto_wall_dist);
 
 // COLLISION 
 int			ft_collision(t_map *map, t_cub *cub);
@@ -30,18 +31,20 @@ void		ft_prepare_vec(double angle, t_dirVector *dir_vector, t_cub *cub);
 void		calculate_delta_distances(t_ray *ray);
 void		calculate_ray_direction(int x, t_ray *ray, t_player *player);
 void		calculate_initial_distances(t_player *player, t_ray *ray);
-int			perform_dda(t_cub *cub, t_ray *ray);
+void		ft_perform_dda(t_cub *cub, t_ray *ray);
 
 // UTILS FUNCTIONS
 void		ft_rotate_vect(double angle, t_dirVector *vector);
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
-bool		ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector);
-void		normalize_vector(t_dirVector *vector);
+bool		ft_perpendicular_vect(t_dirVector *dirVector, \
+t_dirVector *camVector);
+void		ft_free_int_array(int **array);
 
 
 // FREE FUNCTIONS
 void		ft_clear_cub(void);
+void		ft_clear_map(t_map *map);
 
 // ERROR FUNCTIONS
 char		*ft_error_msg_construct(int nbr, ...);
@@ -81,7 +84,6 @@ t_color		*ft_init_color(void);
 int			ft_create_rgb(int r, int g, int b);
 
 // PLAYER FUNCTIONS
-t_player	*ft_init_player(void);
 void		ft_check_player(t_map *map);
 
 // MLX FUNCTIONS
@@ -101,13 +103,14 @@ int			ft_key_press(int keycode, t_cub *cub);
 int			ft_key_release(int keycode, t_cub *cub);
 
 // MLX UTILS
-void		clear_image(t_cub *cub, int color);
 void		ft_draw_vertical_line(int x, t_column *column, t_cub *cub);
 int			**ft_get_image_pixels(t_img *img, int w, int h);
 
 // KEYS
 void		ft_rotate_left(t_player *player, t_cub *cub);
 void		ft_rotate_right(t_player *player, t_cub *cub);
+void		ft_open_door(t_cub *cub);
+void		ft_close_door(t_cub *cub);
 
 // MLX IMAGE FUNCTIONS
 void		ft_image_hub(t_cub *cub);

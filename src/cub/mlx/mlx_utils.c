@@ -6,27 +6,11 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:55:45 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 11:55:26 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:31:33 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
-
-void	clear_image(t_cub *cub, int color)
-{
-	int		x;
-	int		y;
-	char	*dst;
-
-	for (y = 0; y < SCREEN_HEIGHT; y++)
-	{
-		for (x = 0; x < SCREEN_WIDTH; x++)
-		{
-			dst = cub->addr + (y * cub->line_length + x * (cub->bpp / 8));
-			*(unsigned int *)dst = color;
-		}
-	}
-}
 
 void	ft_draw_vertical_line(int x, t_column *column, t_cub *cub)
 {
@@ -45,7 +29,32 @@ void	ft_draw_vertical_line(int x, t_column *column, t_cub *cub)
 		i++;
 	}
 	while (column->draw_end < SCREEN_HEIGHT)
-		ft_my_mlx_pixel_put(cub, x, column->draw_end++, cub->map->texture->floor->color);
+		ft_my_mlx_pixel_put(cub, x, column->draw_end++, \
+		cub->map->texture->floor->color);
+}
+
+static int	**allocate_pixel_memory(int width, int height)
+{
+	int	**pixels;
+	int	x;
+
+	pixels = malloc(width * sizeof(int *));
+	if (!pixels)
+		return (NULL);
+	x = 0;
+	while (x < width)
+	{
+		pixels[x] = malloc(height * sizeof(int));
+		if (!pixels[x])
+		{
+			while (--x >= 0)
+				free(pixels[x]);
+			free(pixels);
+			return (NULL);
+		}
+		x++;
+	}
+	return (pixels);
 }
 
 int	**ft_get_image_pixels(t_img *img, int w, int h)
@@ -54,13 +63,9 @@ int	**ft_get_image_pixels(t_img *img, int w, int h)
 	int	x;
 	int	y;
 
-	x = 0;
-	pixels = malloc(w * sizeof(int *));
-	while (x < w)
-	{
-		pixels[x] = malloc(h * sizeof(int));
-		x++;
-	}
+	pixels = allocate_pixel_memory(w, h);
+	if (!pixels)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": int** pixels", "\"\n"), 1);
 	y = 0;
 	while (y < h)
 	{

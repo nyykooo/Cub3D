@@ -6,7 +6,7 @@
 #    By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 17:37:50 by ncampbel          #+#    #+#              #
-#    Updated: 2024/12/23 12:09:18 by ncampbel         ###   ########.fr        #
+#    Updated: 2025/01/02 13:16:12 by brunhenr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_CUB_DIR = cub texture color map_move time ray_casting minimap
 
 SRC_CUB_MAP_DIR = map player
 
-SRC_CUB_MLX_DIR = mlx hooks image draw_column fill_buffer mlx_utils keys move draw_utils collision sprite sword
+SRC_CUB_MLX_DIR = mlx hooks image draw_column fill_buffer mlx_utils keys move draw_utils collision dda door shading sprite sword
 
 SRC_ERROR_DIR = error
 
@@ -28,7 +28,7 @@ SRC_PARSE_DIR = validation parse parse_texture
 
 SRC_PARSE_MAP_DIR = map floodfill color normalize
 
-SRC_FREE_DIR = free
+SRC_FREE_DIR = free clear
 
 SRC_PRINT_DIR = print
 

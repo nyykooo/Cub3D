@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/03 18:45:47 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:51:53 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,33 @@ static void	ft_init_map_content(t_cub *cub)
 		cub->map->map[i++] = NULL;
 }
 
+static t_player	*ft_init_player(void)
+{
+	t_player	*player;
+
+	player = (t_player *)ft_calloc(1, sizeof(t_player));
+	if (!player)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_player player", "\"\n"), 1);
+	player->p_dir = -1;
+	player->p_x = -1;
+	player->p_y = -1;
+	player->dirVector = (t_dirVector *)ft_calloc(1, sizeof(t_dirVector));
+	if (!player->dirVector)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
+		": t_dirVector dirVector", "\"\n"), 1);
+	player->camVector = (t_dirVector *)ft_calloc(1, sizeof(t_dirVector));
+	if (!player->dirVector || !player->camVector)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
+		": t_dirVector dirVector or camVector", "\"\n"), 1);
+	player->ray = (t_ray *)ft_calloc(1, sizeof(t_ray));
+	if (!player->ray)
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);
+	return (player);
+}
+
 void	ft_init_map(t_cub *cub)
 {
-	cub->map = (t_map *)malloc(sizeof(t_map));
+	cub->map = (t_map *)ft_calloc(1, sizeof(t_map));
 	if (!cub->map)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_READ, ": t_map map", "\"\n"), 1);
 	cub->map->rows = 0;
