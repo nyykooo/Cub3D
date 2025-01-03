@@ -12,10 +12,28 @@
 
 #include "../../includes/headers.h"
 
+static void	ft_clear_single_texture(t_image *texture_part)
+{
+	if (texture_part->tex)
+		ft_free_int_array(texture_part->tex, texture_part->width);
+	if (texture_part->path)
+		free(texture_part->path);
+	if (texture_part)
+		free(texture_part);
+}
+
 static void	ft_clear_player(t_player *player)
 {
 	if (player)
 	{
+		if (player->sword)
+			ft_clear_single_texture(player->sword);
+		if (player->attack)
+		{
+			if (player->attack->sprite_sheet)
+				ft_clear_single_texture(player->attack->sprite_sheet);
+			free (player->attack);
+		}
 		if (player->dirVector)
 			free(player->dirVector);
 		if (player->camVector)
@@ -32,18 +50,6 @@ static void	ft_clear_color(t_color *color)
 		free(color->input);
 	if (color)
 		free(color);
-}
-
-static void	ft_clear_single_texture(t_image *texture_part)
-{
-	if (texture_part->path)
-	{
-		free(texture_part->path);
-		if (texture_part->tex)
-			ft_free_int_array(texture_part->tex);
-	}
-	if (texture_part)
-		free(texture_part);
 }
 
 static void	ft_clear_texture(t_texture *texture)

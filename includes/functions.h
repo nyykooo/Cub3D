@@ -39,12 +39,11 @@ double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
 bool		ft_perpendicular_vect(t_dirVector *dirVector, \
 t_dirVector *camVector);
-void		ft_free_int_array(int **array);
-
 
 // FREE FUNCTIONS
 void		ft_clear_cub(void);
 void		ft_clear_map(t_map *map);
+void		ft_free_int_array(int **array, int w);
 
 // ERROR FUNCTIONS
 char		*ft_error_msg_construct(int nbr, ...);

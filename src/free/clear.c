@@ -27,6 +27,10 @@ static void	ft_clear_images(t_cub *cub)
 			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->east->img);
 		if (cub->map->texture->door->img)
 			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->door->img);
+		if (cub->map->player->attack->sprite_sheet->img)
+			mlx_destroy_image(cub->mlx_ptr, cub->map->player->attack->sprite_sheet->img);
+		if (cub->map->player->sword->img)
+			mlx_destroy_image(cub->mlx_ptr, cub->map->player->sword->img);
 	}
 }
 

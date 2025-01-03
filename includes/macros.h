@@ -67,10 +67,6 @@
 # define SWORD_WIDTH 64
 # define SWORD_HEIGHT 64
 
-// HELMET MACROS
-# define HELMET_WIDTH 64
-# define HELMET_HEIGHT 64
-
 // COLORS
 #define NONE -16777216
 # define Red 0xFF0000

@@ -19,7 +19,6 @@ void	ft_get_player_images(t_cub *cub, t_player *player)
 	sprite = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/sprites/attack/attackss.xpm", 384, 64);
 	player->attack = init_sprite(sprite, 64, 64, 6, 120);
 	player->sword = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/anduril_rest.xpm", 64, 64);
-	player->helmet = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/helmet.xpm", 64, 64);
 }
 
 int	ft_mouse_click(int button, int x, int y, t_cub *cub)

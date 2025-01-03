@@ -12,14 +12,17 @@
 
 #include "../../../includes/headers.h"
 
-t_image *load_sprite_sheet(void *mlx_ptr, char *file_path, int width, int height) {
-    t_image *img = malloc(sizeof(t_image));
-    img->img = mlx_xpm_file_to_image(mlx_ptr, file_path, &width, &height);
-    img->width = width;
-    img->height = height;
-    img->path = ft_strdup(file_path);
-    img->tex = ft_get_image_pixels(img->img, width, height);
-    return img;
+t_image	*load_sprite_sheet(void *mlx_ptr, char *file_path, int width, int height)
+{
+	t_image *img;
+	
+	img = malloc(sizeof(t_image));
+	img->img = mlx_xpm_file_to_image(mlx_ptr, file_path, &width, &height);
+	img->width = width;
+	img->height = height;
+	img->path = ft_strdup(file_path);
+	img->tex = ft_get_image_pixels(img->img, width, height);
+	return (img);
 }
 
 t_sprite *init_sprite(t_image *sprite_sheet, int frame_w, int frame_h, int num_frames, float frame_time) {

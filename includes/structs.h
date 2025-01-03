@@ -77,7 +77,6 @@ typedef struct s_player
 {
 	t_dirVector	*dirVector;
 	t_dirVector	*camVector;
-	t_image		*helmet;
 	t_image		*sword;
 	t_sprite	*attack;
 	double		p_y;

@@ -43,12 +43,12 @@ void	ft_rotate_vect(double angle, t_dirVector *vector)
 	return ;
 }
 
-void	ft_free_int_array(int **array)
+void	ft_free_int_array(int **array, int w)
 {
 	int	i;
 
 	i = 0;
-	while (i < TEX_WIDTH)
+	while (i < w)
 	{
 		free(array[i]);
 		i++;
