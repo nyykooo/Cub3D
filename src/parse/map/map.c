@@ -28,7 +28,6 @@ void	ft_look_for_invalid_map(t_cub *cub)
 			&& cub->map->map[i][j] != 'E' && cub->map->map[i][j] != 'W' \
 			&& cub->map->map[i][j] != '\n' && cub->map->map[i][j] != '\0')
 			{
-				printf("map[%d][%d] = %c\n", i, j, cub->map->map[i][j]);
 				ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CHAR, 0), 1);
 			}
 	}

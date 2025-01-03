@@ -40,6 +40,13 @@ static void	ft_prepare_line(char *line)
 			line[i] = ',';
 }
 
+static void	ft_check_dup_color(t_color *color, char *line)
+{
+	if (color->input)
+		free(color->input);
+	color->input = ft_strdup(line);
+}
+
 static void	ft_get_color(t_cub *cub, char *line)
 {
 	t_texture	*texture;
@@ -49,16 +56,16 @@ static void	ft_get_color(t_cub *cub, char *line)
 	texture = cub->map->texture;
 	if (!split)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_SPLIT), 1);
-	if (ft_strcmp(split[0], "F") == 0 && !texture->floor->input)
+	if (ft_strcmp(split[0], "F") == 0)
 	{
-		texture->floor->input = ft_strdup(line);
+		ft_check_dup_color(texture->floor, line);
 		texture->floor->red = ft_atoi(split[1]);
 		texture->floor->green = ft_atoi(split[2]);
 		texture->floor->blue = ft_atoi(split[3]);
 	}
-	else if (ft_strcmp(split[0], "C") == 0 && !texture->ceiling->input)
+	else if (ft_strcmp(split[0], "C") == 0)
 	{
-		texture->ceiling->input = ft_strdup(line);
+		ft_check_dup_color(texture->ceiling, line);
 		texture->ceiling->red = ft_atoi(split[1]);
 		texture->ceiling->green = ft_atoi(split[2]);
 		texture->ceiling->blue = ft_atoi(split[3]);

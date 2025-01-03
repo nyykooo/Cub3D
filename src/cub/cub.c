@@ -42,7 +42,6 @@ t_cub	*ft_init_cub(void)
 	ft_trim_map(cub);
 	ft_call_flood(cub->map);
 	ft_check_player(cub->map);
-	ft_print_map(cub->map);
 	ft_normalize_map(cub);
 	ft_init_keys(cub);
 	return (cub);

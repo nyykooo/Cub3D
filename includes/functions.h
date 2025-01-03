@@ -63,14 +63,13 @@ t_cub		*ft_init_cub(void);
 
 // TEXTURE FUNCTIONS
 t_texture	*ft_init_texture(void);
-bool		ft_get_text_color(t_map *map, char **split);
+void		ft_get_text_color(t_map *map, char **split);
 bool		ft_is_text_or_color(char *line, t_cub *cub);
 void		ft_get_tex_imgs(t_cub *cub, t_texture *texture);
 
 // MAP FUNCTIONS
 void		ft_init_map(t_cub *cub);
 void		ft_alloc_map(t_cub *cub);
-void		ft_print_map(t_map *map);
 void		ft_get_map_textures(t_map *map, char *line);
 void		ft_trim_map(t_cub *cub);
 void		ft_look_for_invalid_map(t_cub *cub);

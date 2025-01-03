@@ -30,7 +30,6 @@ SRC_PARSE_MAP_DIR = map floodfill color normalize
 
 SRC_FREE_DIR = free clear
 
-SRC_PRINT_DIR = print
 
 SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 	$(addsuffix .c, $(addprefix src/error/, $(SRC_ERROR_DIR))) \
@@ -39,8 +38,7 @@ SRC = $(addsuffix .c, $(addprefix src/, $(SRC_DIR))) \
 	$(addsuffix .c, $(addprefix src/free/, $(SRC_FREE_DIR))) \
 	$(addsuffix .c, $(addprefix src/cub/, $(SRC_CUB_DIR))) \
 	$(addsuffix .c, $(addprefix src/cub/map/, $(SRC_CUB_MAP_DIR))) \
-	$(addsuffix .c, $(addprefix src/cub/mlx/, $(SRC_CUB_MLX_DIR))) \
-	$(addsuffix .c, $(addprefix src/print/, $(SRC_PRINT_DIR)))
+	$(addsuffix .c, $(addprefix src/cub/mlx/, $(SRC_CUB_MLX_DIR)))
 
 # SRC_DIR_BONUS = main_bonus
 
