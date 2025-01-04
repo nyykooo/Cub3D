@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/02 13:15:58 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:32:38 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,20 +123,20 @@ void		ft_move_left(t_cub *cub);
 // TIME FUNCTIONS
 void		ft_start_frame(t_frametime *frameTime);
 void		ft_end_frame(t_frametime *frameTime);
-long	ft_get_time_s(void);
+long		ft_get_time_s(void);
 
 // SWORD FUNCTIONS
-void	ft_draw_sword(t_image *sword, int w, int h, float scale);
+void		ft_draw_sword(t_image *sword, int w, int h, float scale);
 
 // MINIMAP
-void	ft_draw_minimap(t_cub *cub, t_player *player);
+void		ft_draw_minimap(t_cub *cub, t_player *player);
 
 // SPRITES
-void draw_sword_attack(t_cub *cub, t_player *player);
+void		draw_sword_attack(t_cub *cub, t_player *player);
 // void draw_sword_attack(t_cub *cub, t_player *player, int current_time);
 // void draw_cur_frame(t_cub *cub, t_sprite *anim, int x, int y);
-void update_animation(t_sprite *anim);
-t_sprite *init_sprite(t_image *sprite_sheet, int frame_w, int frame_h, int num_frames, float frame_time);
-t_image *load_sprite_sheet(void *mlx_ptr, char *file_path, int width, int height);
+void 		update_animation(t_sprite *anim);
+t_sprite	*init_sprite(t_image *ss, int frame_w, int frame_h, int num_frames);
+t_image		*load_sprite_sheet(void *mlx_ptr, char *path, int width, int height);
 
 #endif

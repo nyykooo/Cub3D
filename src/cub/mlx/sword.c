@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   sword.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 12:05:44 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:24:48 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static void	ft_print_img_pixel( t_image *img, int x, int y, float scale)
 	tex_y = y / scale;
 	if (img->tex[tex_x][tex_y] != NONE)
 		if (img->print_y + y >= 0 && img->print_y + y < SCREEN_HEIGHT)
-			ft_my_mlx_pixel_put(cub, img->print_x + x, img->print_y + y, img->tex[tex_x][tex_y]);
+			ft_my_mlx_pixel_put(cub, img->print_x + x, \
+			img->print_y + y, img->tex[tex_x][tex_y]);
 }
 
 static void	ft_draw_image(t_image *img, int n_w, int n_h, float scale)

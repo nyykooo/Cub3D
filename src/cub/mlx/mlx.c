@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/22 09:24:32 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:31:04 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_get_player_images(t_cub *cub, t_player *player)
 {
 	t_image		*sprite;
 
-	sprite = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/sprites/attack/attackss.xpm", 384, 64);
-	player->attack = init_sprite(sprite, 64, 64, 6, 120);
+	sprite = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/sprites/attack/attackss2.xpm", 192, 64);
+	player->attack = init_sprite(sprite, 64, 64, SPRITE_LEN);
 	player->sword = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/anduril_rest.xpm", 64, 64);
 }
 

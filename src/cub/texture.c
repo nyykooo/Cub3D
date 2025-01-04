@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/02 16:51:15 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:23:46 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ void	ft_get_text_color(t_map *map, char **split)
 		ft_check_duplicated_info(map->texture->south, split[1]);
 	else if (ft_strcmp(split[0], "WE") == 0)
 		ft_check_duplicated_info(map->texture->west, split[1]);
-	else if (ft_strcmp(split[0], "EA") == 0 )
+	else if (ft_strcmp(split[0], "EA") == 0)
 		ft_check_duplicated_info(map->texture->east, split[1]);
-	else if (ft_strcmp(split[0], "DO") == 0 )
+	else if (ft_strcmp(split[0], "DO") == 0)
 		ft_check_duplicated_info(map->texture->door, split[1]);
 }
 

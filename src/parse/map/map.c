@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/11 15:40:29 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:22:47 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void	ft_look_for_invalid_map(t_cub *cub)
 			&& cub->map->map[i][j] != 'N' && cub->map->map[i][j] != 'S' \
 			&& cub->map->map[i][j] != 'E' && cub->map->map[i][j] != 'W' \
 			&& cub->map->map[i][j] != '\n' && cub->map->map[i][j] != '\0')
-			{
 				ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_CHAR, 0), 1);
-			}
 	}
 }
 
