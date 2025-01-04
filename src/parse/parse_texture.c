@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:10:15 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/23 12:56:16 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 12:18:37 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ static void	ft_check_files(t_cub *cub, t_texture *texture)
 	}
 }
 
-static void	ft_set_w_h_and_tex (int w, int h, t_image *image)
+static void	ft_set_w_h_and_tex(int w, int h, t_image *image)
 {
 	image->width = w;
 	image->height = h;
 	image->tex = ft_get_image_pixels(image->img, image->width, image->height);
-
 }
+
 void	ft_get_tex_imgs(t_cub *cub, t_texture *texture)
 {
 	int	width;
