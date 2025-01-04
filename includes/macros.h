@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 12:31:30 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 14:13:35 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@
 # define SWORD_WIDTH 64
 # define SWORD_HEIGHT 64
 
-// SPITE MACROS
+// SPRITE MACROS
+# define SPRITE_WIDTH 192
+# define SPRITE_HEIGHT 64
 # define SPRITE_LEN 3
 # define SPRITE_FRAME_TIME 120
 

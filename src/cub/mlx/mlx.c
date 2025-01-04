@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 12:31:04 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 14:14:35 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,37 @@ void	ft_get_player_images(t_cub *cub, t_player *player)
 {
 	t_image		*sprite;
 
-	sprite = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/sprites/attack/attackss2.xpm", 192, 64);
+	sprite = load_sprite_sheet(cub->mlx_ptr, \
+	"./includes/textures/sprites/attack/attackss2.xpm", \
+	SPRITE_WIDTH, SPRITE_HEIGHT);
 	player->attack = init_sprite(sprite, 64, 64, SPRITE_LEN);
-	player->sword = load_sprite_sheet(cub->mlx_ptr, "./includes/textures/anduril_rest.xpm", 64, 64);
+	player->sword = load_sprite_sheet(cub->mlx_ptr, \
+	"./includes/textures/anduril_rest.xpm", SWORD_WIDTH, SWORD_HEIGHT);
 }
 
 int	ft_mouse_click(int button, int x, int y, t_cub *cub)
 {
-    t_player	*player;
+	t_player	*player;
 
-    player = cub->map->player;
-    (void)x;
-    (void)y;
-    if (button == 1)
-    {
-        if (!player->is_attacking)
-        {
-            player->is_attacking = true;
-            player->attack->cur_frame = 0;
-            while (player->attack->cur_frame <= player->attack->num_frames -1)
-            {
-                update_animation(player->attack);
-                ft_ray_casting(cub);
-            }
-        }
-    }
-    player->is_attacking = false;
-    ft_ray_casting(cub);
-    return (0);
+	player = cub->map->player;
+	(void)x;
+	(void)y;
+	if (button == 1)
+	{
+		if (!player->is_attacking)
+		{
+			player->is_attacking = true;
+			player->attack->cur_frame = 0;
+			while (player->attack->cur_frame <= player->attack->num_frames -1)
+			{
+				update_animation(player->attack);
+				ft_ray_casting(cub);
+			}
+		}
+	}
+	player->is_attacking = false;
+	ft_ray_casting(cub);
+	return (0);
 }
 
 int	ft_mouse(int x, int y, t_cub *cub)
