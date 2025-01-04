@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   collision.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:54:18 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/02 16:42:27 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 14:10:02 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,6 @@ int	ft_collision(t_map *map, t_cub *cub)
 	ft_collision_dists(map->player);
 	ft_collision_dda(map->player, cub);
 	if (map->player->ray->sideDistX < 2.0 || map->player->ray->sideDistY < 2.0)
-	{
-		//system("printf \"\\a\"");
 		return (1);
-	}
 	return (0);
 }
