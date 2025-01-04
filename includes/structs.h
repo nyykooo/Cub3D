@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/02 15:41:46 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 17:17:14 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ typedef struct s_sprite
 	int		frame_h;
 	int		num_frames;
 	int		cur_frame;
+
+	// new stuff
+	float	sprt_scl;
+	int		frame_y;
+	int		new_w;
+	int		new_h;
+	int		start_x;
+	int		start_y;
 } t_sprite;
 
 typedef struct s_fixed

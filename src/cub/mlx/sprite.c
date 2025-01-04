@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:19:08 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 12:35:25 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 17:30:48 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,30 +52,120 @@ void	update_animation(t_sprite *anim)
 	}
 }
 
-void	draw_sword_attack(t_cub *cub, t_player *player)
+// void	draw_sword_attack(t_cub *cub, t_player *player)
+// {
+// 	float	scale;
+// 	int		frame_y;
+// 	int		new_width;
+// 	int		new_height;
+// 	int		start_x;
+// 	int		start_y;
+// 	int		i;
+// 	int		j;
+// 	int		tex_x;
+// 	int		tex_y;
+// 	int		color;
+
+// 	frame_y = player->attack->frame_w * player->attack->cur_frame;
+// 	if (frame_y == player->attack->sprite_sheet->width)
+// 		return ;
+// 	scale = (float)SCREEN_HEIGHT / player->attack->frame_h;
+// 	new_width = player->attack->frame_w * scale;
+// 	new_height = player->attack->frame_h * scale;
+// 	start_x = SCREEN_WIDTH - (SCREEN_WIDTH / 1.7f);
+// 	start_y = SCREEN_HEIGHT - (new_height / 1.3f);
+// 	i = -1;
+// 	while (++i < new_height)
+// 	{
+// 		j = -1;
+// 		while (++j < new_width)
+// 		{
+// 			tex_x = i / scale;
+// 			tex_y = (new_width - j - 1) / scale;
+// 			color = player->attack->sprite_sheet->tex[frame_y + tex_y][tex_x];
+// 			if (color != NONE)
+// 			{
+// 				if (start_y + i >= 0 && start_y + i < SCREEN_HEIGHT)
+// 					ft_my_mlx_pixel_put(cub, start_x + j, start_y + i, color);
+// 			}
+// 		}
+// 	}
+// }
+
+float	calculate_scale(int screen_height, int frame_height)
 {
-	int	frame_y;
+	return ((float)screen_height / frame_height);
+}
 
-	frame_y = player->attack->frame_w * player->attack->cur_frame;
-	if (frame_y == player->attack->sprite_sheet->width)
-		return ;
+void	calculate_dimensions(t_player *player)
+{
+	t_sprite	*attack;
 
-	float scale = (float)SCREEN_HEIGHT / player->attack->frame_h;
-	int new_width = player->attack->frame_w * scale;
-	int new_height = player->attack->frame_h * scale;
+	attack = player->attack;
+	attack->new_w = player->attack->frame_w * attack->sprt_scl;
+	attack->new_h = player->attack->frame_h * attack->sprt_scl;
+}
 
-	int start_x = SCREEN_WIDTH - (SCREEN_WIDTH / 1.7f);
-	int start_y = SCREEN_HEIGHT - (new_height / 1.3f);
+void	calculate_start_positions(int screen_width, int screen_height)
+{
+	t_sprite	*attack;
 
-	for (int i = 0; i < new_height; i++) {
-		for (int j = 0; j < new_width; j++) {
-			int tex_x = i / scale;
-			int tex_y = (new_width - j - 1) / scale;
-			int color = player->attack->sprite_sheet->tex[frame_y + tex_y][tex_x];
-			if (color != NONE) {
-				if (start_y + i >= 0 && start_y + i < SCREEN_HEIGHT)
-					ft_my_mlx_pixel_put(cub, start_x + j, start_y + i, color);
-			}
+	attack = ft_get_cub()->map->player->attack;
+	attack->start_x = screen_width - (screen_width / 1.7f);
+	attack->start_y = screen_height - (attack->new_h / 1.3f);
+}
+
+int	get_frame_y(t_player *player)
+{
+	return (player->attack->frame_w * player->attack->cur_frame);
+}
+
+void	draw_pixel(t_cub *cub, int i, int j, int color)
+{
+	t_sprite	*attack;
+
+	attack = cub->map->player->attack;
+	if (color != NONE)
+	{
+		if (attack->start_y + i >= 0 && attack->start_y + i < SCREEN_HEIGHT)
+			ft_my_mlx_pixel_put(cub, attack->start_x + j, \
+			attack->start_y + i, color);
+	}
+}
+
+void	draw_frame(t_cub *cub, t_player *player)
+{
+	int	i;
+	int	j;
+	int	tex_x;
+	int	tex_y;
+	int	color;
+
+	i = -1;
+	while (++i < player->attack->new_h)
+	{
+		j = -1;
+		while (++j < player->attack->new_w)
+		{
+			tex_x = i / player->attack->sprt_scl;
+			tex_y = (player->attack->new_w - j - 1) / player->attack->sprt_scl;
+			color = player->attack->sprite_sheet->tex[player->attack->frame_y \
+			+ tex_y][tex_x];
+			draw_pixel(cub, i, j, color);
 		}
 	}
+}
+
+void	draw_sword_attack(t_cub *cub, t_player *player)
+{
+	t_sprite	*attack;
+
+	attack = player->attack;
+	attack->frame_y = get_frame_y(player);
+	if (attack->frame_y == player->attack->sprite_sheet->width)
+		return ;
+	attack->sprt_scl = calculate_scale(SCREEN_HEIGHT, player->attack->frame_h);
+	calculate_dimensions(player);
+	calculate_start_positions(SCREEN_WIDTH, SCREEN_HEIGHT);
+	draw_frame(cub, player);
 }
