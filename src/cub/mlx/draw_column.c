@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:31:26 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/02 16:52:34 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:11:44 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ t_player *player, t_cub *cub)
 static double	ft_calculate_orto_wall_dist(t_ray *ray)
 {
 	if (ray->side == 0 || ray->side == 2)
-		return (ray->sideDistX - ray->deltaDistX);
+		return (ray->sidedist_x - ray->deltadist_x);
 	else
-		return (ray->sideDistY - ray->deltaDistY);
+		return (ray->sidedist_y - ray->deltadist_y);
 }
 
 static void	ft_calculate_line_params(double orto_wall_dist, int *line_height, \
@@ -43,14 +43,14 @@ double orto_wall_dist)
 	int		tex_x;
 
 	if (ray->side == 0 || ray->side == 2)
-		wall_cord = player->p_y + orto_wall_dist * ray->dirY;
+		wall_cord = player->p_y + orto_wall_dist * ray->dir_y;
 	else
-		wall_cord = player->p_x + orto_wall_dist * ray->dirX;
+		wall_cord = player->p_x + orto_wall_dist * ray->dir_x;
 	wall_cord -= floor((wall_cord));
 	tex_x = (int)(wall_cord * (double)TEX_WIDTH);
-	if ((ray->side == 0 || ray->side == 2) && ray->dirX > 0)
+	if ((ray->side == 0 || ray->side == 2) && ray->dir_x > 0)
 		tex_x = TEX_WIDTH - tex_x - 1;
-	if ((ray->side == 1 || ray->side == 3) && ray->dirY < 0)
+	if ((ray->side == 1 || ray->side == 3) && ray->dir_y < 0)
 		tex_x = TEX_WIDTH - tex_x - 1;
 	return (tex_x);
 }

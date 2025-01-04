@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:34:16 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/24 18:56:42 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:21:32 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ bool	ft_is_walkable(char c)
 	return (false);
 }
 
-bool	ft_perpendicular_vect(t_dirVector *dirVector, t_dirVector *camVector)
+bool	ft_perpendicular_vect(t_dir_vector *dir_vector, \
+t_dir_vector *cam_vector)
 {
 	double	dot_product;
 
-	dot_product = dirVector->x * camVector->x + dirVector->y * camVector->y;
+	dot_product = dir_vector->x * cam_vector->x + dir_vector->y * cam_vector->y;
 	return (fabs(dot_product) < 0.000001);
 }
 
-void	ft_rotate_vect(double angle, t_dirVector *vector)
+void	ft_rotate_vect(double angle, t_dir_vector *vector)
 {
 	double	old_x;
 

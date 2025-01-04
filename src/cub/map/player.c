@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:10:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/24 14:30:23 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:15:17 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,23 @@ static void	initial_player_dir(t_map *map)
 {
 	if (map->player->p_dir == 78)
 	{
-		map->player->dirVector->x = -0.66;
-		map->player->dirVector->y = 0;
+		map->player->dir_vector->x = -0.66;
+		map->player->dir_vector->y = 0;
 	}
 	else if (map->player->p_dir == 83)
 	{
-		map->player->dirVector->x = 0.66;
-		map->player->dirVector->y = 0;
+		map->player->dir_vector->x = 0.66;
+		map->player->dir_vector->y = 0;
 	}
 	else if (map->player->p_dir == 69)
 	{
-		map->player->dirVector->x = 0;
-		map->player->dirVector->y = 0.66;
+		map->player->dir_vector->x = 0;
+		map->player->dir_vector->y = 0.66;
 	}
 	else if (map->player->p_dir == 87)
 	{
-		map->player->dirVector->x = 0;
-		map->player->dirVector->y = -0.66;
+		map->player->dir_vector->x = 0;
+		map->player->dir_vector->y = -0.66;
 	}
 }
 
@@ -48,23 +48,23 @@ static void	initial_cam_dir(t_map *map)
 {
 	if (map->player->p_dir == 78)
 	{
-		map->player->camVector->x = 0;
-		map->player->camVector->y = 0.66;
+		map->player->cam_vector->x = 0;
+		map->player->cam_vector->y = 0.66;
 	}
 	else if (map->player->p_dir == 83)
 	{
-		map->player->camVector->x = 0;
-		map->player->camVector->y = -0.66;
+		map->player->cam_vector->x = 0;
+		map->player->cam_vector->y = -0.66;
 	}
 	else if (map->player->p_dir == 69)
 	{
-		map->player->camVector->x = 0.66;
-		map->player->camVector->y = 0;
+		map->player->cam_vector->x = 0.66;
+		map->player->cam_vector->y = 0;
 	}
 	else if (map->player->p_dir == 87)
 	{
-		map->player->camVector->x = -0.66;
-		map->player->camVector->y = 0;
+		map->player->cam_vector->x = -0.66;
+		map->player->cam_vector->y = 0;
 	}
 }
 

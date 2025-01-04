@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 15:02:39 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/27 22:59:10 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:14:25 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_open_door(t_cub *cub)
 	int	x;
 	int	y;
 
-	x = (int)(cub->map->player->p_x + cub->map->player->dirVector->x);
-	y = (int)(cub->map->player->p_y + cub->map->player->dirVector->y);
+	x = (int)(cub->map->player->p_x + cub->map->player->dir_vector->x);
+	y = (int)(cub->map->player->p_y + cub->map->player->dir_vector->y);
 	if (cub->map->map[x][y] == '2')
 	{
 		cub->map->map[x][y] = '3';
@@ -37,8 +37,8 @@ void	ft_close_door(t_cub *cub)
 	{
 		return ;
 	}
-	x = (int)(cub->map->player->p_x + cub->map->player->dirVector->x);
-	y = (int)(cub->map->player->p_y + cub->map->player->dirVector->y);
+	x = (int)(cub->map->player->p_x + cub->map->player->dir_vector->x);
+	y = (int)(cub->map->player->p_y + cub->map->player->dir_vector->y);
 	if (cub->map->map[x][y] == '3')
 	{
 		cub->map->map[x][y] = '2';

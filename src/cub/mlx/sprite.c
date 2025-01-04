@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprite.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:19:08 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 17:30:48 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:31:20 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,34 +92,6 @@ void	update_animation(t_sprite *anim)
 // 	}
 // }
 
-float	calculate_scale(int screen_height, int frame_height)
-{
-	return ((float)screen_height / frame_height);
-}
-
-void	calculate_dimensions(t_player *player)
-{
-	t_sprite	*attack;
-
-	attack = player->attack;
-	attack->new_w = player->attack->frame_w * attack->sprt_scl;
-	attack->new_h = player->attack->frame_h * attack->sprt_scl;
-}
-
-void	calculate_start_positions(int screen_width, int screen_height)
-{
-	t_sprite	*attack;
-
-	attack = ft_get_cub()->map->player->attack;
-	attack->start_x = screen_width - (screen_width / 1.7f);
-	attack->start_y = screen_height - (attack->new_h / 1.3f);
-}
-
-int	get_frame_y(t_player *player)
-{
-	return (player->attack->frame_w * player->attack->cur_frame);
-}
-
 void	draw_pixel(t_cub *cub, int i, int j, int color)
 {
 	t_sprite	*attack;
@@ -154,18 +126,4 @@ void	draw_frame(t_cub *cub, t_player *player)
 			draw_pixel(cub, i, j, color);
 		}
 	}
-}
-
-void	draw_sword_attack(t_cub *cub, t_player *player)
-{
-	t_sprite	*attack;
-
-	attack = player->attack;
-	attack->frame_y = get_frame_y(player);
-	if (attack->frame_y == player->attack->sprite_sheet->width)
-		return ;
-	attack->sprt_scl = calculate_scale(SCREEN_HEIGHT, player->attack->frame_h);
-	calculate_dimensions(player);
-	calculate_start_positions(SCREEN_WIDTH, SCREEN_HEIGHT);
-	draw_frame(cub, player);
 }

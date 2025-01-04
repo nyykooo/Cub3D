@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:43:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/24 18:57:16 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:15:17 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static void	ft_clear_player(t_player *player)
 				ft_clear_single_texture(player->attack->sprite_sheet);
 			free (player->attack);
 		}
-		if (player->dirVector)
-			free(player->dirVector);
-		if (player->camVector)
-			free(player->camVector);
+		if (player->dir_vector)
+			free(player->dir_vector);
+		if (player->cam_vector)
+			free(player->cam_vector);
 		if (player->ray)
 			free(player->ray);
 		free (player);

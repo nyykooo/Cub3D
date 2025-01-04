@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 17:17:14 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:19:03 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STRUCTS_H
 
 # include "headers.h"
+
 typedef struct s_list
 {
 	void			*content;
@@ -48,7 +49,7 @@ typedef struct s_sprite
 	int		new_h;
 	int		start_x;
 	int		start_y;
-} t_sprite;
+}	t_sprite;
 
 typedef struct s_fixed
 {
@@ -59,39 +60,40 @@ typedef struct s_fixed
 	int			(*get_raw_bits)(void);
 	void		(*set_raw_bits)(int const raw);
 }	t_fixed;
+
 typedef struct s_ray
 {
-	double	dirX;
-	double	dirY;
-	int		mapX;
-	int		mapY;
-	double	sideDistX;
-	double	sideDistY;
-	double	deltaDistX;
-	double	deltaDistY;
-	int		stepX;
-	int		stepY;
+	double	dir_x;
+	double	dir_y;
+	int		map_x;
+	int		map_y;
+	double	sidedist_x;
+	double	sidedist_y;
+	double	deltadist_x;
+	double	deltadist_y;
+	int		step_x;
+	int		step_y;
 	int		side;
 	int		hit;
 }	t_ray;
 
-typedef struct s_dirVector
+typedef struct s_dir_vector
 {
 	double	x;
 	double	y;
-}	t_dirVector;
+}	t_dir_vector;
 
 typedef struct s_player
 {
-	t_dirVector	*dirVector;
-	t_dirVector	*camVector;
-	t_image		*sword;
-	t_sprite	*attack;
-	double		p_y;
-	double		p_x;
-	char		p_dir;
-	t_ray		*ray; // Agora o player tem um ray para emitir um raio para verificar a distância até a parede
-	bool		is_attacking;
+	t_dir_vector	*dir_vector;
+	t_dir_vector	*cam_vector;
+	t_image			*sword;
+	t_sprite		*attack;
+	double			p_y;
+	double			p_x;
+	char			p_dir;
+	t_ray			*ray; // for collision
+	bool			is_attacking;
 }	t_player;
 
 typedef struct s_color
@@ -127,14 +129,14 @@ typedef struct s_map
 	unsigned int	cols;
 }	t_map;
 
-typedef struct s_frametime
+typedef struct s_frame_time
 {
 	struct timeval	start;
 	struct timeval	end;
 	double			frame_time;
 	double			move_speed;
 	double			rot_speed;
-}	t_frametime;
+}	t_frame_time;
 
 typedef struct s_keys
 {
@@ -152,24 +154,24 @@ typedef struct s_keys
 
 typedef struct s_cub
 {
-	t_map		*map;
-	void		*mlx_ptr;
-	void		*win;
-	void		*img;
-	char		*addr;
-	int			bpp;
-	int			line_length;
-	int			endian;
-	int			mouse_x;
-	int			mouse_y;
-	char		*file;
-	char		*line;
-	int			fd;
-	t_frametime	frameTime;
-	t_keys		keys;
+	t_map			*map;
+	void			*mlx_ptr;
+	void			*win;
+	void			*img;
+	char			*addr;
+	int				bpp;
+	int				line_length;
+	int				endian;
+	int				mouse_x;
+	int				mouse_y;
+	char			*file;
+	char			*line;
+	int				fd;
+	t_frame_time	frame_time;
+	t_keys			keys;
 }	t_cub;
 
-typedef struct	s_column
+typedef struct s_column
 {
 	int			line_height;
 	int			draw_start;

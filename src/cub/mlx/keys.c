@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:29:57 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/02 15:41:25 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:17:50 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ void	ft_rotate_left(t_player *player, t_cub *cub)
 {
 	double	angle;
 
-	angle = cub->frameTime.rot_speed;
-	ft_rotate_vect(angle, player->dirVector);
-	ft_rotate_vect(angle, player->camVector);
+	angle = cub->frame_time.rot_speed;
+	ft_rotate_vect(angle, player->dir_vector);
+	ft_rotate_vect(angle, player->cam_vector);
 }
 
 void	ft_rotate_right(t_player *player, t_cub *cub)
 {
 	double	angle;
 
-	angle = cub->frameTime.rot_speed * -1;
-	ft_rotate_vect(angle, player->dirVector);
-	ft_rotate_vect(angle, player->camVector);
+	angle = cub->frame_time.rot_speed * -1;
+	ft_rotate_vect(angle, player->dir_vector);
+	ft_rotate_vect(angle, player->cam_vector);
 }
 
 int	ft_key_press(int keycode, t_cub *cub)

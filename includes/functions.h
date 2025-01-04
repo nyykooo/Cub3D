@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 12:32:38 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:17:50 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		ft_shading(int *buffer, int len, double orto_wall_dist);
 int			ft_collision(t_map *map, t_cub *cub);
 int			ft_collision_dda(t_player *player, t_cub *cub);
 void		ft_collision_dists(t_player *player);
-void		ft_prepare_vec(double angle, t_dirVector *dir_vector, t_cub *cub);
+void		ft_prepare_vec(double angle, t_dir_vector *dir_vector, t_cub *cub);
 
 // DRAW UTILS
 void		calculate_delta_distances(t_ray *ray);
@@ -34,11 +34,11 @@ void		calculate_initial_distances(t_player *player, t_ray *ray);
 void		ft_perform_dda(t_cub *cub, t_ray *ray);
 
 // UTILS FUNCTIONS
-void		ft_rotate_vect(double angle, t_dirVector *vector);
+void		ft_rotate_vect(double angle, t_dir_vector *vector);
 double		ft_deg_to_rad(double deg);
 bool		ft_is_walkable(char c);
-bool		ft_perpendicular_vect(t_dirVector *dirVector, \
-t_dirVector *camVector);
+bool		ft_perpendicular_vect(t_dir_vector *dir_vector, \
+t_dir_vector *cam_vector);
 
 // FREE FUNCTIONS
 void		ft_clear_cub(void);
@@ -56,6 +56,11 @@ void		ft_input_validation(char **av, int ac);
 void		ft_parse_texture(void);
 void		ft_parse_color(t_cub *cub, char *line);
 void		ft_normalize_map(t_cub *cub);
+void		ft_get_tex_imgs(t_cub *cub, t_texture *texture);
+
+// CHECK COLORS
+void		ft_check_dup_color(t_color *color, char *line);
+void		ft_check_errors(t_cub *cub, char *color);
 
 // CUB FUNCTIONS
 t_cub		*ft_get_cub(void);
@@ -120,23 +125,27 @@ void		ft_move_backward(t_cub *cub);
 void		ft_move_right(t_cub *cub);
 void		ft_move_left(t_cub *cub);
 
+// MOUSE FUNCTIONS
+int			ft_mouse(int x, int y, t_cub *cub);
+int			ft_mouse_click(int button, int x, int y, t_cub *cub);
+
 // TIME FUNCTIONS
-void		ft_start_frame(t_frametime *frameTime);
-void		ft_end_frame(t_frametime *frameTime);
+void		ft_start_frame(t_frame_time *frame_time);
+void		ft_end_frame(t_frame_time *frame_time);
 long		ft_get_time_s(void);
 
 // SWORD FUNCTIONS
 void		ft_draw_sword(t_image *sword, int w, int h, float scale);
+void		draw_frame(t_cub *cub, t_player *player);
 
 // MINIMAP
 void		ft_draw_minimap(t_cub *cub, t_player *player);
 
 // SPRITES
 void		draw_sword_attack(t_cub *cub, t_player *player);
-// void draw_sword_attack(t_cub *cub, t_player *player, int current_time);
-// void draw_cur_frame(t_cub *cub, t_sprite *anim, int x, int y);
-void 		update_animation(t_sprite *anim);
+void		update_animation(t_sprite *anim);
 t_sprite	*init_sprite(t_image *ss, int frame_w, int frame_h, int num_frames);
-t_image		*load_sprite_sheet(void *mlx_ptr, char *path, int width, int height);
+t_image		*load_sprite_sheet(void *mlx_ptr, char *path, \
+int width, int height);
 
 #endif

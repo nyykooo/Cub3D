@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:20:48 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/24 14:55:44 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:15:17 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,45 @@ void	calculate_ray_direction(int x, t_ray *ray, t_player *player)
 	double	param;
 
 	param = (2 * x / (double)SCREEN_WIDTH) - 1;
-	ray->dirX = player->dirVector->x + (param * player->camVector->x);
-	ray->dirY = player->dirVector->y + (param * player->camVector->y);
+	ray->dir_x = player->dir_vector->x + (param * player->cam_vector->x);
+	ray->dir_y = player->dir_vector->y + (param * player->cam_vector->y);
 }
 
 void	calculate_delta_distances(t_ray *ray)
 {
-	if (ray->dirX == 0)
-		ray->deltaDistX = 1e30;
+	if (ray->dir_x == 0)
+		ray->deltadist_x = 1e30;
 	else
-		ray->deltaDistX = fabs(1 / ray->dirX);
-	if (ray->dirY == 0)
-		ray->deltaDistY = 1e30;
+		ray->deltadist_x = fabs(1 / ray->dir_x);
+	if (ray->dir_y == 0)
+		ray->deltadist_y = 1e30;
 	else
-		ray->deltaDistY = fabs(1 / ray->dirY);
+		ray->deltadist_y = fabs(1 / ray->dir_y);
 }
 
 void	calculate_initial_distances(t_player *player, t_ray *ray)
 {
-	ray->mapX = (int)player->p_x;
-	ray->mapY = (int)player->p_y;
+	ray->map_x = (int)player->p_x;
+	ray->map_y = (int)player->p_y;
 	calculate_delta_distances(ray);
-	if (ray->dirX < 0)
+	if (ray->dir_x < 0)
 	{
-		ray->stepX = -1;
-		ray->sideDistX = (player->p_x - ray->mapX) * ray->deltaDistX;
+		ray->step_x = -1;
+		ray->sidedist_x = (player->p_x - ray->map_x) * ray->deltadist_x;
 	}
 	else
 	{
-		ray->stepX = 1;
-		ray->sideDistX = (ray->mapX + 1.0 - player->p_x) * ray->deltaDistX;
+		ray->step_x = 1;
+		ray->sidedist_x = (ray->map_x + 1.0 - player->p_x) * ray->deltadist_x;
 	}
-	if (ray->dirY < 0)
+	if (ray->dir_y < 0)
 	{
-		ray->stepY = -1;
-		ray->sideDistY = (player->p_y - ray->mapY) * ray->deltaDistY;
+		ray->step_y = -1;
+		ray->sidedist_y = (player->p_y - ray->map_y) * ray->deltadist_y;
 	}
 	else
 	{
-		ray->stepY = 1;
-		ray->sideDistY = (ray->mapY + 1.0 - player->p_y) * ray->deltaDistY;
+		ray->step_y = 1;
+		ray->sidedist_y = (ray->map_y + 1.0 - player->p_y) * ray->deltadist_y;
 	}
 }

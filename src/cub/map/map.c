@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/02 16:51:53 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:15:17 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ static t_player	*ft_init_player(void)
 	player->p_dir = -1;
 	player->p_x = -1;
 	player->p_y = -1;
-	player->dirVector = (t_dirVector *)ft_calloc(1, sizeof(t_dirVector));
-	if (!player->dirVector)
+	player->dir_vector = (t_dir_vector *)ft_calloc(1, sizeof(t_dir_vector));
+	if (!player->dir_vector)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
-		": t_dirVector dirVector", "\"\n"), 1);
-	player->camVector = (t_dirVector *)ft_calloc(1, sizeof(t_dirVector));
-	if (!player->dirVector || !player->camVector)
+		": t_dir_vector dir_vector", "\"\n"), 1);
+	player->cam_vector = (t_dir_vector *)ft_calloc(1, sizeof(t_dir_vector));
+	if (!player->dir_vector || !player->cam_vector)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
-		": t_dirVector dirVector or camVector", "\"\n"), 1);
+		": t_dir_vector dir_vector or cam_vector", "\"\n"), 1);
 	player->ray = (t_ray *)ft_calloc(1, sizeof(t_ray));
 	if (!player->ray)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_ray ray", "\"\n"), 1);

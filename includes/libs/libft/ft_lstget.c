@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstget.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 19:04:52 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/09 19:12:16 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:38:39 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstget(t_list *lst, int index)
 {
 	t_list	*n;
-	int i;
+	int		i;
 
 	i = 0;
 	n = lst;

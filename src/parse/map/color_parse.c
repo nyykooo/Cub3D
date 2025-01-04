@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.c                                            :+:      :+:    :+:   */
+/*   color_parse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:39:18 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/13 15:59:46 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:02:18 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
-
-static void	ft_check_errors(t_cub *cub, char *color)
-{
-	if (strcmp(color, "F") == 0)
-	{
-		if (cub->map->texture->floor->red == -1
-			|| cub->map->texture->floor->green == -1
-			|| cub->map->texture->floor->blue == -1)
-			ERROR_PRINT(ERROR_MSG(1, ERROR_NULL_TEXT), 1);
-	}
-	else if (strcmp(color, "C") == 0)
-	{
-		if (cub->map->texture->ceiling->red == -1
-			|| cub->map->texture->ceiling->green == -1
-			|| cub->map->texture->ceiling->blue == -1)
-			ERROR_PRINT(ERROR_MSG(1, ERROR_NULL_TEXT), 1);
-	}
-}
 
 static void	ft_prepare_line(char *line)
 {
@@ -38,13 +20,6 @@ static void	ft_prepare_line(char *line)
 	while (line[++i])
 		if (ft_isspace(line[i]))
 			line[i] = ',';
-}
-
-static void	ft_check_dup_color(t_color *color, char *line)
-{
-	if (color->input)
-		free(color->input);
-	color->input = ft_strdup(line);
 }
 
 static void	ft_get_color(t_cub *cub, char *line)

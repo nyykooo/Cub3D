@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:11:30 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/02 15:41:52 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:17:50 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	ft_rotate_hub(t_cub *cub)
 	if (cub->keys.left)
 	{
 		ft_rotate_left(cub->map->player, cub);
-		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
+		if (!ft_perpendicular_vect(player->dir_vector, player->cam_vector))
 			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
 		ft_ray_casting(cub);
 	}
 	if (cub->keys.right)
 	{
 		ft_rotate_right(cub->map->player, cub);
-		if (!ft_perpendicular_vect(player->dirVector, player->camVector))
+		if (!ft_perpendicular_vect(player->dir_vector, player->cam_vector))
 			ERROR_PRINT(ERROR_MSG(1, ERROR_VECTORS), 1);
 		ft_ray_casting(cub);
 	}
@@ -38,7 +38,7 @@ void	ft_move_hub(t_cub *cub)
 	if (cub->keys.w)
 	{
 		if (cub->keys.shift)
-			cub->frameTime.move_speed = cub->frameTime.move_speed * 2;
+			cub->frame_time.move_speed = cub->frame_time.move_speed * 2;
 		ft_move_forward(cub);
 	}
 	else if (cub->keys.s)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 14:13:35 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:01:03 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,10 @@
 # define PI 3.14159265358979323846
 
 // EVENT MASKS
-# define KeyPressMask        (1L<<0) // 1L (o L é para long)
-# define KeyReleaseMask      (1L<<1) // 2L
-# define ButtonPressMask     (1L<<2) // 4L
-# define ButtonReleaseMask   (1L<<3) // 8L
-# define PointerMotionMask   (1L<<6) // 64L
-# define PointerMotionHintMask (1L<<7) // 128L
-# define ExposureMask        (1L<<15) // 32768L
-# define StructureNotifyMask (1L<<17) // 131072L
+# define KEYPRESS_MASK 0x01
+# define KEYRELEASE_MASK 0x02
+# define BUTTONPRESS_MASK 0x04
+# define POINTERMOTION_MASK 0x40
 
 // SCREEN MACROS
 # define SCREEN_WIDTH 640
@@ -74,13 +70,7 @@
 # define SPRITE_FRAME_TIME 120
 
 // COLORS
-#define NONE -16777216
-# define Red 0xFF0000
-# define Green 0x00FF00
-# define Blue 0x0000FF
-# define White 0xFFFFFF
-# define Cyan 0x00FFFF
-
+# define NONE -16777216
 
 // NAME
 # define NAME "Cub3D"
