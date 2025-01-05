@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parse.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:54:54 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 19:56:38 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/05 12:40:09 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ static void	ft_is_there_doortex(t_cub *cub)
 {
 	if (cub->map->texture->door->path == NULL)
 	{
-		ERROR_PRINT(ERROR_MSG(1, "Error\n Invalid map: \
-		door texture is missing!\n", 0), 1);
+		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_DOOR, 0), 1);
 		ft_clear_cub();
 		exit(1);
 	}
@@ -34,7 +33,7 @@ void	ft_look_for_invalid_map(t_cub *cub)
 		j = -1;
 		while (++j < ft_strlen(cub->map->map[i]))
 		{
-			if (cub->map->map[i][j] != '2')
+			if (cub->map->map[i][j] == '2')
 				ft_is_there_doortex(cub);
 			if (cub->map->map[i][j] != '1' && cub->map->map[i][j] != '0' \
 			&& cub->map->map[i][j] != '2' && cub->map->map[i][j] != ' ' \

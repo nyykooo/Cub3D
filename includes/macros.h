@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   macros.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 21:01:03 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/05 12:20:58 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@
 # define ERROR_READ "Error\n Empty file \""
 # define ERROR_MLC "Error\n Memory allocation failed \""
 # define ERROR_MAP_EMPTY "Error\n Invalid map: empty line in map content\n"
+# define ERROR_MAP_DOOR "Error\n Invalid map: door texture is missing\n"
 # define ERROR_MAP_CLOSE "Error\n Invalid map: map not closed\n"
 # define ERROR_MAP_CHAR "Error\n Invalid map: invalid character in map\n"
 # define ERROR_MAP_ORDER "Error\n Invalid map: map order\n"
