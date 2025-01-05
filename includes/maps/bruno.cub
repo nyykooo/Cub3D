@@ -1,8 +1,8 @@
-NO /home/brunhenr/cube3D/Cub3D/includes/textures/moss_wall.xpm
-SO /home/brunhenr/cube3D/Cub3D/includes/textures/wood_wall.xpm
-WE /home/brunhenr/cube3D/Cub3D/includes/textures/light_wall.xpm
-EA /home/brunhenr/cube3D/Cub3D/includes/textures/stone_wall.xpm
-DO /home/brunhenr/cube3D/Cub3D/includes/textures/wood_door.xpm
+NO ./includes/textures/moss_wall.xpm
+SO ./includes/textures/wood_wall.xpm
+WE ./includes/textures/light_wall.xpm
+EA ./includes/textures/stone_wall.xpm
+DO ./includes/textures/wood_door.xpm
 
 
 F 210,180,140
