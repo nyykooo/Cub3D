@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:08:00 by brunhenr          #+#    #+#             */
-/*   Updated: 2024/12/14 12:02:50 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/05 17:08:03 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	ft_validate_extension(char *name, char *ext)
 			if (ft_strcmp(&name[len], ext) == 0)
 				return ;
 			else
-				ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
+				ERROR_PRINT(ERROR_MSG(3, ERROR_EXT, name, "\"\n"), 1);
 		}
 		len--;
 	}
-	ERROR_PRINT(ERROR_MSG(4, ERROR_EXT, name, "\"\n"), 1);
+	ERROR_PRINT(ERROR_MSG(3, ERROR_EXT, name, "\"\n"), 1);
 }
 
 void	ft_input_validation(char **av, int ac)
