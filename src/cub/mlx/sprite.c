@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprite.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:19:08 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 20:31:20 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/05 11:24:45 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,46 +51,6 @@ void	update_animation(t_sprite *anim)
 		anim->cur_frame++;
 	}
 }
-
-// void	draw_sword_attack(t_cub *cub, t_player *player)
-// {
-// 	float	scale;
-// 	int		frame_y;
-// 	int		new_width;
-// 	int		new_height;
-// 	int		start_x;
-// 	int		start_y;
-// 	int		i;
-// 	int		j;
-// 	int		tex_x;
-// 	int		tex_y;
-// 	int		color;
-
-// 	frame_y = player->attack->frame_w * player->attack->cur_frame;
-// 	if (frame_y == player->attack->sprite_sheet->width)
-// 		return ;
-// 	scale = (float)SCREEN_HEIGHT / player->attack->frame_h;
-// 	new_width = player->attack->frame_w * scale;
-// 	new_height = player->attack->frame_h * scale;
-// 	start_x = SCREEN_WIDTH - (SCREEN_WIDTH / 1.7f);
-// 	start_y = SCREEN_HEIGHT - (new_height / 1.3f);
-// 	i = -1;
-// 	while (++i < new_height)
-// 	{
-// 		j = -1;
-// 		while (++j < new_width)
-// 		{
-// 			tex_x = i / scale;
-// 			tex_y = (new_width - j - 1) / scale;
-// 			color = player->attack->sprite_sheet->tex[frame_y + tex_y][tex_x];
-// 			if (color != NONE)
-// 			{
-// 				if (start_y + i >= 0 && start_y + i < SCREEN_HEIGHT)
-// 					ft_my_mlx_pixel_put(cub, start_x + j, start_y + i, color);
-// 			}
-// 		}
-// 	}
-// }
 
 void	draw_pixel(t_cub *cub, int i, int j, int color)
 {
