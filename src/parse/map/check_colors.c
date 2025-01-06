@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   check_colors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 20:00:34 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/04 20:04:48 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:27:06 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-void	ft_check_dup_color(t_color *color, char *line)
+void	ft_check_dup_color(t_color *color, char *line, char *key)
 {
 	if (color->input)
-		free(color->input);
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MAP_DUPLICATE, key, "\"\n"), 1);
 	color->input = ft_strdup(line);
 }
 

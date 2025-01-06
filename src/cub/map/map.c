@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 21:15:17 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:26:04 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_alloc_map(t_cub *cub)
 	{
 		if (cub->line[0] == '\n' && i != 0)
 			ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_EMPTY), 1);
-		if (!ft_is_text_or_color(cub->line, cub))
+		if (!ft_is_text_or_color(cub->line, cub, false))
 		{
 			cub->map->map[i] = ft_strdup(cub->line);
 			if (!cub->map->map[i++])
