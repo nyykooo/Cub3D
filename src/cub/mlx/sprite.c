@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:19:08 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/05 11:24:45 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:28:07 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_image	*load_sprite_sheet(void *mlx_ptr, char *path, int width, int height)
 
 	img = malloc(sizeof(t_image));
 	img->img = mlx_xpm_file_to_image(mlx_ptr, path, &width, &height);
+	if (!img->img)
+		return (free(img), NULL);
 	img->width = width;
 	img->height = height;
 	img->path = ft_strdup(path);

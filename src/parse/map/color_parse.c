@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_parse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:39:18 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 20:02:18 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:10:36 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ static void	ft_get_color(t_cub *cub, char *line)
 		ERROR_PRINT(ERROR_MSG(1, ERROR_SPLIT), 1);
 	if (ft_strcmp(split[0], "F") == 0)
 	{
-		ft_check_dup_color(texture->floor, line);
+		ft_check_dup_color(texture->floor, line, split[0]);
 		texture->floor->red = ft_atoi(split[1]);
 		texture->floor->green = ft_atoi(split[2]);
 		texture->floor->blue = ft_atoi(split[3]);
 	}
 	else if (ft_strcmp(split[0], "C") == 0)
 	{
-		ft_check_dup_color(texture->ceiling, line);
+		ft_check_dup_color(texture->ceiling, line, split[0]);
 		texture->ceiling->red = ft_atoi(split[1]);
 		texture->ceiling->green = ft_atoi(split[2]);
 		texture->ceiling->blue = ft_atoi(split[3]);

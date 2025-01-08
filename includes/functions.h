@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 21:17:50 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:26:53 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void		ft_normalize_map(t_cub *cub);
 void		ft_get_tex_imgs(t_cub *cub, t_texture *texture);
 
 // CHECK COLORS
-void		ft_check_dup_color(t_color *color, char *line);
+void		ft_check_dup_color(t_color *color, char *line, char *key);
 void		ft_check_errors(t_cub *cub, char *color);
 
 // CUB FUNCTIONS
@@ -69,7 +69,7 @@ t_cub		*ft_init_cub(void);
 // TEXTURE FUNCTIONS
 t_texture	*ft_init_texture(void);
 void		ft_get_text_color(t_map *map, char **split);
-bool		ft_is_text_or_color(char *line, t_cub *cub);
+bool		ft_is_text_or_color(char *line, t_cub *cub, bool parse);
 void		ft_get_tex_imgs(t_cub *cub, t_texture *texture);
 
 // MAP FUNCTIONS

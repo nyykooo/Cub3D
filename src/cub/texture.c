@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 13:54:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 12:23:46 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/06 19:40:23 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ static bool	ft_check_order(t_cub *cub)
 	return (false);
 }
 
-static void	ft_check_duplicated_info(t_image *image, char *path)
+static void	ft_check_duplicated_info(t_image *image, char *path, char *key)
 {
 	if (image->path)
-		free (image->path);
-	image->path = ft_strdup(path);
+		ERROR_PRINT(ERROR_MSG(3, ERROR_MAP_DUPLICATE, key, "\"\n"), 1);
+	else
+		image->path = ft_strdup(path);
 }
 
 t_texture	*ft_init_texture(void)
@@ -61,18 +62,18 @@ void	ft_get_text_color(t_map *map, char **split)
 	if (split[0] == NULL || split[0][0] == '\0' || split[1] == NULL)
 		return ;
 	if (ft_strcmp(split[0], "NO") == 0)
-		ft_check_duplicated_info(map->texture->north, split[1]);
+		ft_check_duplicated_info(map->texture->north, split[1], split[0]);
 	else if (ft_strcmp(split[0], "SO") == 0)
-		ft_check_duplicated_info(map->texture->south, split[1]);
+		ft_check_duplicated_info(map->texture->south, split[1], split[0]);
 	else if (ft_strcmp(split[0], "WE") == 0)
-		ft_check_duplicated_info(map->texture->west, split[1]);
+		ft_check_duplicated_info(map->texture->west, split[1], split[0]);
 	else if (ft_strcmp(split[0], "EA") == 0)
-		ft_check_duplicated_info(map->texture->east, split[1]);
+		ft_check_duplicated_info(map->texture->east, split[1], split[0]);
 	else if (ft_strcmp(split[0], "DO") == 0)
-		ft_check_duplicated_info(map->texture->door, split[1]);
+		ft_check_duplicated_info(map->texture->door, split[1], split[0]);
 }
 
-bool	ft_is_text_or_color(char *line, t_cub *cub)
+bool	ft_is_text_or_color(char *line, t_cub *cub, bool parse)
 {
 	if (line[0] == '\0' || line[0] == '\n')
 		return (true);
@@ -82,9 +83,12 @@ bool	ft_is_text_or_color(char *line, t_cub *cub)
 		return (true);
 	else if (ft_strncmp(line, "C", 1) == 0 || ft_strncmp(line, "F", 1) == 0)
 	{
-		ft_parse_color(ft_get_cub(), line);
+		if (parse)
+			ft_parse_color(ft_get_cub(), line);
 		return (true);
 	}
+	if (line[0] != ' ' && line[0] != '1')
+		ERROR_PRINT(ERROR_MSG(1, ERROR_KEY), 1);
 	if (!ft_check_order(cub))
 		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_ORDER), 1);
 	return (false);

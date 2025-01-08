@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:14:36 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/04 21:17:50 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:00:42 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	ft_ray_casting(t_cub *cub)
 		ft_draw_column(cub, x, player);
 		x++;
 	}
-	if (!player->is_attacking)
+	if (!player->is_attacking && player->sword)
 		ft_draw_sword(player->sword, SWORD_WIDTH,
 			SWORD_HEIGHT, (SCREEN_HEIGHT / SWORD_HEIGHT));
-	else
+	else if (player->sword && player->attack)
 		draw_sword_attack(cub, player);
 	ft_draw_minimap(cub, player);
 	ft_end_frame(&cub->frame_time);

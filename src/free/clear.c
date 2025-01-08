@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clear.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 18:48:33 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/04 19:35:49 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:01:49 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ static void	ft_clear_images(t_cub *cub)
 			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->east->img);
 		if (cub->map->texture->door->img)
 			mlx_destroy_image(cub->mlx_ptr, cub->map->texture->door->img);
-		if (cub->map->player->attack->sprite_sheet->img)
+		if (cub->map->player->attack && \
+		cub->map->player->attack->sprite_sheet->img)
 			mlx_destroy_image(cub->mlx_ptr, \
 			cub->map->player->attack->sprite_sheet->img);
-		if (cub->map->player->sword->img)
+		if (cub->map->player->sword && cub->map->player->sword->img)
 			mlx_destroy_image(cub->mlx_ptr, cub->map->player->sword->img);
 	}
 }

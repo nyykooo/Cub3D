@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 19:41:56 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/04 21:15:17 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:24:59 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_mouse_click(int button, int x, int y, t_cub *cub)
 	(void)y;
 	if (button == 1)
 	{
-		if (!player->is_attacking)
+		if (!player->is_attacking && player->attack)
 		{
 			player->is_attacking = true;
 			player->attack->cur_frame = 0;

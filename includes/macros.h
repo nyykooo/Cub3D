@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:04:32 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/05 12:20:58 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:30:44 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@
 # define ERROR_MAP_CLOSE "Error\n Invalid map: map not closed\n"
 # define ERROR_MAP_CHAR "Error\n Invalid map: invalid character in map\n"
 # define ERROR_MAP_ORDER "Error\n Invalid map: map order\n"
+# define ERROR_KEY "Error\n Invalid keyword\n"
+# define ERROR_MAP_DUPLICATE "Error\n Invalid map: duplicated keyword \""
 # define ERROR_TEXT "Error\n Invalid texture path: \""
 # define ERROR_NULL_TEXT "Error\n Missing texture or color\n"
 # define ERROR_SPLIT "Error\n Unable to split line\n"
