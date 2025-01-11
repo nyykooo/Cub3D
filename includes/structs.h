@@ -6,7 +6,7 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 19:39:51 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 21:19:03 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/10 20:20:03 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ typedef struct s_sprite
 	int		frame_h;
 	int		num_frames;
 	int		cur_frame;
-
-	// new stuff
 	float	sprt_scl;
 	int		frame_y;
 	int		new_w;

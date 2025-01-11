@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:43:58 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/06 17:26:04 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/11 00:15:02 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ static t_player	*ft_init_player(void)
 	if (!player)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, ": t_player player", "\"\n"), 1);
 	player->p_dir = -1;
-	player->p_x = -1;
-	player->p_y = -1;
 	player->dir_vector = (t_dir_vector *)ft_calloc(1, sizeof(t_dir_vector));
 	if (!player->dir_vector)
 		ERROR_PRINT(ERROR_MSG(3, ERROR_MLC, \
@@ -87,21 +85,3 @@ void	ft_alloc_map(t_cub *cub)
 	cub->map->map[i] = NULL;
 	close(cub->fd);
 }
-
-// void	ft_clean_map_spaces(char **line)
-// {
-// 	int	j;
-
-// 	j = -1;
-// 	while ((*line)[++j])
-// 	{
-// 		if (ft_isspace((*line)[j]) && (*line)[j] != ' ')
-// 			(*line)[j] = ' ';
-// 	}
-// }
-
-// void	ft_get_map_info(t_cub *cub, char *line)
-// {
-// 	ft_clean_map_spaces(&line);
-// 	ft_get_map_textures(cub->map, line);
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:50:13 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/07 17:58:56 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:01:55 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_get_player_images(t_cub *cub, t_player *player)
 	if (sprite)
 		player->attack = init_sprite(sprite, 64, 64, SPRITE_LEN);
 	player->sword = load_sprite_sheet(cub->mlx_ptr, \
-	"./includes/textures/anduril_rest1.xpm", SWORD_WIDTH, SWORD_HEIGHT);
+	"./includes/textures/anduril_rest.xpm", SWORD_WIDTH, SWORD_HEIGHT);
 }
 
 void	ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color)

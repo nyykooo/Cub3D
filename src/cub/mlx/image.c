@@ -6,43 +6,11 @@
 /*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:14:37 by ncampbel          #+#    #+#             */
-/*   Updated: 2024/12/18 09:40:49 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/11 00:15:39 by brunhenr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
-
-// static void	ft_draw_map(t_cub *cub)
-// {
-// 	unsigned int	i;
-// 	unsigned int	j;
-// 	unsigned int	x;
-// 	unsigned int	y;
-
-// 	i = -1;
-// 	while (++i < cub->map->rows)
-// 	{
-// 		j = -1;
-// 		while (++j < cub->map->cols)
-// 		{
-// 			y = -1;
-// 			while (++y < 32)
-// 			{
-// 				x = -1;
-// 				while (++x < 32)
-// 				{
-// 					if (cub->map->map[i][j] == '1')
-// 						my_mlx_pixel_put(cub, j * 10 + x, i * 10 + y, 0x000000);
-// 					else if (cub->map->map[i][j] == '0')
-// 						my_mlx_pixel_put(cub, j * 10 + x, i * 10 + y, 0xFFFFFF);
-// 					else if (cub->map->map[i][j] == 'N')
-// 						my_mlx_pixel_put(cub, j * 10 + x, i * 10 + y, 0xFF0000);
-// 				}
-// 			}
-// 		}
-// 	}
-// 	mlx_put_image_to_window(cub->mlx_ptr, cub->win, cub->img, 0, 0);
-// }
 
 void	ft_image_hub(t_cub *cub)
 {
