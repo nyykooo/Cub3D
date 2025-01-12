@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:46:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/12 19:08:41 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:10:42 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ static void	ft_floodfill(t_map *map, int col, int row)
 		ft_analyze_cell(map, col, row);
 		return ;
 	}
-	if (map->ff_map[row][col] == 'N' || map->ff_map[row][col] == 'S' \
-		|| map->ff_map[row][col] == 'E' || map->ff_map[row][col] == 'W')
-		printf("TEST DEBUG\n");
 	map->ff_map[row][col] = 'x';
 	ft_floodfill(map, col + 1, row);
 	ft_floodfill(map, col - 1, row);
