@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:46:29 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/05 12:27:51 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:08:41 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@ static void	ft_floodfill(t_map *map, int col, int row)
 		|| map->ff_map[row][col] == ' ' \
 		|| map->ff_map[row][col] == '1' \
 		|| map->ff_map[row][col] == 'x' \
-		|| map->ff_map[row][col] == 0)
+		|| map->ff_map[row][col] == '\0')
 	{
 		ft_analyze_cell(map, col, row);
 		return ;
 	}
+	if (map->ff_map[row][col] == 'N' || map->ff_map[row][col] == 'S' \
+		|| map->ff_map[row][col] == 'E' || map->ff_map[row][col] == 'W')
+		printf("TEST DEBUG\n");
 	map->ff_map[row][col] = 'x';
 	ft_floodfill(map, col + 1, row);
 	ft_floodfill(map, col - 1, row);
@@ -51,7 +54,9 @@ void	ft_call_flood(t_map *map)
 	{
 		j = -1;
 		while (map->ff_map[i][++j])
-			if (map->ff_map[i][j] == '0')
+			if (map->ff_map[i][j] == '0' || map->ff_map[i][j] == 'N' \
+				|| map->ff_map[i][j] == 'S' || map->ff_map[i][j] == 'E' \
+				|| map->ff_map[i][j] == 'W' || map->ff_map[i][j] == '2')
 				ft_floodfill(map, j, i);
 	}
 }
