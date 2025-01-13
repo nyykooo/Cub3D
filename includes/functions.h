@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/13 12:53:37 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:07:24 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,6 @@ void		ft_mlx_hook_and_loop(t_cub *cub);
 // MLX HOOKS
 int			ft_close_x(t_cub *cub);
 int			ft_keys(t_cub *cub);
-int			ft_game_keys(int keycode, t_cub *cub);
-void		ft_mlx_inicialization(t_cub *cub);
-void		ft_mlx_getdata_and_loop(t_cub *cub);
 void		ft_my_mlx_pixel_put(t_cub *cub, int x, int y, int color);
 int			ft_ray_casting(t_cub *cub);
 int			ft_mouse(int x, int y, t_cub *cub);
