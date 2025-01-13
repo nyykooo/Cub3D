@@ -6,16 +6,19 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 20:00:34 by brunhenr          #+#    #+#             */
-/*   Updated: 2025/01/12 19:17:51 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:52:55 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/headers.h"
 
-void	ft_check_dup_color(t_color *color, char *line, char *key)
+void	ft_check_dup_color(t_color *color, char *line, char **split)
 {
 	if (color->input)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_MAP_DUPLICATE, key, "\"\n"), 1);
+	{
+		ft_free_array(split);
+		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_DUPLICATE), 1);
+	}
 	color->input = ft_strdup(line);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:00:05 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/12 19:17:30 by ncampbel         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:53:37 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void		ft_normalize_map(t_cub *cub);
 void		ft_get_tex_imgs(t_cub *cub, t_texture *texture);
 
 // CHECK COLORS
-void		ft_check_dup_color(t_color *color, char *line, char *key);
+void		ft_check_dup_color(t_color *color, char *line, char **split);
 void		ft_check_errors(t_cub *cub, char **split);
 
 // CUB FUNCTIONS

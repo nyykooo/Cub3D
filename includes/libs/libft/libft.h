@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 11:17:14 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/04 20:38:54 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:20:53 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,8 @@ int		ft_int_to_fixed(int const i);
 
 t_list	*ft_lstget(t_list *lst, int index);
 void	ft_lstiter_param(t_list *lst, void (*f)(void *, void *), void *ptr);
+
+bool	ft_isdigit_str(char *str);
+int		ft_amount_char(char *str, char c);
 
 #endif

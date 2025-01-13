@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunhenr <brunhenr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncampbel <ncampbel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:37:06 by ncampbel          #+#    #+#             */
-/*   Updated: 2025/01/02 16:49:24 by brunhenr         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:14:35 by ncampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ int	ft_create_rgb(int r, int g, int b)
 {
 	int	new_color;
 
-	r = r % 256;
-	g = g % 256;
-	b = b % 256;
 	new_color = (r << 16 | g << 8 | b);
 	return (new_color);
 }
