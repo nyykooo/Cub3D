@@ -1,7 +1,7 @@
 NO ./includes/textures/night_regular_wall.xpm
+EA ./includes/textures/stone_wall.xpm
 SO ./includes/textures/wood_wall.xpm
 WE ./includes/textures/light_wall.xpm
-EA ./includes/textures/stone_wall.xpm
 DO ./includes/textures/wood_door.xpm
 
 F 210,180,140

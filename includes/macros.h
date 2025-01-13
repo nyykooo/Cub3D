@@ -90,7 +90,7 @@
 # define ERROR_MAP_CHAR "Error\n Invalid map: invalid character in map\n"
 # define ERROR_MAP_ORDER "Error\n Invalid map: map order\n"
 # define ERROR_KEY "Error\n Invalid keyword\n"
-# define ERROR_MAP_DUPLICATE "Error\n Invalid map: duplicated keyword \""
+# define ERROR_MAP_DUPLICATE "Error\n Invalid map: duplicated keyword\n"
 # define ERROR_TEXT "Error\n Invalid texture path: \""
 # define ERROR_NULL_TEXT "Error\n Missing texture or color\n"
 # define ERROR_SPLIT "Error\n Unable to split line\n"

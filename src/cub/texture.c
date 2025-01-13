@@ -22,10 +22,13 @@ static bool	ft_check_order(t_cub *cub)
 	return (false);
 }
 
-static void	ft_check_duplicated_info(t_image *image, char *path, char *key)
+static void	ft_check_duplicated_info(t_image *image, char *path, char **split)
 {
 	if (image->path)
-		ERROR_PRINT(ERROR_MSG(3, ERROR_MAP_DUPLICATE, key, "\"\n"), 1);
+	{
+		ft_free_array(split);
+		ERROR_PRINT(ERROR_MSG(1, ERROR_MAP_DUPLICATE), 1);
+	}
 	else
 		image->path = ft_strdup(path);
 }
@@ -62,15 +65,15 @@ void	ft_get_text_color(t_map *map, char **split)
 	if (split[0] == NULL || split[0][0] == '\0' || split[1] == NULL)
 		return ;
 	if (ft_strcmp(split[0], "NO") == 0)
-		ft_check_duplicated_info(map->texture->north, split[1], split[0]);
+		ft_check_duplicated_info(map->texture->north, split[1], split);
 	else if (ft_strcmp(split[0], "SO") == 0)
-		ft_check_duplicated_info(map->texture->south, split[1], split[0]);
+		ft_check_duplicated_info(map->texture->south, split[1], split);
 	else if (ft_strcmp(split[0], "WE") == 0)
-		ft_check_duplicated_info(map->texture->west, split[1], split[0]);
+		ft_check_duplicated_info(map->texture->west, split[1], split);
 	else if (ft_strcmp(split[0], "EA") == 0)
-		ft_check_duplicated_info(map->texture->east, split[1], split[0]);
+		ft_check_duplicated_info(map->texture->east, split[1], split);
 	else if (ft_strcmp(split[0], "DO") == 0)
-		ft_check_duplicated_info(map->texture->door, split[1], split[0]);
+		ft_check_duplicated_info(map->texture->door, split[1], split);
 }
 
 bool	ft_is_text_or_color(char *line, t_cub *cub, bool parse)
