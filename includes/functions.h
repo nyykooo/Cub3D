@@ -84,6 +84,7 @@ void		ft_call_flood(t_map *map);
 
 // COLOR FUNCTIONS
 t_color		*ft_init_color(void);
+void		ft_create_colors(t_cub *cub, char *line);
 int			ft_create_rgb(int r, int g, int b);
 
 // PLAYER FUNCTIONS

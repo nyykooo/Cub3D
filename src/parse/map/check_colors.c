@@ -45,3 +45,14 @@ void	ft_check_errors(t_cub *cub, char **split)
 		}
 	}
 }
+
+void	ft_create_colors(t_cub *cub, char *line)
+{
+	t_color	*color;
+
+	if (strncmp(line, "F", 1) == 0)
+		color = cub->map->texture->floor;
+	else
+		color = cub->map->texture->ceiling;
+	color->color = ft_create_rgb(color->red, color->green, color->blue);
+}

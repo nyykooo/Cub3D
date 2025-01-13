@@ -19,8 +19,8 @@ int	ft_amount_char(char *str, char c)
 
 	amount = 0;
 	i = -1;
-	while(str[++i])
-		if(str[i] == c)
+	while (str[++i])
+		if (str[i] == c)
 			amount++;
 	return (amount);
 }

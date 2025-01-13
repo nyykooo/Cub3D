@@ -14,7 +14,7 @@
 
 static bool	ft_protect_color(char **arr, char *color)
 {
-	char **rgb;
+	char	**rgb;
 
 	rgb = ft_split(color, ',');
 	if (ft_array_len(rgb) != 3 || ft_amount_char(color, ',') != 2)
@@ -23,7 +23,8 @@ static bool	ft_protect_color(char **arr, char *color)
 		ft_free_array(rgb);
 		ERROR_PRINT(ERROR_MSG(1, ERROR_NULL_TEXT), 1);
 	}
-	else if (!ft_isdigit_str(rgb[0]) || !ft_isdigit_str(rgb[1]) || !ft_isdigit_str(rgb[2]))
+	else if (!ft_isdigit_str(rgb[0]) || !ft_isdigit_str(rgb[1]) \
+	|| !ft_isdigit_str(rgb[2]))
 	{
 		ft_free_array(arr);
 		ft_free_array(rgb);
@@ -45,7 +46,7 @@ static void	ft_prepare_line(char *line)
 
 static void	ft_set_color(t_color *color, char *col_inpt, char **split)
 {
-	char **rgb;
+	char	**rgb;
 
 	rgb = ft_split(col_inpt, ',');
 	if ((ft_atol(rgb[0]) < 0 || ft_atol(rgb[0]) > 255) \
@@ -81,19 +82,7 @@ static void	ft_get_color(t_cub *cub, char *line)
 		ft_check_dup_color(texture->ceiling, line, split);
 		ft_set_color(texture->ceiling, split[1], split);
 	}
-	// ft_check_errors(cub, split);
 	ft_free_array(split);
-}
-
-static void	ft_create_colors(t_cub *cub, char *line)
-{
-	t_color	*color;
-
-	if (strncmp(line, "F", 1) == 0)
-		color = cub->map->texture->floor;
-	else
-		color = cub->map->texture->ceiling;
-	color->color = ft_create_rgb(color->red, color->green, color->blue);
 }
 
 void	ft_parse_color(t_cub *cub, char	*line)
